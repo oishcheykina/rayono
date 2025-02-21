@@ -80,3 +80,68 @@ class Photo(models.Model):
             oldest = Photo.objects.order_by('created_at').first()  # Самый старый пост
             if oldest:
                 oldest.delete()
+     
+#akani rasmi           
+class Boss(models.Model):
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+    name = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Rahbar'
+        verbose_name_plural = 'Rahbar'
+    
+class Yil_Dasturi(models.Model):
+    title = models.CharField(max_length=150)
+    image = models.ImageField(null=True, blank=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Yil Daturi'
+        verbose_name_plural = 'Yil Daturi'
+        
+#mmt bolimi
+
+class Rahbar(models.Model):
+    created_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+    field = models.TextField() #kto eto
+    name = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    faks = models.TextField()
+    vebsayt = models.TextField()
+    tarjima_xol = RichTextUploadingField(null=True, blank=True)
+    majburiyatlari = RichTextUploadingField(null=True, blank=True)
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Rahbar'
+        verbose_name_plural = 'Rahbariyat'
+
+class Apparat_Xodimi(models.Model):
+    created_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+    field = models.TextField() #kto eto
+    name = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    faks = models.TextField()
+    vebsayt = models.TextField()
+    tarjima_xol = RichTextUploadingField(null=True, blank=True)
+    majburiyatlari = RichTextUploadingField(null=True, blank=True)
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = 'Apparat hodimi'
+        verbose_name_plural = 'Apparat Hodimlari'
