@@ -6,3 +6,6 @@ admin.site.register(Post)
 admin.site.register(Announcement)
 admin.site.register(Photo)
 print('hefef')
+
+
+
