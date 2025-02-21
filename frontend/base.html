@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="oz">
 <head>
@@ -5,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="https://toshvil.uz/favicon.ico">
     <title>{% block title %}Pol{% endblock %}</title>
-    <link href="/assets/27553e17/css/language-selector.css" rel="stylesheet">
-    <link href="/templates/new_maktab/css/jquery.fancybox.min.css?v=0.0.07" rel="stylesheet">
-    <link href="/templates/new_maktab/css/style.css?v=0.0.07" rel="stylesheet">
-    <link href="/templates/new_maktab/css/fontawesome.min.css?v=0.0.07" rel="stylesheet">
-    <link href="/templates/new_maktab/css/solid.min.css?v=0.0.07" rel="stylesheet">
-    <link href="/templates/new_maktab/css/bvi.min.css?v=0.0.07" rel="stylesheet">
-    <link href="/templates/new_maktab/css/bvi-font.min.css?v=0.0.07" rel="stylesheet">
-    <link href="/templates/new_maktab/css/main.css?v=0.0.117" rel="stylesheet">
-    <link href="/templates/new_maktab/css/site.css?v=0.0.07" rel="stylesheet">
+    <link href="css/language-selector.css" rel="stylesheet">
+    <link href="{% static 'css/jquery.fancybox.min' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fontawesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/solid.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bvi.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bvi-font.min' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/site.css' %}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=fZlhaAH2"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -775,22 +776,22 @@
 <ul>
     <li>
         <a href="https://m.facebook.com/profile.php?id=100038914939742&_rdr" class="__f social-item"><img
-                src="/templates/new_maktab/images/f.png" alt=""></a>
+                src="{% static 'images/f.png' %}" alt=""></a>
     </li>
     <li>
-        <a href="#" class="__i social-item"><img src="/templates/new_maktab/images/i.png" alt=""></a>
+        <a href="#" class="__i social-item"><img src="{% static 'images/i.png' %}" alt=""></a>
     </li>
     <li>
-        <a href="#" class="__y social-item"><img src="/templates/new_maktab/images/y.png" alt=""></a>
+        <a href="#" class="__y social-item"><img src="{% static 'images/y.png' %}" alt=""></a>
     </li>
     <li>
-        <a href="#" class="__tt social-item"><img src="/templates/new_maktab/images/tt.png" alt=""></a>
+        <a href="#" class="__tt social-item"><img src="{% static 'images/tt.png' %}" alt=""></a>
     </li>
     <li>
-        <a href="#" class="__tg social-item"><img src="/templates/new_maktab/images/tg.png" alt=""></a>
+        <a href="#" class="__tg social-item"><img src="{% static 'images/tg.png' %}" alt=""></a>
     </li>
     <li>
-        <a href="#" class="__tw social-item"><img src="/templates/new_maktab/images/twitter.png" alt=""></a>
+        <a href="#" class="__tw social-item"><img src="{% static 'images/twitter.png' %}" alt=""></a>
     </li>
 </ul>
 </div>
@@ -813,7 +814,7 @@
                         href="/murojaatlar">Murojaat yuborish</a>
                     <a class="btn btn-o" href="/oz/toskent-viloati-okimi">Bog'lanish</a>
                 </div>
-                <img class="mb-4" src="/templates/new_maktab/images/mudir.jpg" width="70%">
+                <img class="mb-4" src="{% static 'images/mudir.jpg'  %}" width="70%">
             </div>
 
         </div>
@@ -876,13 +877,13 @@
         <div class="col-left">
             <h3>Yil dasturi</h3>
             <p><a href="/oqituvchilarga/davlat-dasturlari/" title="All courses">
-                    <img src="/templates/new_maktab/images/yil_dasturi.jpg" alt="Banner"
+                    <img src="{% static 'images/yil_dasturi.jpg' %}" alt="Banner"
                         class="img-rounded img-responsive"></a></p>
         </div>
         <div class="col-left">
             <h3>Besh muhim tashabbus</h3>
             <p><a href="/oqituvchilarga/besh-muhim-tashabbus/" title="All courses">
-                    <img src="/templates/new_maktab/images/photo.jpg" alt="Banner"
+                    <img src="{% static 'images/photo.jpg' %}" alt="Banner"
                         class="img-rounded img-responsive"></a></p>
         </div>
 
@@ -1249,40 +1250,40 @@
 <div class="container footer-useful-links d-flex justify-content-between flex-wrap">
 
 <a href="http://www.president.uz/uz"><span><img
-        src="/templates/new_maktab/2021/03/4547c694-58cc-8ec9-aef6-1b9a2939748e-120x80.png"></span><strong>O'zbekiston
+        src="{% static '2021/03/4547c694-58cc-8ec9-aef6-1b9a2939748e-120x80.png' %}"></span><strong>O'zbekiston
     Respublikasi Prezidenti rasmiy veb-sayti</strong></a>
 <a href="https://pm.gov.uz"><span><img
-        src="/templates/new_maktab/2021/03/4547c694-58cc-8ec9-aef6-1b9a2939748e-120x80.png"></span><strong>O'zbekiston
+        src="{% static '2021/03/4547c694-58cc-8ec9-aef6-1b9a2939748e-120x80.png' %}"></span><strong>O'zbekiston
     Respublikasi Prezidenti virtual qabulhonasi</strong></a>
 <a href="https://gov.uz"><span><img
-        src="/templates/new_maktab/2021/03/govuz-120x80.png"></span><strong>O'zbekiston Respublikasi hukumat
+        src="{% static '2021/03/govuz-120x80.png' %}"></span><strong>O'zbekiston Respublikasi hukumat
     portali</strong></a>
 <a href="https://my.gov.uz"><span><img
-        src="/templates/new_maktab/2021/03/qip-shot-screen-006-120x80.png"></span><strong>Yagona interaktiv
+        src="{% static '2021/03/qip-shot-screen-006-120x80.png' %}"></span><strong>Yagona interaktiv
     davlat hizmatlari portali</strong></a>
 <a href="https://parliament.gov.uz"><span><img
-        src="/templates/new_maktab/2021/03/qip-shot-screen-007-120x80.png"></span><strong>O'zbekiston
+        src="{% static '2021/03/qip-shot-screen-007-120x80.png' %}"></span><strong>O'zbekiston
     Respublikasi Oliy Mazhlis qonunchilik palatasi</strong></a>
 <a href="https://soliq.uz"><span><img
-        src="/templates/new_maktab/2021/03/14112a8e-03a8-11fc-3c10-2985adb3a7b7-120x80.png"></span><strong>O'zbekiston
+        src="{% static '2021/03/14112a8e-03a8-11fc-3c10-2985adb3a7b7-120x80.png' %}"></span><strong>O'zbekiston
     Respublikasi Davlat Soliq qo'mitasi</strong></a>
 <a href="http://invest.gov.uz"><span><img
-        src="/templates/new_maktab/2021/03/4547c694-58cc-8ec9-aef6-1b9a2939748e-120x80.png"></span><strong>O'zbekiston
+        src="{% static '2021/03/4547c694-58cc-8ec9-aef6-1b9a2939748e-120x80.png' %}"></span><strong>O'zbekiston
     Respublikasi investiciya salohiyati portali</strong></a>
 <a href="https://www.lex.uz"><span><img
-        src="/templates/new_maktab/2021/03/be03e7fc-a81d-ee71-8897-2dc4029ff3ff-120x80.png"></span><strong>O'zbekiston
+        src="{% static '2021/03/be03e7fc-a81d-ee71-8897-2dc4029ff3ff-120x80.png' %}"></span><strong>O'zbekiston
     Respublikasi Qonun huzhzhatlari ma'lumotlari milliy bazasi</strong></a>
 <a href="https://davaktiv.uz"><span><img
-        src="/templates/new_maktab/2021/03/bez-nazvania-120x80.png"></span><strong>Davlat aktivlarini
+        src="{% static '2021/03/bez-nazvania-120x80.png' %}"></span><strong>Davlat aktivlarini
     boshqarish agentligi</strong></a>
 <a href="https://constitution.uz"><span><img
-        src="/templates/new_maktab/2021/03/4547c694-58cc-8ec9-aef6-1b9a2939748e-120x80.png"></span><strong>O'zbekiston
+        src="{% static '2021/03/4547c694-58cc-8ec9-aef6-1b9a2939748e-120x80.png' %}"></span><strong>O'zbekiston
     Respublikasi Konstituciyasi</strong></a>
 <a href="https://license.gov.uz"><span><img
-        src="/templates/new_maktab/2021/03/2fef45e4-9982-97b8-499e-05f566bcae57-120x80.png"></span><strong>Elektron
+        src="{% static '2021/03/2fef45e4-9982-97b8-499e-05f566bcae57-120x80.png' %}"></span><strong>Elektron
     licenziyalash portali</strong></a>
 <a href="http://ek.uz/uz"><span><img
-        src="/templates/new_maktab/2021/03/b00543b8-7ea2-55bc-9cec-011c26c589b7-120x80.png"></span><strong>Kommunal
+        src="{% static '2021/03/b00543b8-7ea2-55bc-9cec-011c26c589b7-120x80.png' %}"></span><strong>Kommunal
     ho'zhalik va uy-zhoy fondi portali</strong></a>
 </div>
 
@@ -1294,13 +1295,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/templates/new_maktab/assets/bce22f02/jquery.js"></script>
     <script src="/templates/new_maktab/assets/e9b1b592/yii.js"></script>
-    <script src="/templates/new_maktab/js/jquery.fancybox.min.js"></script>
-    <script src="/templates/new_maktab/js/js.cookie.min.js"></script>
-    <script src="/templates/new_maktab/js/bvi-init.js"></script>
-    <script src="/templates/new_maktab/js/bvi.min.js"></script>
-    <script src="/templates/new_maktab/js/vendors.js"></script>
-    <script src="/templates/new_maktab/js/main.js"></script>
-    <script src="/templates/new_maktab/js/scripts.js"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/js.cookie.min.js' %}"></script>
+    <script src="{% static 'js/bvi-init.js' %}"></script>
+    <script src="{% static 'js/bvi.min.js' %}"></script>
+    <script src="{% static 'js/vendors.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
     <script>
         $("[to]").click(function () {
             $r_id = $(this).attr("to")
