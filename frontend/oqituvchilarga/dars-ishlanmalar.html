@@ -77,128 +77,16 @@
         div.drop-down-container>ul>li>a.drop-down {
             padding: 15px !important;
         }
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .card img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Modal ekranni to‘liq qoplashi uchun */
-        .fullscreen-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1050;
-        }
-
-        /* Modal ichidagi rasm */
-        .fullscreen-modal img {
-            max-width: 95vw;
-            max-height: 95vh;
-            object-fit: contain;
-            cursor: pointer;
-        }
-    </style>
-    <style>
-        /* Calendar styles */
-        #calendar-layer {
-            background: white !important;
-            margin: 10px 15px !important;
-            padding: 10px 15px !important;
-        }
-
-        .calendar {
-            display: table;
-            margin: 0 auto;
-            text-align: center;
-            width: 100%;
-        }
-
-        .day {
-            margin: 10px 10px;
-            padding: 10px 10px;
-        }
-
-        .weekday {
-            margin: 10px 10px;
-            padding: 10px 10px;
-            color: #d85959;
-        }
-
-        /* Theme colors */
-        .color {
-            color: #014c8b !important;
-        }
-
-        .bg {
-            background: #014c8b !important;
-        }
-
-        /* Menu styles */
-        .catmenuozim {
-            background: #33a1fd3d;
-            color: #FFFFFF !important;
-        }
-
-        .megamenu > li a.drop-down {
-            background-image: url(../img/arrow-down-white.png);
-            background-repeat: no-repeat;
-            background-position: right 20px;
-            padding: 14px 5px 15px 0 !important;
-            color: #fff;
-            font-size: 15px !important;
-        }
-
-        div.drop-down-container > ul > li > a.drop-down {
-            padding: 15px !important;
-        }
-
-        /* Preloader */
-        .preloader {
-            position: fixed;
-            background: #fff;
-            z-index: 99999;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Hide iframes by default */
-        iframe {
-            display: none !important;
-        }
-
-        /* Language links */
-        .lang a {
-            color: #fff;
-        }
     </style>
 </head>
 
 <body class="">
-    <div class="preloader" id="preloader" style="position: fixed;  
-    background: #fff;z-index: 99999;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;">
+    <!-- <div class="preloader" id="preloader" style="position: fixed;background: #fff;z-index: 99999;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;">
   <div class="lds-ripple">
     <div></div>
     <div></div>
   </div>
-</div>
+</div> -->
     <style>
         iframe {
             display: none !important;
@@ -212,27 +100,27 @@
             }
         </style>
         <header class="header"
-            style="background: linear-gradient(rgba(62, 6, 232, 0.3), rgba(71, 5, 236, 0.3)), 
-            url('/templates/new_maktab/images/plain.png'); 
-            background-position: center; 
-            background-size: cover;
-            padding-bottom:0;">          
-      
-            
-            <div class=".header-top {
-                height: 10%; /* or any other value you want */
-                display: flex;
-                align-items: center;
-            }">
+            style="background: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url('/templates/new_maktab/images/ban.jpg'); background-position: center; background-size: cover;padding-bottom:0;">
+            <div class="header-top">
                 <div class="container d-flex justify-content-between align-items-center">
                     <div class="header-top__left">
                         <a class="logo d-flex align-items-center" href="/">
-                            <img src="/templates/new_maktab/images/logo_new.png" width="10%" alt="logo"><br>
+                            <img src="/templates/new_maktab/images/logo_new.png" width="15%" alt="logo"><br>
                             <strong style="color: #fff;">
-                                <span>Denov tumani maktabgacha<br> va maktab ta’limi bo‘limi</span>
+                                <span>Yunusobod tumani maktabgacha<br> va maktab ta’limi bo‘limi</span>
                                 <span style="color: #fff;"> </span>
                             </strong>
                         </a>
+
+
+
+
+
+
+
+
+
+
                     </div>
                     <div class="header-top__right d-flex">
                         <div class="header-contacts mr-5">
@@ -247,64 +135,64 @@
                     </div>
                 </div>
             </div>
-            <nav class="main-nav " style="background: #2056f6;
-                                            border-top: 1px solid #051bab;
-                                            border-bottom: 15px solid #d4dadf;
-                                            position: relative;
-                                            padding: 15px 0;
-                                            margin-top:95px;">
+            <nav class="main-nav " style="background: #33a1fd;
+    border-top: 8px solid #055fab;
+    border-bottom: 8px solid #d4dadf;
+    position: relative;
+        margin-top:95px;">
+
                 <div class="megamenu_container">
                     <a id="megamenu-button-mobile" href="#">Menu</a>
                     <ul class="megamenu">
-                        <li class="drop-normal"><a class="drop-down" href="/xalq-talimi-bolimi/xalq-talimi-bolimi.html">MMT
+                        <li class="drop-normal"><a class="drop-down" href="https://yummtb.uz/xalq-talimi-bolimi/">MMT
                                 bo‘limi <span class="caret"></span></a>
                             <div class="drop-down-container normal">
                                 <ul>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/rahbariyat.html">Rahbariyat </a>
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/rahbariyat/">Rahbariyat </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/apparat-xodimlari.html">Apparat
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/apparat-xodimlari/">Apparat
                                             xodimlari </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/tarkibiy-tuzilma.html">Tarkibiy
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/tarkibiy-tuzilma/">Tarkibiy
                                             tuzilma </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/rahbariyat-qabul-kunlari.html">Rahbariyat
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/rahbariyat-qabul-kunlari/">Rahbariyat
                                             qabul kunlari </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/bolim-nizomi.html">Bo‘lim Nizomi </a>
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/bolim-nizomi/">Bo‘lim Nizomi </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/talim-muassasalari.html">Ta’lim
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/">Ta’lim
                                             muassasalari </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/mtm.html">Maktabgacha ta&#039;lim
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/mtm/">Maktabgacha ta&#039;lim
                                             tashkiloti </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/bolim-ish-kun-tartibi.html">Bo‘lim
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/bolim-ish-kun-tartibi/">Bo‘lim
                                             ish kun tartibi </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/bosh-ish-orinlari.html">Bo&#039;sh
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/bo039sh-ish-o039rinlari/">Bo&#039;sh
                                             ish o&#039;rinlari </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/xalq-talimi-bolimi/bolim-manzili.html">Bo`lim manzili
+                                            href="https://yummtb.uz/xalq-talimi-bolimi/bolim-manzili/">Bo`lim manzili
                                         </a>
 
                                     </li>
@@ -312,37 +200,37 @@
                             </div>
                         </li>
                         <li class="drop-normal"><a class="drop-down"
-                                href="/oqituvchilarga/oqituvchilarga.html">O&#039;qituvchilarga <span
+                                href="https://yummtb.uz/o039qituvchilarga/">O&#039;qituvchilarga <span
                                     class="caret"></span></a>
                             <div class="drop-down-container normal">
                                 <ul>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/oqituvchilarga/oqituvchilar-malakasini-oshirish.html">O‘qituvchilar
+                                            href="https://yummtb.uz/o039qituvchilarga/oqituvchilar-malakasini-oshirish/">O‘qituvchilar
                                             malakasini oshirish </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/oqituvchilarga/dars-ishlanmalar.html">Dars
+                                            href="https://yummtb.uz/o039qituvchilarga/dars-ishlanmalar/">Dars
                                             ishlanmalar </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/oqituvchilarga/fanlar-boyicha-testlar.html">Fanlar
+                                            href="https://yummtb.uz/o039qituvchilarga/fanlar-bo039yicha-testlar/">Fanlar
                                             bo&#039;yicha testlar </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/oqituvchilarga/davlat-dasturlari.html">Davlat
+                                            href="https://yummtb.uz/o039qituvchilarga/davlat-dasturlari/">Davlat
                                             dasturlari </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/oqituvchilarga/kasaba-uyishmasi.html">Kasaba
+                                            href="https://yummtb.uz/o039qituvchilarga/kasaba-uyishmasi/">Kasaba
                                             uyishmasi </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/oqituvchilarga/huquq-va-majburiyatlar.html">Ta&#039;lim
+                                            href="https://yummtb.uz/o039qituvchilarga/huquq-va-majburiyatlar/">Ta&#039;lim
                                             to‘g‘isidagi qonun </a>
 
                                     </li>
@@ -350,128 +238,128 @@
                             </div>
                         </li>
                         <li class="drop-normal"><a class="drop-down"
-                                href="/oquvchilarga/oquvchilarga.html">O&#039;quvchilarga <span
+                                href="https://yummtb.uz/o039quvchilarga/">O&#039;quvchilarga <span
                                     class="caret"></span></a>
                             <div class="drop-down-container normal">
                                 <ul>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/oquvchilarga/davlat-ramzlari.html">Davlat ramzlari
+                                            href="https://yummtb.uz/o039quvchilarga/davlat-ramzlari/">Davlat ramzlari
                                         </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="#">Elektron
+                                            href="https://yummtb.uz/o039quvchilarga/yo039l-harakati-qoidalari/">Elektron
                                             darsliklar </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/oquvchilarga/imtihon-materiallari.html">Imtihon
+                                            href="https://yummtb.uz/o039quvchilarga/imtihon-materiallari/">Imtihon
                                             materiallari </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish.html">Yo‘qolgan
+                                            href="https://yummtb.uz/o039quvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish/">Yo‘qolgan
                                             shahodatnomani tiklash uchun ariza berish </a>
 
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="drop-normal"><a class="drop-down" href="/ota-onalarga/ota-onalarga.html">Ota-onalarga
+                        <li class="drop-normal"><a class="drop-down" href="https://yummtb.uz/ota-onalarga/">Ota-onalarga
                                 <span class="caret"></span></a>
                             <div class="drop-down-container normal">
                                 <ul>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/ota-onalarga/bolani-bogchaga-joylashtirish-uchun-ariza-berish.html">Bolani
+                                            href="https://yummtb.uz/ota-onalarga/bolani-bogchaga-joylashtirish-uchun-ariza-berish/">Bolani
                                             bogʼchaga joylashtirish uchun ariza berish </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/ota-onalarga/bolalarni-bogchaga-qabul-navbatini-tekshirish.html">Bolalarni
+                                            href="https://yummtb.uz/ota-onalarga/bolalarni-bogchaga-qabul-navbatini-tekshirish/">Bolalarni
                                             bog‘chaga qabul navbatini tekshirish </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/ota-onalarga/bogcha-tolovlari-togrisida-malumot.html">Bog&#039;cha
+                                            href="https://yummtb.uz/ota-onalarga/bog039cha-tolovlari-togrisida-ma039lumot/">Bog&#039;cha
                                             to‘lovlari to‘g‘risida ma&#039;lumot olish </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/ota-onalarga/bolani-maktabning-birinchi-sinfiga-joylashtirishga-ariza-yuborish.html">Bolani
+                                            href="https://yummtb.uz/ota-onalarga/bolani-maktabning-birinchi-sinfiga-joylashtirishga-ariza-yuborish/">Bolani
                                             maktabning birinchi sinfiga joylashtirish </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/ota-onalarga/maktabga-oquvchilarni-qabul-qilish.html">Maktabga
+                                            href="https://yummtb.uz/ota-onalarga/maktabga-oquvchilarni-qabul-qilish/">Maktabga
                                             o‘quvchilarni qabul qilish </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/ota-onalarga/bolalarni-bir-maktabdan-boshqa-maktabga-kochirish-uchun-ariza-yuborish.html">Bolalarni
+                                            href="https://yummtb.uz/ota-onalarga/bolalarni-bir-maktabdan-boshqa-maktabga-kochirish-uchun-ariza-yuborish/">Bolalarni
                                             bir maktabdan boshqa maktabga ko‘chirish </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/ota-onalarga/xorijiy-fuqarolar-uchun-bolalarini-maktabga-joylashtirish.html">Xorijiy
+                                            href="https://yummtb.uz/ota-onalarga/xorijiy-fuqarolar-uchun-bolalarini-maktabga-joylashtirish/">Xorijiy
                                             fuqarolar uchun bolalarini maktabga joylashtirish </a>
 
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="drop-normal"><a class="drop-down" href="/matbuot-xizmati/matbuot-xizmati.html">Matbuot
+                        <li class="drop-normal"><a class="drop-down" href="https://yummtb.uz/matbuot-xizmati/">Matbuot
                                 xizmati <span class="caret"></span></a>
                             <div class="drop-down-container normal">
                                 <ul>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/matbuot-xizmati/yangiliklar.html">Yangiliklar </a>
+                                            href="https://yummtb.uz/matbuot-xizmati/yangiliklar/">Yangiliklar </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/matbuot-xizmati/elonlar.html">E&#039;lonlar </a>
+                                            href="https://yummtb.uz/matbuot-xizmati/e039lonlar/">E&#039;lonlar </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/matbuot-xizmati/maruzalar.html">Ma&#039;ruzalar </a>
+                                            href="https://yummtb.uz/matbuot-xizmati/ma039ruzalar/">Ma&#039;ruzalar </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/matbuot-xizmati/tadbirlar-rejasi.html">Tadbirlar rejasi
+                                            href="https://yummtb.uz/matbuot-xizmati/tadbirlar-rejasi/">Tadbirlar rejasi
                                         </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/matbuot-xizmati/bolim-ish-rejasi.html">Bo`lim ish rejasi
+                                            href="https://yummtb.uz/matbuot-xizmati/bolim-ish-rejasi/">Bo`lim ish rejasi
                                         </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/matbuot-xizmati/videogalereya.html">Videogalereya </a>
+                                            href="https://yummtb.uz/matbuot-xizmati/videogalereya/">Videogalereya </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/matbuot-xizmati/fotogalereya.html">Fotogalereya </a>
+                                            href="https://yummtb.uz/matbuot-xizmati/fotogalereya/">Fotogalereya </a>
 
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="drop-normal"><a class="drop-down" href="/faoliyat/faoliyat.html">Faoliyat <span
+                        <li class="drop-normal"><a class="drop-down" href="https://yummtb.uz/faoliyat/">Faoliyat <span
                                     class="caret"></span></a>
                             <div class="drop-down-container normal">
                                 <ul>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/faoliyat/korrupsiyaga-qarshi-kurash.html">Korrupsiyaga
+                                            href="https://yummtb.uz/faoliyat/korrupsiyaga-qarshi-kurash/">Korrupsiyaga
                                             qarshi kurash </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/faoliyat/talimga-doir-terminlar.html">Ta’limga doir
+                                            href="https://yummtb.uz/faoliyat/talimga-doir-terminlar/">Ta’limga doir
                                             terminlar </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/faoliyat/besh-muhim-tashabbus.html">Besh muhim tashabbus
+                                            href="https://yummtb.uz/faoliyat/besh-muhim-tashabbus/">Besh muhim tashabbus
                                         </a>
 
                                     </li>
@@ -479,27 +367,27 @@
                             </div>
                         </li>
                         <li class="drop-normal"><a class="drop-down"
-                                href="/normativ-hujjatlar/normativ-hujjatlar.html">Normativ hujjatlar <span
+                                href="https://yummtb.uz/normativ-hujjatlar/">Normativ hujjatlar <span
                                     class="caret"></span></a>
                             <div class="drop-down-container normal">
                                 <ul>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/normativ-hujjatlar/prezident-qaror-va-farmonlari.html.html">Prezident
+                                            href="https://yummtb.uz/normativ-hujjatlar/prezident-qaror-va-farmonlari/">Prezident
                                             qaror va farmonlari </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-hayat-qarorlari.html">Maktabgacha
+                                            href="https://yummtb.uz/normativ-hujjatlar/ozbekiston-respublikasi-maktabgacha-va-maktab-ta039lim-vazirligi-hayat-qarorlari/">Maktabgacha
                                             va maktab ta&#039;lim vazirligi hay’at qarorlari </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari.html">Maktabgacha
+                                            href="https://yummtb.uz/normativ-hujjatlar/maktabgacha-va-maktab-ta039lim-vazirligi-meyoriy-hujjatlari/">Maktabgacha
                                             va maktab ta&#039;lim vazirligi me’yoriy hujjatlari </a>
 
                                     </li>
                                     <li class="drop-normal"><a class="drop-down"
-                                            href="/normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari.html">Yunusobod
+                                            href="https://yummtb.uz/normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari/">Yunusobod
                                             tumani maktabgacha va maktab taʼlimi bo`limining me`yoriy hujjatlari </a>
 
                                     </li>
@@ -530,7 +418,7 @@
                         }
 
                         .megamenu>li:hover {
-                            background-color: #0e0bb5;
+                            background-color: #006e92;
                             box-shadow: inset 5px 0 5px -5px rgba(0, 0, 0, .35), inset -5px 0 5px -5px rgba(0, 0, 0, .35);
                             -webkit-box-shadow: inset 5px 0 5px -5px rgba(0, 0, 0, .35), inset -5px 0 5px -5px rgba(0, 0, 0, .35);
                             -moz-box-shadow: inset 5px 0 5px -5px rgba(0, 0, 0, .35), inset -5px 0 5px -5px rgba(0, 0, 0, .35);
@@ -539,7 +427,7 @@
                         }
 
                         .megamenu>li.active {
-                            background-color: #1450dc;
+                            background-color: #006e92;
                             -webkit-box-shadow: inset 5px 0 5px -5px rgba(0, 0, 0, .35), inset -5px 0 5px -5px rgba(0, 0, 0, .35);
                             -moz-box-shadow: inset 5px 0 5px -5px rgba(0, 0, 0, .35), inset -5px 0 5px -5px rgba(0, 0, 0, .35);
                             color: #fff;
@@ -634,7 +522,7 @@
                             border-bottom-right-radius: 5px;
                             border-bottom-left-radius: 5px;
                             border-top: none;
-                            background: #1e6fe0;
+                            background: #2d343e;
                             /* display:none; */
                         }
 
@@ -652,12 +540,12 @@
                             margin-bottom: 25px;
                             color: #fff;
                             -webkit-box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .1);
-                            -moz-box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.1);
+                            -moz-box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .1);
                             box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .1)
                         }
 
                         .drop-down-container#icon-menu a:hover {
-                            background: #084dee
+                            background: #0f91bd
                         }
 
                         .drop-down-container#icon-menu a i {
@@ -707,13 +595,13 @@
                         .drop-down-container.normal ul li a {
                             display: block;
                             padding: 0px 10px;
-                            width:180px;
+                            /* width:180px; */
                             color: #fff;
-                            background-color: #131ee89e;
+                            background-color: #33a1fd7d;
                         }
 
                         .drop-down-container.normal ul li a:hover {
-                            background-color: #040763;
+                            background-color: #2353a1;
                             color: #fff
                         }
 
@@ -796,7 +684,7 @@
                         }
 
                         ul.tabs li a.active {
-                            background-color: #2e31ee;
+                            background-color: #0f91bd;
                             color: #fff;
                             text-decoration: none
                         }
@@ -1050,6 +938,12 @@
                             width: auto;
                         }
                     </style>
+
+
+
+
+
+
                 </div>
             </nav>
 
@@ -1082,9 +976,27 @@
             </div>
         </div>
 
-      
+        <div class="search-block">
+            <form action="/oz/search">
+                <input type="text" name="q" placeholder="Что ищете?">
+                <button id="search-btn" type="button">
+                    <i class="png-icon png-icon-search"></i>
+                    <img src="images/search-active.png" alt="">
+                </button>
+            </form>
+        </div>
 
-        
+        <div class="asd-block">
+            <div class="asd-block__inner">
+                <a href="mailto:info@toshvil.uz"><img src="images/mail.png" alt=""></a>
+                <a href="/oz/sitemap"><img src="images/sitemap.png" alt=""></a>
+                <a href="#" class="on"><img src="images/voice.png" alt=""><span> Ovozli matn</span></a>
+            </div>
+            <button id="asd-block__toggle">
+                <i class="png-icon png-icon-more-hor"></i>
+                <img src="images/close.png" alt="">
+            </button>
+        </div>
 
         <!-- social networks --->
         <div class="header-nets-block">
@@ -1112,27 +1024,11 @@
         </div>
 
 
-        <main class="content" style="padding:10px 0 !important">
+        <main class="content" style="padding 10px 0 !important">
 
             <div class="container d-flex main-panels-cont">
                 <div class="sidebar-left">
-                    <div class="sidebar-right">
 
-                        <div class="director-item">
-                            <div class="director-item__title">Denov tumani maktabgacha va maktab ta’limi bo‘lim
-                                mudiri<br> </div>
-                            <p>Kirgizbayev Suxrobbek Mukimjanovich<br>
-                                Telefon:0 371 212-01-98<br>
-                                E-mail: yunusobodtxtb212@gmail.com<br>
-                            </p>
-                            <div class="d-flex justify-content-between mb-4"><a class="btn btn-o"
-                                    href="/murojaatlar">Murojaat yuborish</a>
-                                <a class="btn btn-o" href="/oz/toskent-viloati-okimi">Bog'lanish</a>
-                            </div>
-                            <img class="mb-4" src="/templates/new_maktab/images/mudir.jpg" width="70%">
-                        </div>
-
-                    </div>
                     <div class="sidebar-news-block">
                         <div class="sidebar-news-block__title p-3 h5"><i
                                 class="fa-solid mt-3 fa-book text-primary"></i><span><a href="https://www.kitob.uz/"
@@ -1145,7 +1041,7 @@
                         <hr>
                         <div class="sidebar-news-block__title p-3 h5"><i
                                 class="fa-solid fa-school mt-3 text-primary"></i><span><a
-                                    href="/xalq-talimi-bolimi/talim-muassasalari.html" class="color">Ta`lim muassasalari</a>
+                                    href="/xalq-talimi-bolimi/talim-muassasalari/" class="color">Ta`lim muassasalari</a>
                             </span></div>
                         <hr>
                         <div class="sidebar-news-block__title p-3 h5"><i
@@ -1189,20 +1085,6 @@
                                     class="color">O`qituvchilar soni: 3068 </span></div>
                         </div>
                     </div>
-                    <div class="col-left">
-                        <h3>Yil dasturi</h3>
-                        <p><a href="/oqituvchilarga/davlat-dasturlari/" title="All courses">
-                                <img src="/templates/new_maktab/images/yil_dasturi.jpg" alt="Banner"
-                                    class="img-rounded img-responsive"></a></p>
-                    </div>
-                    <div class="col-left">
-                        <h3>Besh muhim tashabbus</h3>
-                        <p><a href="/oqituvchilarga/besh-muhim-tashabbus/" title="All courses">
-                                <img src="/templates/new_maktab/images/photo.jpg" alt="Banner"
-                                    class="img-rounded img-responsive"></a></p>
-                    </div>
-
-                   
                     <div class="sidebar-news-block">
                         <div class="news-list">
                             <div id="calendar-layer">
@@ -1268,296 +1150,190 @@
                     </div>
                 </div>
                 <div class="content-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <div class="for-acquaintance">
 
-                        <h3 class="title-1">Yangiliklar </h3>
-
-
-                        <div class="actual-news">
-                            <div class="actual-news__img"><img
-                                    src="/uploads/posts/2025-02/1739548205_photo_2025-02-14_00-30-55.jpg"></div>
-                            <div class="actual-news__header d-flex justify-content-between">
-                                <strong>MAVZUGA OID YANGILIKLAR</strong><span>14.02.2025 / 08:49</span>
-                            </div>
-                            <div class="actual-news__body">
-                                <h3><a
-                                        href="/matbuot-xizmati/yangiliklar/1302-yunusobod-tumanidagi-97-sonli-umumtalim-maktabida-talim-va-biznes-hamkorligi-muvaffaqiyat-kaliti-shiori-ostida-oquvchilar-bilan-uchrashuv-otkazildi.html">Yunusobod
-                                        tumanidagi 97-sonli umumta&#039;lim maktabida “Ta&#039;lim va biznes hamkorligi
-                                        – muvaffaqiyat kaliti!” shiori ostida o&#039;quvchilar bilan uchrashuv
-                                        o&#039;tkazildi</a></h3>
-                                <p>
-                                    Ochiq muloqotga O'zbekiston savdo-sanoat palatasi mas'ullari (D.Ismoiljonova), tuman
-                                    prokuraturasi, Toshkent shahar maktabgacha va maktab ta'limi boshqarmasi vakillari,
-                                    tuman maktabgacha va maktab ta'limi bo'limi boshlig'i (S.Kirgizbayev), taniqli...
-                                </p>
-                            </div>
-                        </div>
-
-
 
 
                         <div class="post-item d-flex jusify-content-between">
                             <div class="post-item__preview">
                                 <div class="post-item__img">
-                                    <img src="/uploads/posts/2025-02/1739548205_photo_2025-02-14_00-30-55.jpg">
+                                    <img
+                                        src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661840337_depositphotos_192671974-stock-photo-children-in-chemical-lesson.jpg">
                                 </div>
                                 <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">14.02.2025 / 08:49.</div>
+                                    <div class="post-item__date">30.08.2022 / 11:13.</div>
                                     <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
                                 </div>
                             </div>
                             <div><a class="post-item__title"
-                                    href="/matbuot-xizmati/yangiliklar/1302-yunusobod-tumanidagi-97-sonli-umumtalim-maktabida-talim-va-biznes-hamkorligi-muvaffaqiyat-kaliti-shiori-ostida-oquvchilar-bilan-uchrashuv-otkazildi.html">Yunusobod
-                                    tumanidagi 97-sonli umumta&#039;lim maktabida “Ta&#039;lim va biznes hamkorligi –
-                                    muvaffaqiyat kaliti!” shiori ostida o&#039;quvchilar bilan uchrashuv
-                                    o&#039;tkazildi</a>
-                                <p>Ochiq muloqotga O'zbekiston savdo-sanoat palatasi mas'ullari (D.Ismoiljonova), tuman
-                                    prokuraturasi, Toshkent shahar maktabgacha va maktab ta'limi boshqarmasi vakillari,
-                                    tuman maktabgacha va maktab ta'limi bo'limi boshlig'i (S.Kirgizbayev), taniqli...
-                                </p>
+                                    href="https://yummtb.uz/o039qituvchilarga/dars-ishlanmalar/170-fizika-fanidan-yillik-dars-ishlanmalar.html">Fizika
+                                    fanidan yillik dars ishlanmalar</a>
+                                <p>...</p>
                             </div>
                         </div>
 
 
 
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img src="/uploads/posts/2025-02/1739470850_photo_2025-02-13_20-24-15.jpg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">13.02.2025 / 11:18.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title"
-                                    href="/matbuot-xizmati/yangiliklar/1300-talim-va-biznes-hamkorligi-muvaffaqiyat-kaliti-shiori-ostida-uchrashuv-bolib-otdi.html">“Ta’lim
-                                    va biznes hamkorligi – muvaffaqiyat kaliti!” shiori ostida uchrashuv bo‘lib
-                                    o‘tdi</a>
-                                <p>Yunusobod tumanidagi 5-sonli umumta’lim maktabida ta’lim va biznes hamkorligini
-                                    mustahkamlash maqsadida “Ta’lim va biznes hamkorligi – muvaffaqiyat kaliti!” shiori
-                                    ostida uchrashuv bo‘lib o‘tdi. Ushbu tadbir Savdo-sanoat palatasi, Yunusobod
-                                    tuman...</p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img src="/uploads/posts/2025-02/1739469052_photo_2025-02-13_15-58-31.jpg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">13.02.2025 / 10:50.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title"
-                                    href="/matbuot-xizmati/yangiliklar/1299-hazrati-alisher-navoiyning-584-yilligi-hamda-zahiriddin-muhammad-boburning-542-yilligiga-bagishlangan-adabiy-mariy-tadbir-bolib-otdi.html">Hazrati
-                                    Alisher Navoiyning 584 yilligi hamda Zahiriddin Muhammad Boburning 542 yilligiga
-                                    bag&#039;ishlangan adabiy-ma&#039;riy tadbir bo&#039;lib o&#039;tdi</a>
-                                <p>Poytaxtimizning Yunusobod tumanidagi 235-sonli umumta'lim maktabida ikki buyuk siymo
-                                    — Hazrati Alisher Navoiyning 584 yilligi hamda Zahiriddin Muhammad Boburning 542
-                                    yilligiga bag'ishlangan adabiy-ma'riy tadbir bo'lib o'tdi. Tadbirga Xalq...</p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img src="/uploads/posts/2025-02/1739441814_photo_2025-02-13_15-15-35.jpg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">13.02.2025 / 03:16.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title"
-                                    href="/matbuot-xizmati/yangiliklar/1298-energiya-sarfi-savodxonligi-yuzasidan-xalqaro-hamkorlik-loyihalari.html">Energiya
-                                    sarfi savodxonligi yuzasidan xalqaro hamkorlik loyihalari</a>
-                                <p>Bugun Maktabgacha va maktab ta'limi vazirligi tomonidan Vazirlar Mahkamasi huzuridagi
-                                    Texnik jihatdan tartibga solish agentligi bilan hamkorlikda "Energiya sarfi
-                                    savodxonligi" mavzusidagi seminar-treninglarga start berildi. Unda vazirning
-                                    birinchi...</p>
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <ul class="pagination">
-                                <li><span>Oldingi</span></li>
-                                <li><span>1</span> <a href="/page/2/">2</a> <a
-                                        href="/page/3/">3</a> <a href="/page/4/">4</a>
-                                    <a href="/page/5/">5</a> <a href="/page/6/">6</a>
-                                    <a href="/page/7/">7</a> <a href="/page/8/">8</a>
-                                    <a href="/page/9/">9</a> <a
-                                        href="/page/10/">10</a> <span class="nav_ext">...</span> <a
-                                        href="/page/163/">163</a></li>
-                                <li><a href="/page/2/">Keyingi</a></li>
-                            </ul>
-                        </div>
-
-
-
-                        <div class="mt-3 text-right">
-                            <a href="/matbuot-xizmati/yangiliklar/">Barcha yangiliklar</a>
-                        </div>
 
                     </div>
-                    <div class="container mt-4">
-                        <h3 class="title-1">Yangiliklar</h3>
-                        <div class="row">
-                            <!-- Card 1 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Yangilik 1</h5>
-                                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                                        <a href="#" class="btn btn-primary">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Card 2 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 2">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Yangilik 2</h5>
-                                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                                        <a href="#" class="btn btn-primary">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Card 3 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Yangilik 3</h5>
-                                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                                        <a href="#" class="btn btn-primary">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Card 4 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Yangilik 4</h5>
-                                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                                        <a href="#" class="btn btn-primary">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
+
+
+
+
+
+
+                </div>
+                <div class="sidebar-right">
+
+                    <div class="director-item">
+                        <div class="director-item__title">Yunusobod tumani maktabgacha va maktab ta’limi bo‘lim
+                            mudiri<br> </div>
+                        <p>Kirgizbayev Suxrobbek Mukimjanovich<br>
+                            Telefon:0 371 212-01-98<br>
+                            E-mail: yunusobodtxtb212@gmail.com<br>
+                        </p>
+                        <div class="d-flex justify-content-between mb-4"><a class="btn btn-o"
+                                href="/murojaatlar">Murojaat yuborish</a>
+                            <!-- <a class="btn btn-o" href="/oz/toskent-viloati-okimi">Bog'lanish</a> -->
                         </div>
-                    
-                        <div class="row mt-4">
-                            <!-- Card 5 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 5">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Yangilik 5</h5>
-                                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                                        <a href="#" class="btn btn-primary">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Card 6 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 6">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Yangilik 6</h5>
-                                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                                        <a href="#" class="btn btn-primary">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Card 7 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 7">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Yangilik 7</h5>
-                                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                                        <a href="#" class="btn btn-primary">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Card 8 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://ogoh.uz/wp-content/uploads/2023/07/photo_2023-07-24_21-41-32.jpg" class="card-img-top" alt="Yangilik 8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Yangilik 8</h5>
-                                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                                        <a href="#" class="btn btn-primary">Batafsil</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>          
-                    <div class="container mt-4">
-                        <h3 class="text-center mb-4">📸 Foto Galereya</h3>
-                        <div class="row">
-                            <!-- Image 1 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" alt="Rasm 1" onclick="openFullscreen(this)">
-                                </div>
-                            </div>
-                
-                            <!-- Image 2 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" alt="Rasm 2" onclick="openFullscreen(this)">
-                                </div>
-                            </div>
-                
-                            <!-- Image 3 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" alt="Rasm 3" onclick="openFullscreen(this)">
-                                </div>
-                            </div>
-                
-                            <!-- Image 4 -->
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="https://storage.kun.uz/source/3/e-_-eCzhVocLd7bRmOifk5eFhJLyhlDF.jpg" alt="Rasm 4" onclick="openFullscreen(this)">
-                                </div>
-                            </div>
-                        </div>
+                        <img class="mb-4" src="/templates/new_maktab/images/mudir.jpg" width="70%">
+
+
+
+
+
+
+
+
                     </div>
-                
-                    <!-- Fullscreen Modal -->
-                    <div class="fullscreen-modal" id="fullscreenModal" onclick="closeFullscreen()">
-                        <img id="fullscreenImage" src="" alt="Kattalashtirilgan rasm">
+
+                    <div class="col-left">
+                        <h3>Yil dasturi</h3>
+                        <p><a href="/o039qituvchilarga/davlat-dasturlari/" title="All courses">
+                                <img src="/templates/new_maktab/images/yil_dasturi.jpg" alt="Banner"
+                                    class="img-rounded img-responsive"></a></p>
                     </div>
-                
-                    <script>
-                        function openFullscreen(img) {
-                            var modal = document.getElementById("fullscreenModal");
-                            var modalImage = document.getElementById("fullscreenImage");
-                            modalImage.src = img.src;
-                            modal.style.display = "flex";
-                        }
-                
-                        function closeFullscreen() {
-                            document.getElementById("fullscreenModal").style.display = "none";
-                        }
-                    </script>
+                    <div class="col-left">
+                        <h3>Besh muhim tashabbus</h3>
+                        <p><a href="/o039qituvchilarga/besh-muhim-tashabbus/" title="All courses">
+                                <img src="/templates/new_maktab/images/photo.jpg" alt="Banner"
+                                    class="img-rounded img-responsive"></a></p>
+                    </div>
+
+                    <div class="col-left">
+                        <h3>davlat ramzlari</h3>
+                        <p><a href="/o039quvchilarga/davlat-ramzlari/" title="All courses"><img
+                                    src="/templates/new_maktab/images/bayroq-haqida-sherlar.jpg" alt="Banner"
+                                    class="img-rounded img-responsive"></a></p>
+                    </div>
+
+                    <!-- sdadasdasdasdd -->
+
+
+                    <!-- asdasdasd -->
+                </div>
+            </div>
+            <div class="container d-flex">
+                <div class="sidebar-left">
+                    <div class="medias-tabs c-tabs d-flex justify-content-between">
+                        <button class="active bg" data-panel="#video-tab" data-panel-class=".media-panel"><a
+                                style="text-decoration:none;color: white"
+                                href="/matbuot-xizmati/videogalereya/">VIDEOGALEREYA...</a></button>
+                        <button data-panel="#photo-tab" class="active bg" data-panel-class=".media-panel"><a
+                                style="text-decoration:none;color: white"
+                                href="/matbuot-xizmati/fotogalereya/">FOTOGALEREYA</a></button>
+                    </div>
+                    <div class="media-panel" id="video-tab" style="display: block">
+                        <style>
+                            iframe {
+                                display: block !important;
+                            }
+                        </style>
+
+                        <div class="media-item">
+                            <div class="media-item__preview" style="height: 250px;">
+                                <img style="display:none;" src="/uploads/posts/2024-09/1727109644_1727109589096.png"
+                                    class="fr-fic fr-dib"
+                                    alt=""><!--dle_media_begin:https://youtu.be/B6YZe8Dr0VI?si=U4Uoftwoi8bDyhA---><iframe
+                                    width="356" height="200"
+                                    src="https://www.youtube.com/embed/B6YZe8Dr0VI?feature=oembed" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                                    title="Tinchlik shukronasi"></iframe><!--dle_media_end-->
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <div class="media-panel" id="photo-tab">
+
+                    </div>
+                </div>
+                <div class="content-body uz-news-block">
+                    <h2 class="title-1">&nbsp;&nbsp;&nbsp; <!--FOTOGALEREYA
+                                O`  ZBEKISTON YANGILIKLARI-->
+                    </h2>
+                    <div class="uz-news d-flex justify-content-between">
+
+
+
+                        <a class="uz-news-item"
+                            href="https://yummtb.uz/matbuot-xizmati/fotogalereya/1301-yunusobod-tumanidagi-5-sonli-umumtalim-maktabida-talim-va-biznes-hamkorligini-mustahkamlash-maqsadida-talim-va-biznes-hamkorligi-muvaffaqiyat-kaliti-shiori-ostida-uchrashuv-bolib-otdi.html">
+                            <img src="/uploads/posts/2025-02/1739470905_photo_2025-02-13_20-24-16.jpg">
+                            <div div class="uz-news-item__inner d-flex flex-column justify-content-end">
+                                <span>13.02.2025 / 11:21.</span><strong>Yunusobod tumanidagi 5-sonli umumta’lim
+                                    maktabida ta’lim va biznes hamkorligini mustahkamlash maqsadida “Ta’lim va biznes
+                                    hamkorligi – muvaffaqiyat kaliti!” shiori ostida uchrashuv bo‘lib o‘tdi</strong>
+                            </div>
+                        </a>
+
+                        <a class="uz-news-item"
+                            href="https://yummtb.uz/matbuot-xizmati/fotogalereya/1292-yunusobod-tumanidagi-288-sonli-umumtalim-maktabida-oquvchilar-ortasida-siz-ekologiyaga-oid-qonunlarini-bilasizmi-respublika-korik-tanlovining-tuman-bosqichi-bolib-otdi.html">
+                            <img src="/uploads/posts/2025-02/1739342479_photo_2025-02-12_00-52-07.jpg">
+                            <div div class="uz-news-item__inner d-flex flex-column justify-content-end">
+                                <span>12.02.2025 / 11:40.</span><strong>Yunusobod tumanidagi 288-sonli umumta&#039;lim
+                                    maktabida o‘quvchilar o‘rtasida &quot;Siz ekologiyaga oid qonunlarini
+                                    bilasizmi?&quot; Respublika ko&#039;rik-tanlovining tuman bosqichi bo‘lib
+                                    o‘tdi</strong>
+                            </div>
+                        </a>
+
+                        <a class="uz-news-item"
+                            href="https://yummtb.uz/matbuot-xizmati/fotogalereya/1288-yunusobod-tumanidagi-70-sonli-umumtalim-maktabida-8-sinf-oquvchilari-ishtirokida-behbudiyni-yod-etib-mavzusida-manaviy-marifiy-tadbir-otkazildi.html">
+                            <img src="/uploads/posts/2025-02/1738994877_photo_2025-02-07_18-20-00.jpg">
+                            <div div class="uz-news-item__inner d-flex flex-column justify-content-end">
+                                <span>08.02.2025 / 11:07.</span><strong>Yunusobod tumanidagi 70-sonli umumta&#039;lim
+                                    maktabida 8-sinf o&#039;quvchilari ishtirokida “Behbudiyni yod etib” mavzusida
+                                    ma&#039;naviy-ma&#039;rifiy tadbir o&#039;tkazildi</strong>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </main>
@@ -1601,12 +1377,8 @@
                     src="/templates/new_maktab/2021/03/b00543b8-7ea2-55bc-9cec-011c26c589b7-120x80.png"></span><strong>Kommunal
                 ho'zhalik va uy-zhoy fondi portali</strong></a>
     </div>
-    <footer  style="background: linear-gradient(rgba(64, 3, 246, 0.3), rgba(64, 1, 252, 0.3)), 
-                        url('/templates/new_maktab/images/plain.png'); 
-                        background-position: center; 
-                        background-size: cover;
-                        padding-bottom:0;
-                        color: #fff;" >
+    <footer style="background:#33a1fd;color:black">
+
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-4">
@@ -1626,6 +1398,7 @@
                         <li><i class="icon-envelope"></i> Email: <a href="mailto:yunsobodtalim@gmail.com" style="
     color: black;
 ">yunsobodtalim@gmail.com</a></li>
+
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-4" id="quick-links">
@@ -1643,6 +1416,7 @@
                     <p>Sayt <a href="https://aktsoft.uz/" style="color:black">"Axborot-kommunikatsiya texnologiyalarini
                             rivojlantirish markazi"</a>MCHJ tomonidan yaratildi.</p>
                 </div>
+
             </div>
         </div>
     </footer>
@@ -1650,7 +1424,6 @@
 
 
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/templates/new_maktab/assets/bce22f02/jquery.js"></script>
     <script src="/templates/new_maktab/assets/bce22f02/jquery.js"></script>
     <script src="/templates/new_maktab/assets/e9b1b592/yii.js"></script>
@@ -1690,4 +1463,4 @@
 </html>
 
 
-<!-- Веб-сайт ReflexMEDIA томонидан яратилди, (https://reflex.uz) -->
+<!-- Веб-сайт CYBER томонидан яратилди, (https://cyberrs.uz) -->
