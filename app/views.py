@@ -10,4 +10,9 @@ def home(request):
 def xalq_talimi_bolimi(request):
     return render(request , 'xalq-talimi-bolimi/xalq-talimi-bolimi.html')
 
+def oqituvchilarga(request):
+    return render(request,'oqituvchilarga/oqituvchilarga.html' )
+
+def dars_ishlanmalar(request):
+    return render(request,'oqituvchilarga/dars-ishlanmalar.html' )
 
