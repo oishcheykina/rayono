@@ -1,0 +1,35 @@
+{% load static %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/templates/new_maktab/assets/bce22f02/jquery.js"></script>
+<script src="/templates/new_maktab/assets/e9b1b592/yii.js"></script>
+<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'js/js.cookie.min.js' %}"></script>
+<script src="{% static 'js/bvi-init.js' %}"></script>
+<script src="{% static 'js/bvi.min.js' %}"></script>
+<script src="{% static 'js/vendors.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+<script>
+    $("[to]").click(function () {
+        $r_id = $(this).attr("to")
+        $("#info_" + $r_id).toggle(400)
+    })
+    $("[ot]").click(function () {
+        $r_id = $(this).attr("ot")
+        $("#tarjima_" + $r_id).toggle(400)
+    })
+</script>
+<script>
+    $('#search-btn').click(function () {
+        $('.search-block').toggleClass('active');
+    });
+
+    $('#asd-block__toggle').click(function () {
+        $('.asd-block').toggleClass('active');
+    });
+
+    $('.on').click(function () {
+        $(this).toggleClass('active');
+    });
+</script>
