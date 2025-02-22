@@ -18,6 +18,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=fZlhaAH2"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
  #calendar-layer {
             background: white !important;
@@ -735,15 +737,10 @@
                 width: auto;
             }
         </style>
-    </div>
-</nav>
 
 <script>
     $(".main-nav-toggle").click((function (e) { e.preventDefault(), $(this).toggleClass("active"), $(this).next("ul").toggleClass("active") }))
 </script>
-
-</nav>
-</header>
 
 <div class="modal fade" id="statisticModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog modal-lg" role="document">
@@ -820,7 +817,7 @@
         </div>
         <div class="sidebar-news-block">
             <div class="sidebar-news-block__title p-3 h5"><i
-                    class="fa-solid mt-3 fa-book text-primary"></i><span><a href="https://www.kitob.uz/"
+                    class="fa-solid fa-book mt-3 text-primary"></i><span><a href="https://www.kitob.uz/"
                         class="color">Elektron kutubxona</a> </span></div>
             <hr>
 
@@ -960,7 +957,7 @@
 
             <div class="actual-news">
                 <div class="actual-news__img"><img
-                        src="/uploads/posts/2025-02/1739548205_photo_2025-02-14_00-30-55.jpg"></div>
+                        src="{% static 'uploads/posts/2025-02/1739470905_photo_2025-02-13_20-24-16.jpg' %}"></div>
                 <div class="actual-news__header d-flex justify-content-between">
                     <strong>MAVZUGA OID YANGILIKLAR</strong><span>14.02.2025 / 08:49</span>
                 </div>
