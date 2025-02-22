@@ -28,59 +28,7 @@ class Post(models.Model):
             oldest = Post.objects.order_by('created_at').first()  # Самый старый пост
             if oldest:
                 oldest.delete()
-                
-class Announcement(models.Model):
-    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
-    slug = models.SlugField(unique=True)
-    title = models.CharField(max_length=200, unique=True)
-    content = RichTextUploadingField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.title
-    
-    # def get_absolute_url(self):
-    #     return reverse("announcement", kwargs={"slug": self.slug})
-    
-    class Meta:
-        verbose_name = "E'lon"
-        verbose_name_plural = "E'lonlar"
-        
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)  # Сохраняем новый пост
 
-        # Проверяем количество постов
-        if Announcement.objects.count() > 100:
-            oldest = Announcement.objects.order_by('created_at').first()  # Самый старый пост
-            if oldest:
-                oldest.delete()
-                
-class Photo(models.Model):
-    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
-    slug = models.SlugField(unique=True)
-    title = models.CharField(max_length=200, unique=True)
-    content = RichTextUploadingField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.title
-    
-    # def get_absolute_url(self):
-    #     return reverse("announcement", kwargs={"slug": self.slug})
-    
-    class Meta:
-        verbose_name = 'Foto'
-        verbose_name_plural = 'Fotogalereya'
-        
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)  # Сохраняем новый пост
-
-        # Проверяем количество постов
-        if Photo.objects.count() > 100:
-            oldest = Photo.objects.order_by('created_at').first()  # Самый старый пост
-            if oldest:
-                oldest.delete()
-     
 #akani rasmi           
 class Boss(models.Model):
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
@@ -255,7 +203,7 @@ class Bolim_manzili(models.Model):
 class Malaka_Oshirish(models.Model):
     title = models.CharField(max_length=200)
     content = RichTextUploadingField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to='malaka_oshirish/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
@@ -264,3 +212,324 @@ class Malaka_Oshirish(models.Model):
     class Meta:
         verbose_name = 'Malaka oshirish'
         verbose_name_plural = 'Malaka oshirish'
+        
+class Dars_Ishlanmalar(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField()
+    created_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='dars_ishlanmalari/', null=True, blank=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Dars ishlanma'
+        verbose_name_plural = 'Dars ishlanmalar'
+        
+class Fan_Testlar(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField()
+    image = models.ImageField(upload_to='oqituvchilarga/', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Fan test'
+        verbose_name_plural = 'Fan testlar'
+        
+class Davlat_Dasturlari(models.Model):
+    image = models.ImageField(upload_to='davlat_dasturlari/', null=True, blank=True)
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField()
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Davlat dasturlari'
+        verbose_name_plural = 'Davlat dasturlari'
+        
+class Talim_Qonun(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField()
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Talim qonun'
+        verbose_name_plural = 'Talim qonun'
+ 
+#oquvchilarga
+        
+class Imtihon_Materiallari(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Imtihon materiallari'
+        verbose_name_plural = 'Imtihon materiallari'
+        
+class Shahodatnomani_Tiklash(models.Model):
+    title = models.TextField()
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Shahodatnomani tiklash'
+        verbose_name_plural = 'Shahodatnomani tiklash'
+        
+#ota-onalarga
+class Bogchaga_Joylashtirish(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Bog'chaga joylashtirish"
+        verbose_name_plural = "Bog'chaga joylashtirish"
+        
+class Qabul_Teshirish(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Bog'chaga qabul navbatni teshirish"
+        verbose_name_plural = "Bog'chaga qabul navbatni teshirish"
+        
+class Tolovlar_Malumot(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Bog'cha Tolovlar malumot"
+        verbose_name_plural = "Bog'cha Tolovlar malumot"
+        
+class Birinchi_Sinf(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Birinchi sinf'
+        verbose_name_plural = 'Birinchi sinf'
+        
+class Oquvchilar_Qabul(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Oquvchilarni maktabga qabul'
+        verbose_name_plural = 'Oquvchilarni maktabga qabul'
+        
+class Bola_Kuchirish(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Bolani maktabdan kuchirish'
+        verbose_name_plural = 'Bolani maktabdan kuchirish'
+        
+class Xorijiy_Fuqarolar(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Xorijiy fuqarolar'
+        verbose_name_plural = 'Xorijiy fuqarolar'
+        
+#matbuot hizmati
+class Video_Galereya(models.Model):
+    title = models.CharField(max_length=200)
+    video = models.URLField()
+    created_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='video_galereya_images/')
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Video galereya'
+        verbose_name_plural = 'Video galereya'
+        
+class Announcement(models.Model):
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+    slug = models.SlugField(unique=True)
+    title = models.CharField(max_length=200, unique=True)
+    content = RichTextUploadingField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title
+    
+    # def get_absolute_url(self):
+    #     return reverse("announcement", kwargs={"slug": self.slug})
+    
+    class Meta:
+        verbose_name = "E'lon"
+        verbose_name_plural = "E'lonlar"
+        
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сохраняем новый пост
+
+        # Проверяем количество постов
+        if Announcement.objects.count() > 100:
+            oldest = Announcement.objects.order_by('created_at').first()  # Самый старый пост
+            if oldest:
+                oldest.delete()
+                
+class Photo(models.Model):
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+    slug = models.SlugField(unique=True)
+    title = models.CharField(max_length=200, unique=True)
+    content = RichTextUploadingField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title
+    
+    # def get_absolute_url(self):
+    #     return reverse("announcement", kwargs={"slug": self.slug})
+    
+    class Meta:
+        verbose_name = 'Foto'
+        verbose_name_plural = 'Fotogalereya'
+        
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Сохраняем новый пост
+
+        # Проверяем количество постов
+        if Photo.objects.count() > 100:
+            oldest = Photo.objects.order_by('created_at').first()  # Самый старый пост
+            if oldest:
+                oldest.delete()
+     
+# faoliyat
+
+class Korrupsia_Qarshi(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='faoliyat/')
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Korrupsiya qarshi'
+        verbose_name_plural = 'Korrupsiya qarshi'
+        
+class Talim_Terminlar(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Talim terminlar'
+        verbose_name_plural = 'Talim terminlar'
+        
+class Besh_Tashshabus(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='faoliyat')
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Besh tashshabus'
+        verbose_name_plural = 'Besh tashshabus'
+   
+   
+#normativ hujjatlar
+        
+class Prezident_Qarorlari(models.Model):
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='normativ_hujjatlar/', null=True, blank=True)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Prezident qarorlari'
+        verbose_name_plural = 'Prezident qarorlari'
+        
+class Hayat_Qarorlari(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Hayat qarorlari'
+        verbose_name_plural = 'Hayat qarorlari'
+        
+class Meyoriy_Hujjatlar(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='normativ_hujjatlar/', blank=True, null=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Me'yoriy hujjatlar"
+        verbose_name_plural = "Me'yoriy hujjatlar"
+        
+class Tuman_Hujjatlari(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Tuman me'yoriy hujjatlar"
+        verbose_name_plural = "Tuman me'yoriy hujjatlar"
