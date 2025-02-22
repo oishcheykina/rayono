@@ -218,6 +218,7 @@ class Kun_Tartibi(models.Model):
     day = models.CharField(max_length=200)
     work_time = models.CharField(max_length=200)
     lunch_time = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return self.day
@@ -229,6 +230,7 @@ class Kun_Tartibi(models.Model):
 class Bosh_orinlar(models.Model):
     title = models.CharField(max_length=200)
     content = RichTextUploadingField()
+    created_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return self.title
@@ -240,6 +242,7 @@ class Bosh_orinlar(models.Model):
 class Bolim_manzili(models.Model):
     title = models.CharField(max_length=200)
     content = RichTextUploadingField()
+    created_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return self.title
@@ -247,3 +250,17 @@ class Bolim_manzili(models.Model):
     class Meta:
         verbose_name = "Bo'lim manzili"
         verbose_name_plural = "Bo'lim manzili"
+        
+#oqituvchilarga
+class Malaka_Oshirish(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextUploadingField()
+    image = models.ImageField()
+    created_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Malaka oshirish'
+        verbose_name_plural = 'Malaka oshirish'
