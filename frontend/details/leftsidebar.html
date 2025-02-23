@@ -1,0 +1,154 @@
+{% load static %}
+<div class="sidebar-left">
+    <div class="sidebar-right">
+
+        <div class="director-item">
+            <div class="director-item__title">Denov tumani maktabgacha va maktab ta’limi bo‘lim
+                mudiri<br> </div>
+            <p>Kirgizbayev Suxrobbek Mukimjanovich<br>
+                Telefon:0 371 212-01-98<br>
+                E-mail: yunusobodtxtb212@gmail.com<br>
+            </p>
+            <div class="d-flex justify-content-between mb-4"><a class="btn btn-o"
+                    href="/murojaatlar">Murojaat yuborish</a>
+                <a class="btn btn-o" href="/oz/toskent-viloati-okimi">Bog'lanish</a>
+            </div>
+            <img class="mb-4" src="{% static 'images/mudir.jpg'  %}" width="70%">
+        </div>
+
+    </div>
+
+    <div class="sidebar-news-block">
+        <div class="sidebar-news-block__title p-3 h5"><i
+                class="fa-solid fa-book mt-3 text-primary"></i><span><a href="https://www.kitob.uz/"
+                    class="color">Elektron kutubxona</a> </span></div>
+        <hr>
+
+        <div class="sidebar-news-block__title p-3 h5"><i
+                class="fa-solid mt-3 fa-book text-primary"></i><span><a href="https://uzedu.uz/uz"
+                    class="color">Maktab va Maktabgacha ta'lim vazirligi</a> </span></div>
+        <hr>
+        <div class="sidebar-news-block__title p-3 h5"><i
+                class="fa-solid fa-school mt-3 text-primary"></i><span><a
+                    href="/xalq-talimi-bolimi/talim-muassasalari.html" class="color">Ta`lim muassasalari</a>
+            </span></div>
+        <hr>
+        <div class="sidebar-news-block__title p-3 h5"><i
+                class="fa-solid fa-school mt-3 text-primary"></i><span><a href="/mtm/"
+                    class="color">Maktabgacha ta'lim tashkilotlari</a> </span></div>
+        <hr>
+        <div class="sidebar-news-block__title p-3 h5"><i
+                class="fa-solid fa-tasks mt-3 text-primary"></i><span><a
+                    href="/xalq-talimi-bolimi/bo039sh-ish-o039rinlari/142-bosh-ish-orinlari.html"
+                    class="color">Bo`sh ish o`rinlari</a> </span></div>
+        <hr>
+        <!--<div class="sidebar-news-block__title p-3 h5"><i class="fa-solid mt-3 fa-book text-primary"></i><span><a href="https://eduportal.uz/" class="color">Online Treninglar</a>        </span></div><hr>-->
+        <div class="sidebar-news-block__title p-3 h5"><i
+                class="fa-solid mt-3 fa-book text-primary"></i><span><a href="https://maktab.uz/"
+                    class="color">Videodarsliklar kutubxonasi</a> </span></div>
+        <hr>
+        <div class="sidebar-news-block__title p-3 h5"><i
+                class="fa-solid mt-3 fa-book text-primary"></i><span><a href="https://uzbekcoders.uz/"
+                    class="color">Bir million o`zbek dasturchilari </a> </span></div>
+        <hr>
+
+        <div class="news-list">
+
+
+        </div>
+
+    </div>
+
+    <div class="sidebar-news-block">
+        <div class="news-list">
+            <div class="sidebar-news-block__title p-3 h5"><i
+                    class="fas fa-building mt-3 text-primary"></i></i><span class="color">Maktablar
+                    soni: 42 </span></div>
+            <hr>
+            <div class="sidebar-news-block__title p-3 h5"><i
+                    class="fa-solid fa-child mt-3 text-primary"></i><span class="color">O`quvchilar
+                    soni: 60788 </span></div>
+            <hr>
+            <div class="sidebar-news-block__title p-3 h5"><i
+                    class="fas fa-chalkboard-teacher mt-3 text-primary"></i><span
+                    class="color">O`qituvchilar soni: 3068 </span></div>
+        </div>
+    </div>
+    <div class="col-left">
+        <h3>Yil dasturi</h3>
+        <p><a href="/oqituvchilarga/davlat-dasturlari/" title="All courses">
+                <img src="{% static 'images/yil_dasturi.jpg' %}" alt="Banner"
+                    class="img-rounded img-responsive"></a></p>
+    </div>
+    <div class="col-left">
+        <h3>Besh muhim tashabbus</h3>
+        <p><a href="/oqituvchilarga/besh-muhim-tashabbus/" title="All courses">
+                <img src="{% static 'images/photo.jpg' %}" alt="Banner"
+                    class="img-rounded img-responsive"></a></p>
+    </div>
+
+   
+    <!-- <div class="sidebar-news-block">
+        <div class="news-list">
+            <div id="calendar-layer">
+                <table id="calendar" class="calendar">
+                    <tr>
+                        <th colspan="7" class="monthselect"><a class="monthlink"
+                                onclick="doCalendar('01','2025','right'); return false;" href="#"
+                                title="Предыдущий месяц">&laquo;</a>&nbsp;&nbsp;&nbsp;&nbsp;Февраль
+                            2025&nbsp;&nbsp;&nbsp;&nbsp;&raquo;</th>
+                    </tr>
+                    <tr>
+                        <th class="workday">Пн</th>
+                        <th class="workday">Вт</th>
+                        <th class="workday">Ср</th>
+                        <th class="workday">Чт</th>
+                        <th class="workday">Пт</th>
+                        <th class="weekday">Сб</th>
+                        <th class="weekday">Вс</th>
+                    </tr>
+                    <tr>
+                        <td colspan="5">&nbsp;</td>
+                        <td class="weekday">1</td>
+                        <td class="day">2</td>
+                    </tr>
+                    <tr>
+                        <td class="day-active-v">3</td>
+                        <td class="day-active-v">4</td>
+                        <td class="day">5</td>
+                        <td class="day-active-v">6</td>
+                        <td class="day-active-v">7</td>
+                        <td class="day">8</td>
+                        <td class="weekday">9</td>
+                    </tr>
+                    <tr>
+                        <td class="day">10</td>
+                        <td class="day">11</td>
+                        <td class="day-active-v">12</td>
+                        <td class="day-active-v">13</td>
+                        <td class="day day-current">14</td>
+                        <td class="weekday">15</td>
+                        <td class="weekday">16</td>
+                    </tr>
+                    <tr>
+                        <td class="day">17</td>
+                        <td class="day">18</td>
+                        <td class="day">19</td>
+                        <td class="day">20</td>
+                        <td class="day">21</td>
+                        <td class="weekday">22</td>
+                        <td class="weekday">23</td>
+                    </tr>
+                    <tr>
+                        <td class="day">24</td>
+                        <td class="day">25</td>
+                        <td class="day">26</td>
+                        <td class="day">27</td>
+                        <td class="day">28</td>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div> -->
+</div>
