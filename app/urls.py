@@ -15,6 +15,4 @@ urlpatterns = [
     path('xalq-talimi-bolimi/bolim-ish-kun-tartibi/' , bolim_ish_kun_tartibi),
     path('xalq-talimi-bolimi/bosh-ish-orinlari/' , bosh_ish_orinlari),
     path('xalq-talimi-bolimi/bolim-manzili/' , bolim_manzili),
-
-
 ]
