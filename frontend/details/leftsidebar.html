@@ -5,15 +5,15 @@
         <div class="director-item">
             <div class="director-item__title">Denov tumani maktabgacha va maktab ta’limi bo‘lim
                 mudiri<br> </div>
-            <p>Kirgizbayev Suxrobbek Mukimjanovich<br>
-                Telefon:0 371 212-01-98<br>
-                E-mail: yunusobodtxtb212@gmail.com<br>
+            <p>{{ boss.name }}<br>
+                Telefon:{{ boss.phone_number }}<br>
+                E-mail: {{ boss.email }}<br>
             </p>
             <div class="d-flex justify-content-between mb-4"><a class="btn btn-o"
                     href="/murojaatlar">Murojaat yuborish</a>
                 <a class="btn btn-o" href="/oz/toskent-viloati-okimi">Bog'lanish</a>
             </div>
-            <img class="mb-4" src="{% static 'images/mudir.jpg'  %}" width="70%">
+            <img class="mb-4" src="{{ boss.image.url }}" width="70%">
         </div>
 
     </div>
