@@ -78,3 +78,52 @@ def oqituvchilarga(request):
 
 def dars_ishlanmalar(request):
     return render(request,'oqituvchilarga/dars-ishlanmalar.html' )
+
+def fanlar_boyicha_testlar(request):
+     return render(request,'oqituvchilarga/fanlar-boyicha-testlar.html' )
+
+def davlat_dasturlari(request):
+     return render(request,'oqituvchilarga/davlat-dasturlari.html' )
+
+def kasaba_uyishmasi(request):
+     return render(request,'oqituvchilarga/kasaba-uyishmasi.html' )
+
+#MATBUOT-XIMATI
+
+def elonlar(request):
+     return render(request,'matbuot-xizmati/elonlar.html' )
+
+def bolim_ish_rejasi(request):
+     return render(request,'matbuot-xizmati/bolim-ish-rejasi.html' )
+
+def fotogalereya(request):
+     return render(request,'matbuot-xizmati/fotogalereya.html' )
+
+def maruzalar(request):
+     return render(request,'matbuot-xizmati/maruzalar.html' )
+
+def matbuot_xizmati(request):
+     return render(request,'matbuot-xizmati/matbuot-xizmati.html' )
+
+def tadbirlar_rejasi(request):
+     return render(request,'matbuot-xizmati/tadbirlar-rejasi.html' )
+
+def videogalereya(request):
+     return render(request,'matbuot-xizmati/videogalereya.html' )
+
+def yangiliklar(request):
+     return render(request,'matbuot-xizmati/yangiliklar.html' )
+
+#FAOLIYAT
+
+def besh_muhim_tashabbus(request):
+     return render(request,'faoliyat/besh-muhim-tashabbus.html' )
+
+def faoliyat(request):
+     return render(request,'faoliyat/faoliyat.html' )
+
+def korrupsiyaga_qarshi_kurash(request):
+     return render(request,'faoliyat/korrupsiyaga-qarshi-kurash.html' )
+
+def talimga_doir_terminlar(request):
+     return render(request,'faoliyat/talimga-doir-terminlar.html' )
