@@ -1,21 +1,41 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import *
 
 # MTM BO"LIMI
 def home(request):
-    admins = Boss.objects.first()
+    boss = Boss.objects.first()
     posts = Post.objects.all().order_by('-created_at')  
-    paginator = Paginator(posts, 6)
+    last_post = Post.objects.order_by('-created_at').first()
+    paginator = Paginator(posts, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
     yil_dasturi = Yil_Dasturi.objects.first()
     dic = {
-        'admins': admins,
+        'boss': boss,
         'page_obj': page_obj,
         'yil_dasturi': yil_dasturi,
+        'last_post': last_post,
     }
     return render(request, 'index.html', dic)
+
+def more(request, slug):
+    boss = Boss.objects.all()
+    post = get_object_or_404(Post, slug=slug)
+    viewed_news = request.session.get('viewed_news', [])
+
+    if slug not in viewed_news:
+        post.views += 1
+        post.save(update_fields=['views'])
+        viewed_news.append(slug)
+        request.session['viewed_news'] = viewed_news
+    yil_dasturi = Yil_Dasturi.objects.first()
+    dic = {
+        'boss': boss,
+        'post': post,
+        'yil_dasturi': yil_dasturi,
+    }
+    return render(request, 'more.html', dic)
 
 
 def xalq_talimi_bolimi(request):

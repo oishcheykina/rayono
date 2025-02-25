@@ -11,128 +11,77 @@
 
         <div class="actual-news">
             <div class="actual-news__img"><img
-                    src="{% static 'uploads/posts/2025-02/1739470905_photo_2025-02-13_20-24-16.jpg' %}"></div>
+                    src="{{ last_post.image.url }}"></div>
             <div class="actual-news__header d-flex justify-content-between">
-                <strong>MAVZUGA OID YANGILIKLAR</strong><span>14.02.2025 / 08:49</span>
+                <strong>MAVZUGA OID YANGILIKLAR</strong><span>{{ last_post.created_at|date:"j-m-Y, H:i" }}</span>
             </div>
             <div class="actual-news__body">
                 <h3><a
-                        href="/matbuot-xizmati/yangiliklar/1302-yunusobod-tumanidagi-97-sonli-umumtalim-maktabida-talim-va-biznes-hamkorligi-muvaffaqiyat-kaliti-shiori-ostida-oquvchilar-bilan-uchrashuv-otkazildi.html">Yunusobod
-                        tumanidagi 97-sonli umumta&#039;lim maktabida “Ta&#039;lim va biznes hamkorligi
-                        – muvaffaqiyat kaliti!” shiori ostida o&#039;quvchilar bilan uchrashuv
-                        o&#039;tkazildi</a></h3>
+                        href="{{ last_post.get_absolute_url }}">{{ last_post.title }}</a></h3>
                 <p>
-                    Ochiq muloqotga O'zbekiston savdo-sanoat palatasi mas'ullari (D.Ismoiljonova), tuman
-                    prokuraturasi, Toshkent shahar maktabgacha va maktab ta'limi boshqarmasi vakillari,
-                    tuman maktabgacha va maktab ta'limi bo'limi boshlig'i (S.Kirgizbayev), taniqli...
+                    {{ last_post.content|truncatechars:230|safe }}
                 </p>
             </div>
         </div>
 
-
-
+        {% for post in page_obj %}
 
         <div class="post-item d-flex jusify-content-between">
             <div class="post-item__preview">
                 <div class="post-item__img">
-                    <img src="/uploads/posts/2025-02/1739548205_photo_2025-02-14_00-30-55.jpg">
+                    <img src="{{ post.image.url }}">
                 </div>
                 <div class="post-item__stats d-flex justify-content-between">
-                    <div class="post-item__date">14.02.2025 / 08:49.</div>
-                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
+                    <div class="post-item__date">{{ last_post.created_at|date:"j-m-Y, H:i" }}</div>
+                    <div class="post-item__views"><i class="png-icon png-icon-eye"></i>{{ post.views }}</div>
                 </div>
             </div>
             <div><a class="post-item__title"
-                    href="/matbuot-xizmati/yangiliklar/1302-yunusobod-tumanidagi-97-sonli-umumtalim-maktabida-talim-va-biznes-hamkorligi-muvaffaqiyat-kaliti-shiori-ostida-oquvchilar-bilan-uchrashuv-otkazildi.html">Yunusobod
-                    tumanidagi 97-sonli umumta&#039;lim maktabida “Ta&#039;lim va biznes hamkorligi –
-                    muvaffaqiyat kaliti!” shiori ostida o&#039;quvchilar bilan uchrashuv
-                    o&#039;tkazildi</a>
-                <p>Ochiq muloqotga O'zbekiston savdo-sanoat palatasi mas'ullari (D.Ismoiljonova), tuman
-                    prokuraturasi, Toshkent shahar maktabgacha va maktab ta'limi boshqarmasi vakillari,
-                    tuman maktabgacha va maktab ta'limi bo'limi boshlig'i (S.Kirgizbayev), taniqli...
+                    href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                <p>{{ post.content|safe|truncatechars:230 }}
                 </p>
             </div>
         </div>
 
+        {% endfor %}
 
-
-        <div class="post-item d-flex jusify-content-between">
-            <div class="post-item__preview">
-                <div class="post-item__img">
-                    <img src="/uploads/posts/2025-02/1739470850_photo_2025-02-13_20-24-15.jpg">
-                </div>
-                <div class="post-item__stats d-flex justify-content-between">
-                    <div class="post-item__date">13.02.2025 / 11:18.</div>
-                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                </div>
-            </div>
-            <div><a class="post-item__title"
-                    href="/matbuot-xizmati/yangiliklar/1300-talim-va-biznes-hamkorligi-muvaffaqiyat-kaliti-shiori-ostida-uchrashuv-bolib-otdi.html">“Ta’lim
-                    va biznes hamkorligi – muvaffaqiyat kaliti!” shiori ostida uchrashuv bo‘lib
-                    o‘tdi</a>
-                <p>Yunusobod tumanidagi 5-sonli umumta’lim maktabida ta’lim va biznes hamkorligini
-                    mustahkamlash maqsadida “Ta’lim va biznes hamkorligi – muvaffaqiyat kaliti!” shiori
-                    ostida uchrashuv bo‘lib o‘tdi. Ushbu tadbir Savdo-sanoat palatasi, Yunusobod
-                    tuman...</p>
-            </div>
-        </div>
-
-
-
-        <div class="post-item d-flex jusify-content-between">
-            <div class="post-item__preview">
-                <div class="post-item__img">
-                    <img src="/uploads/posts/2025-02/1739469052_photo_2025-02-13_15-58-31.jpg">
-                </div>
-                <div class="post-item__stats d-flex justify-content-between">
-                    <div class="post-item__date">13.02.2025 / 10:50.</div>
-                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                </div>
-            </div>
-            <div><a class="post-item__title"
-                    href="/matbuot-xizmati/yangiliklar/1299-hazrati-alisher-navoiyning-584-yilligi-hamda-zahiriddin-muhammad-boburning-542-yilligiga-bagishlangan-adabiy-mariy-tadbir-bolib-otdi.html">Hazrati
-                    Alisher Navoiyning 584 yilligi hamda Zahiriddin Muhammad Boburning 542 yilligiga
-                    bag&#039;ishlangan adabiy-ma&#039;riy tadbir bo&#039;lib o&#039;tdi</a>
-                <p>Poytaxtimizning Yunusobod tumanidagi 235-sonli umumta'lim maktabida ikki buyuk siymo
-                    — Hazrati Alisher Navoiyning 584 yilligi hamda Zahiriddin Muhammad Boburning 542
-                    yilligiga bag'ishlangan adabiy-ma'riy tadbir bo'lib o'tdi. Tadbirga Xalq...</p>
-            </div>
-        </div>
-
-
-
-        <div class="post-item d-flex jusify-content-between">
-            <div class="post-item__preview">
-                <div class="post-item__img">
-                    <img src="/uploads/posts/2025-02/1739441814_photo_2025-02-13_15-15-35.jpg">
-                </div>
-                <div class="post-item__stats d-flex justify-content-between">
-                    <div class="post-item__date">13.02.2025 / 03:16.</div>
-                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                </div>
-            </div>
-            <div><a class="post-item__title"
-                    href="/matbuot-xizmati/yangiliklar/1298-energiya-sarfi-savodxonligi-yuzasidan-xalqaro-hamkorlik-loyihalari.html">Energiya
-                    sarfi savodxonligi yuzasidan xalqaro hamkorlik loyihalari</a>
-                <p>Bugun Maktabgacha va maktab ta'limi vazirligi tomonidan Vazirlar Mahkamasi huzuridagi
-                    Texnik jihatdan tartibga solish agentligi bilan hamkorlikda "Energiya sarfi
-                    savodxonligi" mavzusidagi seminar-treninglarga start berildi. Unda vazirning
-                    birinchi...</p>
-            </div>
-        </div>
-
+        
         <div class="text-center">
+            {% if page_obj.has_other_pages %}
             <ul class="pagination">
-                <li><span>Oldingi</span></li>
-                <li><span>1</span> <a href="/page/2/">2</a> <a
-                        href="/page/3/">3</a> <a href="/page/4/">4</a>
-                    <a href="/page/5/">5</a> <a href="/page/6/">6</a>
-                    <a href="/page/7/">7</a> <a href="/page/8/">8</a>
-                    <a href="/page/9/">9</a> <a
-                        href="/page/10/">10</a> <span class="nav_ext">...</span> <a
-                        href="/page/163/">163</a></li>
-                <li><a href="/page/2/">Keyingi</a></li>
+                {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
+                                <li><span>Oldingi</span></li>
+                            {% endif %}
+                <li><a href="?page=1">1</a>
+
+                    {% if page_obj.number > 4 %}
+                    <span class="nav_ext">...</span>
+                    {% endif %} 
+                    {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                        {% else %}
+                                        <a href="?page={{ num }}">{{ num }}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <span>...</span>
+                            {% endif %}
+                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                        {% else %}
+                            <li><span>Keyingi</span></li>
+                        {% endif %}
             </ul>
+            {% endif %}
         </div>
 
 
