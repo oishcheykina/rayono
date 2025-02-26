@@ -360,6 +360,21 @@
     </div>          
 
 
+    <div class="container mt-4">
+        <h3 class="text-center mb-4">📸 Foto Galereya</h3>
+        <div class="row">
+      
+            <!-- Image 1 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{{ photo.image.url }}" alt="" onclick="openFullscreen(this)">
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+
     <!-- Fullscreen Modal -->
     <div class="fullscreen-modal" id="fullscreenModal" onclick="closeFullscreen()">
         <img id="fullscreenImage" src="" alt="Kattalashtirilgan rasm">
