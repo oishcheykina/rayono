@@ -34,7 +34,7 @@
                     <img src="{{ post.image.url }}">
                 </div>
                 <div class="post-item__stats d-flex justify-content-between">
-                    <div class="post-item__date">{{ last_post.created_at|date:"j-m-Y, H:i" }}</div>
+                    <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
                     <div class="post-item__views"><i class="png-icon png-icon-eye"></i>{{ post.views }}</div>
                 </div>
             </div>

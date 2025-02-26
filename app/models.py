@@ -46,7 +46,7 @@ class Boss(models.Model):
 class Yil_Dasturi(models.Model):
     title = models.CharField(max_length=150)
     image = models.ImageField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.title
@@ -58,7 +58,7 @@ class Yil_Dasturi(models.Model):
 #mmt bolimi
 
 class Rahbar(models.Model):
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     field = models.TextField() #kto eto
     name = models.CharField(max_length=200)
@@ -77,7 +77,7 @@ class Rahbar(models.Model):
         verbose_name_plural = 'Rahbariyat'
 
 class Apparat_Xodimi(models.Model):
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     field = models.TextField() #kto eto
     name = models.CharField(max_length=200)
@@ -97,7 +97,7 @@ class Apparat_Xodimi(models.Model):
         
 class Tarkibiy_Tuzilma(models.Model):
     title = models.CharField(max_length=150)
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(auto_now_add=True)
     content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
@@ -109,7 +109,7 @@ class Tarkibiy_Tuzilma(models.Model):
         verbose_name_plural = 'Tarkibiy tuzilma'
         
 class Qabul_Kunlari(models.Model):
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(auto_now_add=True)
     day = models.CharField(max_length=150)
     time = models.CharField(max_length=150)
     lunch = models.CharField(max_length=150)
@@ -118,7 +118,7 @@ class Qabul_Kunlari(models.Model):
     
 class Bolim_Nizomi(models.Model):
     title = models.CharField(max_length=150)
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(auto_now_add=True)
     content = RichTextUploadingField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     
@@ -140,7 +140,7 @@ class Principals(models.Model): #direktorlar
     education = models.TextField(null=True)
     field = models.TextField(null=True)
     description = models.TextField(null=True)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.name
@@ -155,6 +155,7 @@ class Principals(models.Model): #direktorlar
 class Talim_Tashkiloti(models.Model):
     name = models.CharField(max_length=200, null=True)
     content = RichTextUploadingField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.name
@@ -167,7 +168,7 @@ class Kun_Tartibi(models.Model):
     day = models.CharField(max_length=200)
     work_time = models.CharField(max_length=200)
     lunch_time = models.CharField(max_length=200)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.day
@@ -244,7 +245,7 @@ class Davlat_Dasturlari(models.Model):
     image = models.ImageField(upload_to='davlat_dasturlari/', null=True, blank=True)
     title = models.CharField(max_length=200)
     content = RichTextUploadingField()
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.title
@@ -380,7 +381,7 @@ class Xorijiy_Fuqarolar(models.Model):
 class Video_Galereya(models.Model):
     title = models.CharField(max_length=200)
     video = models.URLField()
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='video_galereya_images/')
     
     def __str__(self):
@@ -447,7 +448,7 @@ class Photo(models.Model):
 class Korrupsia_Qarshi(models.Model):
     title = models.CharField(max_length=200)
     content = RichTextUploadingField(blank=True)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='faoliyat/')
     
     def __str__(self):
@@ -472,7 +473,7 @@ class Talim_Terminlar(models.Model):
 class Besh_Tashshabus(models.Model):
     title = models.CharField(max_length=200)
     content = RichTextUploadingField(blank=True, null=True)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='faoliyat')
     
     def __str__(self):
