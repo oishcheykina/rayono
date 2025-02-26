@@ -4,8 +4,6 @@ urlpatterns = [
     path('', home, name='home'),
     path('more/<slug:slug>/', more, name='more'),
     path('xalq-talimi-bolimi/xalq-talimi-bolimi/' , xalq_talimi_bolimi, name='xalq-talimi-bolimi'),
-    path('oqituvchilarga/oqituvchilarga/', oqituvchilarga, name='oqituvchilarga'),
-    path('oqituvchilarga/dars-ishlanmalar/', dars_ishlanmalar, name='dars-ishlanmalar'),
     path('xalq-talimi-bolimi/rahbariyat/' , rahbariyat, name='rahbariyat'),
     path('xalq-talimi-bolimi/apparat-xodimlari/' , apparat_xodimlari, name='apparat-xodimlari' ),
     path('xalq-talimi-bolimi/tarkibiy-tuzilma/' , tarkibiy_tuzilma, name='tarkibiy-tuzilma'),
@@ -16,9 +14,6 @@ urlpatterns = [
     path('xalq-talimi-bolimi/bolim-ish-kun-tartibi/' , bolim_ish_kun_tartibi, name='bolim-ish-kun-tartibi'),
     path('xalq-talimi-bolimi/bosh-ish-orinlari/' , bosh_ish_orinlari, name='bosh-ish-orinlari'),
     path('xalq-talimi-bolimi/bolim-manzili/' , bolim_manzili, name='bolim-manzili'),
-    path('oqituvchilarga/fanlar-boyicha-testlar/', fanlar_boyicha_testlar, name='fanlar-boyicha-testlar'),
-    path('oqituvchilarga/davlat-dasturlari/', davlat_dasturlari, name='davlat-dasturlari'),
-    path('oqituvchilarga/kasaba-uyishmasi/', kasaba_uyishmasi, name='kasaba-uyishmasi'),
     path('matbuot-xizmati/elonral/', elonlar, name= 'elonlar'),
     path('matbuot-xizmati/bolim-ish-rejasi/', bolim_ish_rejasi, name= 'bolim-ish-rejasi'),
     path('matbuot-xizmati/fotogalereya/', fotogalereya, name= 'fotogalereya'),
@@ -35,4 +30,13 @@ urlpatterns = [
     path('oquvchilarga/davlat-ramzlari/', davlat_ramzlari, name='davlat-ramzlari'),
     path('oquvchilarga/imtihon-materiallari/', imtihon_materiallari, name='imtihon-materiallari'),
     path('oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish', yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish, name='yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish'),
+    path('oqituvchilarga/fanlar-boyicha-testlar/', fanlar_boyicha_testlar, name='fanlar-boyicha-testlar'),
+    path('oqituvchilarga/davlat-dasturlari/', davlat_dasturlari, name='davlat-dasturlari'),
+    path('oqituvchilarga/kasaba-uyishmasi/', kasaba_uyishmasi, name='kasaba-uyishmasi'),
+    path('oqituvchilarga/oqituvchilarga/', oqituvchilarga, name='oqituvchilarga'),
+    path('oqituvchilarga/dars-ishlanmalar/', dars_ishlanmalar, name='dars-ishlanmalar'),
+    path('oqituvchilarga/huquq-va-majburiyatlar/', huquq_va_majburiyatlar ),
+    path('oqituvchilarga/oqituvchilar-malakasini-oshirish/', oqituvchilar_malakasini_oshirish ),
+
 ]
+
