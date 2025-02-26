@@ -89,6 +89,9 @@ def kasaba_uyishmasi(request):
 def huquq_va_majburiyatlar(request):
      return render(request,'oqituvchilarga/huquq-va-majburiyatlar.html' )
 
+def oqituvchilar_malakasini_oshirish(request):
+     return render(request,'oqituvchilarga/oqituvchilar-malakasini-oshirish.html' )
+
 
 #MATBUOT-XIMATI
 

@@ -36,5 +36,7 @@ urlpatterns = [
     path('oqituvchilarga/oqituvchilarga/', oqituvchilarga, name='oqituvchilarga'),
     path('oqituvchilarga/dars-ishlanmalar/', dars_ishlanmalar, name='dars-ishlanmalar'),
     path('oqituvchilarga/huquq-va-majburiyatlar/', huquq_va_majburiyatlar ),
+    path('oqituvchilarga/oqituvchilar-malakasini-oshirish/', oqituvchilar_malakasini_oshirish ),
+
 ]
 
