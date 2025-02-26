@@ -181,3 +181,12 @@ def yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish(request):
      return render(request,'oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish.html' )
 
 
+#OTA-ONALARGA
+def bolani_bogchaga_joylashtirish_uchun_ariza_berish(request):
+     return render(request , 'ota-onalarga/bolani-bogchaga-joylashtirish-uchun-ariza-berish.html')
+
+
+
+
+
+
