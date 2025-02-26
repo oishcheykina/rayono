@@ -69,7 +69,6 @@ def bosh_ish_orinlari(request):
 def bolim_manzili(request):
         return render(request , 'xalq-talimi-bolimi/bolim-manzili.html')
 
-
 # O'QITUVCHILARGA
 
 def oqituvchilarga(request):
@@ -86,6 +85,10 @@ def davlat_dasturlari(request):
 
 def kasaba_uyishmasi(request):
      return render(request,'oqituvchilarga/kasaba-uyishmasi.html' )
+
+def huquq_va_majburiyatlar(request):
+     return render(request,'oqituvchilarga/huquq-va-majburiyatlar.html' )
+
 
 #MATBUOT-XIMATI
 
