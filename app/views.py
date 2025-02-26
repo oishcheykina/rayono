@@ -127,3 +127,19 @@ def korrupsiyaga_qarshi_kurash(request):
 
 def talimga_doir_terminlar(request):
      return render(request,'faoliyat/talimga-doir-terminlar.html' )
+
+#OQUVCHILARGA
+
+def oquvchilarga(request):
+     return render(request,'oquvchilarga/oquvchilarga.html' )
+
+def davlat_ramzlari(request):
+     return render(request,'oquvchilarga/davlat-ramzlari.html' )
+
+def imtihon_materiallari(request):
+     return render(request,'oquvchilarga/imtihon-materiallari.html' )
+
+def yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish(request):
+     return render(request,'oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish.html' )
+
+

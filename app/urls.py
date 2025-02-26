@@ -19,7 +19,7 @@ urlpatterns = [
     path('oqituvchilarga/fanlar-boyicha-testlar/', fanlar_boyicha_testlar, name='fanlar-boyicha-testlar'),
     path('oqituvchilarga/davlat-dasturlari/', davlat_dasturlari, name='davlat-dasturlari'),
     path('oqituvchilarga/kasaba-uyishmasi/', kasaba_uyishmasi, name='kasaba-uyishmasi'),
-    path('matbuot-xizmati/elonral/', elonlar, name= 'elolar'),
+    path('matbuot-xizmati/elonral/', elonlar, name= 'elonlar'),
     path('matbuot-xizmati/bolim-ish-rejasi/', bolim_ish_rejasi, name= 'bolim-ish-rejasi'),
     path('matbuot-xizmati/fotogalereya/', fotogalereya, name= 'fotogalereya'),
     path('matbuot-xizmati/maruzalar/', maruzalar, name= 'maruzalar'),
@@ -31,4 +31,8 @@ urlpatterns = [
     path('faoliyat/faoliyat/', faoliyat, name='faoliyat'),
     path('faoliyat/korrupsiyaga-qarshi-kurash/', korrupsiyaga_qarshi_kurash, name='korrupsiyaga-qarshi-kurash'),
     path('faoliyat/talimga-doir-terminlar/', talimga_doir_terminlar, name='talimga-doir-terminlar'),
+    path('oquvchilarga/oquvchilarga/', oquvchilarga, name='oquvchilarga'),
+    path('oquvchilarga/davlat-ramzlari/', davlat_ramzlari, name='davlat-ramzlari'),
+    path('oquvchilarga/imtihon-materiallari/', imtihon_materiallari, name='imtihon-materiallari'),
+    path('oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish', yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish, name='yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish'),
 ]
