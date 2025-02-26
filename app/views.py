@@ -20,7 +20,7 @@ def home(request):
     return render(request, 'index.html', dic)
 
 def more(request, slug):
-    boss = Boss.objects.all()
+    boss = Boss.objects.first()
     post = get_object_or_404(Post, slug=slug)
     viewed_news = request.session.get('viewed_news', [])
 
@@ -112,7 +112,18 @@ def videogalereya(request):
      return render(request,'matbuot-xizmati/videogalereya.html' )
 
 def yangiliklar(request):
-     return render(request,'matbuot-xizmati/yangiliklar.html' )
+    boss = Boss.objects.first()
+    posts = Post.objects.all().order_by('-created_at')  
+    paginator = Paginator(posts, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    yil_dasturi = Yil_Dasturi.objects.first()
+    dic = {
+        'boss': boss,
+        'page_obj': page_obj,
+        'yil_dasturi': yil_dasturi,
+    }
+    return render(request,'matbuot-xizmati/yangiliklar.html', dic )
 
 #FAOLIYAT
 
