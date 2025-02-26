@@ -137,7 +137,6 @@ def korrupsiyaga_qarshi_kurash(request):
 
 def talimga_doir_terminlar(request):
      return render(request,'faoliyat/talimga-doir-terminlar.html' )
-<<<<<<< HEAD
 
 #OQUVCHILARGA
 
@@ -154,5 +153,3 @@ def yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish(request):
      return render(request,'oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish.html' )
 
 
-=======
->>>>>>> 8a9df2732b056e2b9ee02b6dd348998238fea450
