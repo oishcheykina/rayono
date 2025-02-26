@@ -36,8 +36,6 @@ def more(request, slug):
         'yil_dasturi': yil_dasturi,
     }
     return render(request, 'more.html', dic)
-
-
 def xalq_talimi_bolimi(request):
     return render(request , 'xalq-talimi-bolimi/xalq-talimi-bolimi.html')
 
@@ -73,6 +71,7 @@ def bolim_manzili(request):
 
 
 # O'QITUVCHILARGA
+
 def oqituvchilarga(request):
     return render(request,'oqituvchilarga/oqituvchilarga.html' )
 
