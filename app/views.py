@@ -182,8 +182,31 @@ def yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish(request):
 
 
 #OTA-ONALARGA
+
+def ota_onalarga(request):
+     return render(request , 'ota-onalarga/ota-onalarga.html')
+
 def bolani_bogchaga_joylashtirish_uchun_ariza_berish(request):
      return render(request , 'ota-onalarga/bolani-bogchaga-joylashtirish-uchun-ariza-berish.html')
+
+def bolalarni_bogchaga_qabul_navbatini_tekshirish(request):
+     return render(request , 'ota-onalarga/bolalarni-bogchaga-qabul-navbatini-tekshirish.html')
+
+def bogcha_tolovlari_togrisida_malumot(request):
+     return render(request , 'ota-onalarga/bogcha-tolovlari-togrisida-malumot.html')
+
+def bolani_maktabning_birinchi_sinfiga_joylashtirishga_ariza_yuborish(request):
+     return render(request , 'ota-onalarga/bolani-maktabning-birinchi-sinfiga-joylashtirishga-ariza-yuborish.html')
+
+def maktabga_oquvchilarni_qabul_qilish(request):
+     return render(request , 'ota-onalarga/maktabga-oquvchilarni-qabul-qilish.html')
+
+def bolalarni_bir_maktabdan_boshqa_maktabga_kochirish_uchun_ariza_yuborish(request):
+     return render(request , 'ota-onalarga/bolalarni-bir-maktabdan-boshqa-maktabga-kochirish-uchun-ariza-yuborish.html')
+
+def xorijiy_fuqarolar_uchun_bolalarini_maktabga_joylashtirish(request):
+     return render(request , 'ota-onalarga/xorijiy-fuqarolar-uchun-bolalarini-maktabga-joylashtirish.html')
+
 
 
 
