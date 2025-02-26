@@ -20,7 +20,7 @@ def home(request):
     return render(request, 'index.html', dic)
 
 def more(request, slug):
-    boss = Boss.objects.all()
+    boss = Boss.objects.first()
     post = get_object_or_404(Post, slug=slug)
     viewed_news = request.session.get('viewed_news', [])
 
@@ -36,8 +36,6 @@ def more(request, slug):
         'yil_dasturi': yil_dasturi,
     }
     return render(request, 'more.html', dic)
-
-
 def xalq_talimi_bolimi(request):
     return render(request , 'xalq-talimi-bolimi/xalq-talimi-bolimi.html')
 
@@ -73,6 +71,7 @@ def bolim_manzili(request):
 
 
 # O'QITUVCHILARGA
+
 def oqituvchilarga(request):
     return render(request,'oqituvchilarga/oqituvchilarga.html' )
 
@@ -112,7 +111,18 @@ def videogalereya(request):
      return render(request,'matbuot-xizmati/videogalereya.html' )
 
 def yangiliklar(request):
-     return render(request,'matbuot-xizmati/yangiliklar.html' )
+    boss = Boss.objects.first()
+    posts = Post.objects.all().order_by('-created_at')  
+    paginator = Paginator(posts, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    yil_dasturi = Yil_Dasturi.objects.first()
+    dic = {
+        'boss': boss,
+        'page_obj': page_obj,
+        'yil_dasturi': yil_dasturi,
+    }
+    return render(request,'matbuot-xizmati/yangiliklar.html', dic )
 
 #FAOLIYAT
 
@@ -127,6 +137,7 @@ def korrupsiyaga_qarshi_kurash(request):
 
 def talimga_doir_terminlar(request):
      return render(request,'faoliyat/talimga-doir-terminlar.html' )
+<<<<<<< HEAD
 
 #OQUVCHILARGA
 
@@ -143,3 +154,5 @@ def yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish(request):
      return render(request,'oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish.html' )
 
 
+=======
+>>>>>>> 8a9df2732b056e2b9ee02b6dd348998238fea450
