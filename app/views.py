@@ -37,10 +37,32 @@ def more(request, slug):
     }
     return render(request, 'more.html', dic)
 def xalq_talimi_bolimi(request):
-    return render(request , 'xalq-talimi-bolimi/xalq-talimi-bolimi.html')
+    boss = Boss.objects.first()
+    posts = Rahbar.objects.all().order_by('-created_at')
+    paginator = Paginator(posts, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    yil_dasturi = Yil_Dasturi.objects.first()
+    dic = {
+        'boss': boss,
+        'page_obj': page_obj,
+        'yil_dasturi': yil_dasturi,
+    }
+    return render(request , 'xalq-talimi-bolimi/xalq-talimi-bolimi.html', dic)
 
 def rahbariyat(request):
-    return render(request, 'xalq-talimi-bolimi/rahbariyat.html')
+    boss = Boss.objects.first()
+    posts = Rahbar.objects.all().order_by('-created_at')
+    paginator = Paginator(posts, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    yil_dasturi = Yil_Dasturi.objects.first()
+    dic = {
+        'boss': boss,
+        'page_obj': page_obj,
+        'yil_dasturi': yil_dasturi,
+    }
+    return render(request, 'xalq-talimi-bolimi/rahbariyat.html', dic)
 
 def apparat_xodimlari(request):
     return render(request , 'xalq-talimi-bolimi/apparat-xodimlari.html')
