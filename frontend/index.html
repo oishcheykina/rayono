@@ -32,7 +32,7 @@
                     <img src="{{ post.image.url }}">
                 </div>
                 <div class="post-item__stats d-flex justify-content-between">
-                    <div class="post-item__date">{{ last_post.created_at|date:"j-m-Y, H:i" }}</div>
+                    <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
                     <div class="post-item__views"><i class="png-icon png-icon-eye"></i>{{ post.views }}</div>
                 </div>
             </div>
@@ -82,23 +82,6 @@
                         {% endif %}
             </ul>
             {% endif %}
-        </div>
-
-
-
-        <div class="container mt-4">
-            <h3 class="text-center mb-4">📸 Foto Galereya</h3>
-            <div class="row">
-                {{ for photo in photos  }}
-                <!-- Image 1 -->
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="{{ photo.image.url }}" alt="" onclick="openFullscreen(this)">
-                    </div>
-                </div>
-    
-               
-            </div>
         </div>
 
 
