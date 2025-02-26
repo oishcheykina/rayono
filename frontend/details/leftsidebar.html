@@ -76,8 +76,8 @@
     </div>
     <div class="col-left">
         <h3>Yil dasturi</h3>
-        <p><a href="/oqituvchilarga/davlat-dasturlari/" title="All courses">
-                <img src="{% static 'images/yil_dasturi.jpg' %}" alt="Banner"
+        <p><a href="{% url 'davlat-dasturlari' %}" title="All courses">
+                <img src="{{ yil_dasturi.image.url }}" alt="Banner"
                     class="img-rounded img-responsive"></a></p>
     </div>
     <div class="col-left">

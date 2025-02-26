@@ -10,7 +10,7 @@ def home(request):
     paginator = Paginator(posts, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
-    yil_dasturi = Yil_Dasturi.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     dic = {
         'boss': boss,
         'page_obj': page_obj,
@@ -29,7 +29,7 @@ def more(request, slug):
         post.save(update_fields=['views'])
         viewed_news.append(slug)
         request.session['viewed_news'] = viewed_news
-    yil_dasturi = Yil_Dasturi.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     dic = {
         'boss': boss,
         'post': post,
@@ -42,7 +42,7 @@ def xalq_talimi_bolimi(request):
     paginator = Paginator(posts, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
-    yil_dasturi = Yil_Dasturi.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     dic = {
         'boss': boss,
         'page_obj': page_obj,
@@ -56,7 +56,7 @@ def rahbariyat(request):
     paginator = Paginator(posts, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
-    yil_dasturi = Yil_Dasturi.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     dic = {
         'boss': boss,
         'page_obj': page_obj,
