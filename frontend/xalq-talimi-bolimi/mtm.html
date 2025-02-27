@@ -17,27 +17,24 @@
         height: 500px !important;
     
     }
-</style>
-<h2 class="entry-title">
+                    </style>
+                    <h2 class="entry-title">
     <h3 rel="bookmark">Maktabgacha ta&#039;lim tashkiloti</h3>
-</h2>
-<div class="entry-meta">
-    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">6-06-2023, 15:44</span></span>
-    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh sahifa</a> / Maktabgacha ta&#039;lim tashkiloti</span>
-</div>
+                    </h2>
+                    <div class="entry-meta">
+    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ talim_tashkiloti.created_at|date:"j-m-Y, H:i" }}</span></span>
+    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Maktabgacha ta&#039;lim tashkiloti</span>
+                    </div>
 
-<div class="row">
+                    <div class="row">
     <div class="col-lg-12">
         <div class="default-content">
             <p>
-                <img src="https://yunusobodxtb.uz/uploads/posts/2023-06/1686049946_2023-06-06_16-07-43.png" class="fr-fic fr-dib" alt=""><img src="https://yunusobodxtb.uz/uploads/posts/2023-06/1686049936_2023-06-06_16-08-29.png" class="fr-fic fr-dib" alt=""><img src="https://yunusobodxtb.uz/uploads/posts/2023-06/1686050008_2023-06-06_16-09-36.png" class="fr-fic fr-dib" alt=""><img src="https://yunusobodxtb.uz/uploads/posts/2023-06/1686049980_2023-06-06_16-10-28.png" class="fr-fic fr-dib" alt="">
+                {{ talim_tashkiloti.content|safe }}
             </p>
         </div>
     </div>
-</div>
-
-
-                    
+                    </div> 
                 </div>
 
 

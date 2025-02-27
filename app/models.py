@@ -139,14 +139,13 @@ class Principals(models.Model): #direktorlar
     date_of_birth = models.TextField(null=True)
     education = models.TextField(null=True)
     field = models.TextField(null=True)
-    description = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.name
     
-    # def get_absolute_url(self):
-    #     return reverse("more", kwargs={"slug": self.slug})
+    def get_absolute_url(self):
+        return reverse("more", kwargs={"slug": self.slug})
     
     class Meta:
         verbose_name = 'Direktor'

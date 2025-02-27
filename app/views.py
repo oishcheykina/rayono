@@ -104,13 +104,40 @@ def rahbariyat_qabul_kunlari(request):
     return render(request , 'xalq-talimi-bolimi/rahbariyat-qabul-kunlari.html', dic)
 
 def bolim_nizomi(request):
-    return render(request , 'xalq-talimi-bolimi/bolim-nizomi.html')
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    nizom = Qabul_Kunlari.objects.first()
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'nizom': nizom,
+    }
+    return render(request , 'xalq-talimi-bolimi/bolim-nizomi.html', dic)
 
 def talim_muassasalari(request):
-    return render(request , 'xalq-talimi-bolimi/talim-muassasalari.html')
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    direktorlar = Principals.objects.all()
+    paginator = Paginator(direktorlar, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'page_obj': page_obj,
+    }
+    return render(request , 'xalq-talimi-bolimi/talim-muassasalari.html', dic)
 
 def maktabgacha_talim_tashkiloti(request):
-    return render(request , 'xalq-talimi-bolimi/mtm.html')
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    talim_tashkiloti = Talim_Tashkiloti.objects.first()
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'talim_tashkiloti': talim_tashkiloti,
+    }
+    return render(request , 'xalq-talimi-bolimi/mtm.html', dic)
 
 def bolim_ish_kun_tartibi(request):
         return render(request , 'xalq-talimi-bolimi/bolim-ish-kun-tartibi.html')

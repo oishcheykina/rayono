@@ -4,126 +4,70 @@
 {% load static %}
 
 {% block content %}
-                    <div class="for-acquaintance">
+    <div class="for-acquaintance">
 
 
-
-                        <div class="post-item d-flex jusify-content-between">
+        {% for direktor in page_obj %}
+            <div class="post-item d-flex jusify-content-between">
                             <div class="post-item__preview">
                                 <div class="post-item__img">
                                     <img
-                                        src="https://yunusobodxtb.uz/uploads/posts/2022-09/1662357353_1653635972_1653635867771.png">
+                                        src="{{ direktor.image.url }}">
                                 </div>
                                 <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">05.09.2022 / 10:55.</div>
+                                    <div class="post-item__date">{{ direktor.created_at|date:"j-m-Y, H:i" }}</div>
                                     <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
                                 </div>
                             </div>
                             <div><a class="post-item__title"
-                                    href="https://yummtb.uz/xalq-talimi-bolimi/xalq-talimi-bolimi/">5
-                                    - sonli umumta`lim maktab direktori</a>
-                                <p>Xidoyatova Nargiza Sadikjonovna TELEFON: 0 371 209-97-02, 94-643-10-10 VEB-SAYT:
-                                    www.5-school.uz E-MAIL: y-5-maktab@inbox.uz QABUL KUNLARI: Dushanbadan jumagacha
-                                    09:00 dan 18:00 gacha 1979 yil, Toshkent shahrida tug&#96;ilgan Ma’lumoti oliy.
-                                    1999...</p>
+                                    href="https://yummtb.uz/xalq-talimi-bolimi/xalq-talimi-bolimi/">{{ direktor.field }}</a>
+                                <p>{{ direktor.name }} TELEFON: {{ direktor.name }} VEB-SAYT:
+                                    {{ direktor.veb_sayt }} E-MAIL: {{ direktor.email }}p>
                             </div>
-                        </div>
+            </div>
+        {% endfor %}
 
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img
-                                        src="https://yunusobodxtb.uz/uploads/posts/2022-09/1662358058_1655204667_1654159104_9-maktab-rahbari.jpg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">05.09.2022 / 10:54.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title"
-                                    href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/184-9-sonli-umumtalim-maktab-direktori.html">9
-                                    - sonli umumta`lim maktab direktori</a>
-                                <p>Maqsudbekova Malika Atxamdjanovna TELEFON: 0 371 235-24-02 VEB-SAYT: www.9-maktab.uz
-                                    E-MAIL: y-9 maktab@inbox.uz QABUL KUNLARI: Seshanba, Juma kunlari 14:00 dan 16:00
-                                    gacha 1975 yil, Toshkent shahrida tug&#96;ilgan Ma’lumoti oliy. 1997 yil...</p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img src="/templates/new_maktab/dleimages/no_image.jpg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">05.09.2022 / 10:53.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title"
-                                    href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/185-12-sonli-umumtalim-maktab-direktori.html">12
-                                    - sonli umumta`lim maktab direktori</a>
-                                <p>Jalolov Xasan Nizomovich TELEFON: 0 371 223-16-32 VEB-SAYT: www.12-yumaktab.uz
-                                    E-MAIL: y-12maktab@inbox.uz QABUL KUNLARI: Shanba kuni soat 09:00 dan 14:00 gacha
-                                    1966 yil, Surxondaryo viloyati Ma’lumoti oliy. 1994y. O‘zbekiston Davlat
-                                    Universitetini...</p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img
-                                        src="https://yunusobodxtb.uz/uploads/posts/2022-09/1662358754_1652677448_photo_2022-04-21_09-39-11.jpg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">05.09.2022 / 10:52.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title"
-                                    href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/186-17-sonli-umumtalim-maktab-direktori.html">17
-                                    - sonli umumta`lim maktab direktori</a>
-                                <p>Mirbabaeva Gulnoza Xamzaevna TELEFON: 0 371 236-26-46 VEB-SAYT: www.17-maktab.uz
-                                    E-MAIL: y.17maktab@gmail.com QABUL KUNLARI: Seshanba va shanba kunlari 08:00 dan
-                                    16:00 gacha 1965 yil, Toshkent shahrida tug&#96;ilgan Ma’lumoti oliy. 1988 yil...
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <ul class="pagination">
+        <div class="text-center">
+            {% if page_obj.has_other_pages %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
                                 <li><span>Oldingi</span></li>
-                                <li><span>1</span> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/2/">2</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/3/">3</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/4/">4</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/5/">5</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/6/">6</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/7/">7</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/8/">8</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/9/">9</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/10/">10</a>
-                                    <a href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/11/">11</a>
-                                </li>
-                                <li><a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/talim-muassasalari/page/2/">Keyingi</a>
-                                </li>
-                            </ul>
-                        </div>
+                            {% endif %}
+                <li><a href="?page=1">1</a>
+
+                    {% if page_obj.number > 4 %}
+                    <span class="nav_ext">...</span>
+                    {% endif %} 
+                    {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                        {% else %}
+                                        <a href="?page={{ num }}">{{ num }}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <span>...</span>
+                            {% endif %}
+                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                        {% else %}
+                            <li><span>Keyingi</span></li>
+                        {% endif %}
+            </ul>
+            {% endif %}
+        </div>
 
 
 
-                    </div>
+    </div>
 
 
-
-
-
-    {% endblock %}
-    
+{% endblock %}
