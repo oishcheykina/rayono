@@ -4,7 +4,9 @@
 {% block title %}Bosh sahifa{% endblock %}
 
 {% block content %}
-    <div class="for-acquaintance">
+
+
+    <div class="for-acquaintance">  
 
         <h3 class="title-1">Yangiliklar </h3>
 
@@ -32,7 +34,7 @@
                     <img src="{{ post.image.url }}">
                 </div>
                 <div class="post-item__stats d-flex justify-content-between">
-                    <div class="post-item__date">{{ last_post.created_at|date:"j-m-Y, H:i" }}</div>
+                    <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
                     <div class="post-item__views"><i class="png-icon png-icon-eye"></i>{{ post.views }}</div>
                 </div>
             </div>
@@ -86,9 +88,15 @@
 
 
 
+       
+
+
+
         <div class="mt-3 text-right">
-            <a href="/matbuot-xizmati/yangiliklar/">Barcha yangiliklar</a>
+            <a href="{% url 'yangiliklar' %}">Barcha yangiliklar</a>
         </div>
 
     </div>
+
+
 {% endblock %}
