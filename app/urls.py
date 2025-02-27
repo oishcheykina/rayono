@@ -50,6 +50,13 @@ urlpatterns = [
     path('ota-onalarga/maktabga-oquvchilarni-qabul-qilish/', maktabga_oquvchilarni_qabul_qilish),
     path('ota-onalarga/bolalarni-bir-maktabdan-boshqa-maktabga-kochirish-uchun-ariza-yuborish/', bolalarni_bir_maktabdan_boshqa_maktabga_kochirish_uchun_ariza_yuborish),
     path('ota-onalarga/xorijiy-fuqarolar-uchun-bolalarini-maktabga-joylashtirish/', xorijiy_fuqarolar_uchun_bolalarini_maktabga_joylashtirish),
+
+    path('normativ-hujjatlar/normativ-hujjatlar/' , normativ_hujjatlar),
+    path('normativ-hujjatlar/prezident-qaror-va-farmonlari/' , prezident_qaror_va_farmonlari),
+    path('normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-hayat-qarorlari/' , maktabgacha_va_maktab_talim_vazirligi_hayat_qarorlari),
+    path('normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari/' , maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari),
+    path('normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari/' , yunusobod_tumani_maktabgacha_va_maktab_talimi_bolimining_meyoriy_hujjatlari),
+
 ]
 
 

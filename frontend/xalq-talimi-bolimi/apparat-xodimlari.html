@@ -1,7 +1,9 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
+
 {% block content %}
-    <div class="for-acquaintance">
+
+                    <div class="for-acquaintance">
 
                         {% for post in page_obj %}
                         <div class="post-item d-flex jusify-content-between">
@@ -70,5 +72,6 @@
                             </ul>
                             {% endif %}
                         </div>
-    </div>
+                    </div>
+
 {% endblock %}

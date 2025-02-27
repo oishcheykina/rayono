@@ -239,7 +239,20 @@ def xorijiy_fuqarolar_uchun_bolalarini_maktabga_joylashtirish(request):
 
 
 
+# NORMATIV-HUJATLAR
 
 
+def normativ_hujjatlar(request):
+     return render(request , 'normativ-hujjatlar/normativ-hujjatlar.html')
 
+def prezident_qaror_va_farmonlari(request):
+     return render(request , 'normativ-hujjatlar/prezident-qaror-va-farmonlari.html')
 
+def maktabgacha_va_maktab_talim_vazirligi_hayat_qarorlari(request):
+     return render(request , 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-hayat-qarorlari.html')
+
+def maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari(request):
+     return render(request , 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari.html')
+
+def yunusobod_tumani_maktabgacha_va_maktab_talimi_bolimining_meyoriy_hujjatlari(request):
+     return render(request , 'normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari.html')
