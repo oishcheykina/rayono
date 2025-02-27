@@ -1,11 +1,9 @@
-
-
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
 
-                    <div class="for-acquaintance">
+    <div class="for-acquaintance">
 
                         <style>
                             .default-content img {
@@ -22,8 +20,7 @@
                             <h3 rel="bookmark">Qabul kunlari</h3>
                         </h2>
                         <div class="entry-meta">
-                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">26-08-2022,
-                                    15:59</span></span>
+                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ qabul_kuni.date|date:"j-m-Y, H:i" }}</span></span>
                             <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
                                     sahifa</a> / Rahbariyat qabul kunlari </span>
                         </div>
@@ -55,14 +52,5 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-                    </div>
-
-
-
-
-
-    {% endblock %}
-
+    </div>
+{% endblock %}

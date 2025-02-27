@@ -1,14 +1,9 @@
-
-
-
-
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 
 
-                    <div class="for-acquaintance">
+    <div class="for-acquaintance">
 
                         <style>
                             .default-content img {
@@ -25,9 +20,8 @@
                             <h3 rel="bookmark">Tarkibiy tuzilma</h3>
                         </h2>
                         <div class="entry-meta">
-                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">2-06-2023,
-                                    16:51</span></span>
-                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
+                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ tarkibiy_tuzilma.date|date:"j-m-Y, H:i" }}</span></span>
+                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh
                                     sahifa</a> / Tarkibiy tuzilma</span>
                         </div>
 
@@ -35,20 +29,12 @@
                             <div class="col-lg-12">
                                 <div class="default-content">
                                     <p>
-
+                                        {{ tarkibiy_tuzilma.content|safe }}
                                     </p>
                                 </div>
                             </div>
                         </div>
 
 
-
-                    </div>
-
-
-
-
-
-
-    {% endblock %}
-
+    </div>
+{% endblock %}

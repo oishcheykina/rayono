@@ -65,13 +65,43 @@ def rahbariyat(request):
     return render(request, 'xalq-talimi-bolimi/rahbariyat.html', dic)
 
 def apparat_xodimlari(request):
-    return render(request , 'xalq-talimi-bolimi/apparat-xodimlari.html')
+    boss = Boss.objects.first()
+    posts = Apparat_Xodimi.objects.all().order_by('-created_at')
+    paginator = Paginator(posts, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'boss': boss,
+        'page_obj': page_obj,
+        'yil_dasturi': yil_dasturi,
+    }
+    return render(request , 'xalq-talimi-bolimi/apparat-xodimlari.html', dic)
 
 def tarkibiy_tuzilma(request):
-    return render(request , 'xalq-talimi-bolimi/tarkibiy-tuzilma.html')
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    tarkibiy_tuzilma = Tarkibiy_Tuzilma.objects.first()
+    
+    dic = {
+        'boss': boss,
+        'tarkibiy_tuzilma': tarkibiy_tuzilma,
+        'yil_dasturi': yil_dasturi,
+    }
+    return render(request , 'xalq-talimi-bolimi/tarkibiy-tuzilma.html', dic)
 
 def rahbariyat_qabul_kunlari(request):
-    return render(request , 'xalq-talimi-bolimi/rahbariyat-qabul-kunlari.html')
+    qabul_kunlari = Qabul_Kunlari.objects.all()
+    qabul_kuni = Qabul_Kunlari.objects.first()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'qabul_kuni': qabul_kuni,
+        'qabul_kunlari': qabul_kunlari,
+    }
+    return render(request , 'xalq-talimi-bolimi/rahbariyat-qabul-kunlari.html', dic)
 
 def bolim_nizomi(request):
     return render(request , 'xalq-talimi-bolimi/bolim-nizomi.html')
