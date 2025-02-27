@@ -21,7 +21,7 @@
                         </h2>
                         <div class="entry-meta">
                             <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ qabul_kuni.date|date:"j-m-Y, H:i" }}</span></span>
-                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{}">Bosh
+                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh
                                     sahifa</a> / Rahbariyat qabul kunlari </span>
                         </div>
 
@@ -36,16 +36,13 @@
                                                 <td width="240"><b>Qabul vaqti</b></td>
                                                 <td width="227"><b>Tushlik vaqti</b></td>
                                             </tr>
+                                            {% for day in qabul_kunlari %}
                                             <tr>
-                                                <td width="227">Seshanba<br></td>
-                                                <td width="240">14:00 dan 17:00 gacha<br></td>
-                                                <td width="227">13:00 dan 14:00 gacha<br></td>
+                                                <td width="227">{{ day.day }}<br></td>
+                                                <td width="240">{{ day.time }}<br></td>
+                                                <td width="227">{{ day.lunch }}<br></td>
                                             </tr>
-                                            <tr>
-                                                <td width="227">Juma<br></td>
-                                                <td width="240">09:00 dan 12:00 gacha<br></td>
-                                                <td width="227">13:00 dan 14:00 gacha<br></td>
-                                            </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                     </p>
