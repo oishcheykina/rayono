@@ -3,368 +3,72 @@
 {% block content %}
     <div class="for-acquaintance">
 
-
+                        {% for post in page_obj %}
                         <div class="post-item d-flex jusify-content-between">
                             <div class="post-item__preview">
                                 <div class="post-item__img">
                                     <img
-                                        src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661772781_jakubova-mijasar-akmalovna.png">
+                                        src="{{ post.image.url }}">
                                 </div>
                                 <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">29.09.2022 / 04:32.</div>
+                                    <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
                                     <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
                                 </div>
                             </div>
-                            <div><a class="post-item__title" href="#">Ta&#039;lim muassasalarini faoliyatini tashkil
-                                    etish sho&#039;basi mudiri</a>
-                                <p><b>Yakubova Muyassar Akmalovna</b><br><b>Telefon:</b> 0 371 212-01-99<br><b>Faks:</b>
-                                    0 371 212-01-99<br><b>E-mail: </b>yunsobodtalim@gmail.com<br><b>Veb-sayt:</b>
-                                    www.yunusobodxtb.uz</p>
-                                <button ot="158" class="btn btn-primary">tarjimai xol</button>
-                                <button to="158" class="btn btn-primary">Majburyatlari</button>
-                                <div id="tarjima_158" style="display:none">1967 yil, Toshkent shahri<br>Ma’lumoti oliy.
-                                    1989 y. Nizomiy nomli Toshkent davlat pedagogika institutini tamomlagan<br>Ma’lumoti
-                                    bo‘yicha mutaxassisligi: oila etikasi va psixologiyasi<div
-                                        style="text-align:center;"><b>MEHNAT FAOLIYАTI</b></div>1984-1985 yy. Toshkent
-                                    shahar, Oxunboboyev nomli pionerlar uyi uslubchisi<br>1985-1989 yy. Nizomiy nomli
-                                    Toshkent davlat pedagogika instituti talabasi<br>1989-1989 yy. Toshkent shahar,
-                                    Yunusobod tumani, 21-sonli maktab kuni uzaytirilgan gurux tarbiyachisi<br>1989-1998
-                                    yy. Toshkent shahar, Yunusobod tumani, 21-sonli maktab o‘qituvchisi<br>1998-1999 yy.
-                                    Toshkent shahar, Yunusobod tumani, 21-sonli maktab direktor muovini<br>1999-2000 yy.
-                                    Toshkent shahar, Yunusobod tuman xalq ta’limi bo‘limi uslubiyot xonasi
-                                    mudiri<br>2000-2002 yy. Toshkent shahar, Yunusobod tuman xalq ta’limi bo‘limi bosh
-                                    mutaxassisi<br>2002-2003 yy. Toshkent shahar, Yunusobod tumani, 21-sonli maktab
-                                    o‘qituvchisi<br>2003-2005 yy Toshkent shahar, Yunusobod tuman xalq ta’limi bo‘limi
-                                    bosh mutaxassisi <br>2005-2011 yy. Toshkent shahar, Yunusobod tuman xalq ta’limi
-                                    bo‘limi o‘quv-tarbiyaviy ishlar bo‘yicha mudir o‘rinbosari <div
-                                        style="text-align:left;">2011-2017 yy. Toshkent shahar, Yunusobod tumani xalq
-                                        ta’limi muassasalari faoliyatini metodik ta’minlash va tashkil etish bo‘limi
-                                        o‘quvchilarni ma’naviy-axloqiytarbiyalash sho’basi mutaxassisi </div><br><br>
-                                </div>
-                                <div id="info_158" style="display:none">
-                                    <div style="text-align:justify;">Lavozim vazifalari:<br>a) “Umumiy o‘rta ta’lim
-                                        to‘g‘risida”gi Nizom asosida umumiy o‘rta ta’lim muassasalari faoliyatini
-                                        muvofiqlashtirish; <br>b) maktab yoshidagi bolalarning umumiy o‘rta ta’limga
-                                        jalb qilish ishlarini amalga oshirish, bolalarni umumta’lim maktablarining
-                                        mikrohududi bo‘yicha qamrab olinishini tashkillashtirish va nazoratga olish;
-                                        <br>v) umumta’lim muassasalarida o‘quvchilar davomatini nazorat qilish; <br>g)
-                                        umumta’lim muassasalarida o‘quvchilarning bosqichli nazorat imtihonlari va
-                                        yakuniy attestatsiyasi bo‘yicha ishlarni belgilangan tartibda tashkil etilishi
-                                        yuzasidan o‘rganishlar o‘tkazadi va ularga metodik yordam ko‘rsatish; <br>d)
-                                        umumiy o‘rta ta’lim maktablarining bitiruvchilariga attestat, shahodatnoma va
-                                        sertifikatlar berilishi bilan bog‘liq faoliyatni muvofiqlashtirish va bu borada
-                                        hujjatlarning to‘g‘ri yuritilishini nazorat qilish va ularga metodik yordam
-                                        ko‘rsatish;<br>e) umumiy o‘rta ta’lim dasturlarini davlat ta’lim standarti
-                                        doirasida mustaqil o‘zlashtirgan ta’lim oluvchilarni eksternat tartibida yakuniy
-                                        davlat attestatsiyasidan o‘tkazilishini tashkil etish; <br>j) o‘quvchilar
-                                        harakati (o‘quvchilar safiga qabul qilish va ularni hisobdan chiqarish) bilan
-                                        bog‘liq faoliyatni muvofiqlashtirish; <br>z) mudir o‘rinbosari bilan birgalikda
-                                        umumta’lim maktablarini yillik monitoring qilish reja-jadvali va dasturini
-                                        ishlab chiqish, o‘quv ishlari bo‘yicha direktor o‘rinbosari faoliyatini
-                                        muvofiqlashtirish, ularning ish samaradorligi oshirilishini ta’minlash; <br>i)
-                                        umumiy o‘rta ta’lim tizimini tashkil etilishi bo‘yicha o‘rganishlar o‘tkazish,
-                                        ulardagi muammoli holatlarni bartaraf etish bo‘yicha amaliy yordam ko‘rsatish,
-                                        maktablar faoliyatini monitoring qilish materiallari va dasturini tayyorlash,
-                                        o‘tkazilgan monitoring natijalarini umumlashtirish va tahlil qilish; <br>k)
-                                        umumiy o‘rta ta’lim maktablarida o‘tkazilgan monitoring natijalari asosida
-                                        ularning faoliyatini takomillashtirish bo‘yicha tavsiyalar tayyorlash; <br>l)
-                                        ixtisoslashtirilgan davlat umumta’lim maktablari va maktab-internatlar faoliyati
-                                        monitoringini amalga oshirish; <br>m) ta’lim sifati monitoringi bo‘yicha tayanch
-                                        ta’lim muassasalari faoliyatini tashkil qilish, ularning negizida ilg‘or
-                                        tajribalar almashish, yangi pedagogik, axborot-kommunikatsion va boshqa
-                                        texnologiyalarni joriy etish masalalari bo‘yicha uchrashuvlar, seminarlar,
-                                        konferensiyalar o‘tkazish, ulardan ta’lim-tarbiya jarayonida foydalanishni
-                                        ta’minlash; <br>n) tayanch ta’lim muassasalari faoliyatini tashkil etishga
-                                        metodik yordam ko‘rsatish, o‘quv-tarbiya jarayonini metodik ta’minlash sho’basi
-                                        metodistlari bilan hamkorlikda o‘quvchilar bilimidagi kamchiliklarni bartaraf
-                                        etish bo‘yicha metodik materiallar tayyorlash; <br>o) ijodkor o‘qituvchilar
-                                        faoliyatini targ‘ibot qilish maqsadida “Yilning eng yaxshi fan o‘qituvchisi”
-                                        ko‘rik-tanlovining tuman (shahar) bosqichi o‘tkazilishini tashkil etish; <br>p)
-                                        ta’lim muassasalarida ta’lim sifatini oshirish yuzasidan pedagoglar, o‘quvchilar
-                                        va ota-onalar fikrlarini inobatga olgan holda takliflar tayyorlash va bo‘lim
-                                        rahbariyatiga taqdim etish;<br>r) umumta’lim maktablaridan sohaga oid
-                                        hisobotlarni to‘plash, tahlil qilish, bo‘lim rahbariyati va boshqa vakolatli
-                                        yuqori turuvchi organlarga taqdim qilish; <br>s) kasbiy odob-axloq qoidalari,
-                                        sanitariya-gigiyena talablari, mehnatni muhofaza qilish, texnika va yong‘in
-                                        xavfsizligi qoidalari talablariga rioya qilish</div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img src="/templates/new_maktab/dleimages/no_image.jpg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">28.09.2022 / 04:13.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title" href="#">Ma’naviy-axloqiy tarbiya va bolalarning ijtimoiy
-                                    himoyasi hamda O‘quv-ishlab chiqarish majmualari faoliyatini tashkil etish va
-                                    metodik xizmat ko‘rsatish sho‘basi mudiri</a>
-                                <p><b>Mo'minova Dilobar Inoyatovna</b><br><b>Telefon: </b>0 371
-                                    212-01-99<br><b>Faks:</b> 0 371 212-01-99<br><b>E-mail:</b>
-                                    yunsobodtalim@gmail.com<br><b>Veb-sayt:</b> www.yunusobodxtb.uz</p>
-                                <button ot="149" class="btn btn-primary">tarjimai xol</button>
-                                <button to="149" class="btn btn-primary">Majburyatlari</button>
-                                <div id="tarjima_149" style="display:none"></div>
-                                <div id="info_149" style="display:none">
-                                    <div style="text-align:justify;">Lavozim vazifalari:</div>
-                                    <div style="text-align:justify;">a) sho’baning yillik rejasini ishlab chiqish hamda
-                                        amalga oshirishda o‘quv-tarbiya va ma’naviy-axloqiy ishlarning ta’lim
-                                        muassasalarida bajarilishini ta’minlash; </div>
-                                    <div style="text-align:justify;">b) ommaviy axborot vositalarida bo‘lim va uning
-                                        tasarrufidagi ta’lim muassasalari faoliyatidagi ilg‘or pedagogik
-                                        texnologiyalarni targ‘ibot etish; </div>
-                                    <div style="text-align:justify;">v) ma’naviy-ma’rifiy va tarbiyaviy ishlarni tashkil
-                                        etishda xalq ta’limi tizimidagi ilmiy tadqiqot olib boruvchi tashkilotlarning
-                                        imkoniyatlaridan foydalanish, pedagogika fani yutuqlarini va ilg‘or tajribalarni
-                                        ommalashtirish; </div>
-                                    <div style="text-align:justify;">g) voyaga yetmaganlar ishlari bo‘yicha
-                                        shug‘ullanish hamda o‘quvchilar orasida jinoyatchilik, alkogolizm, narkotik va
-                                        psixotrop moddalarni iste’mol qilinishi, har xil diniy oqimlarga kirib ketishi
-                                        kabi zararli odatlarni oldini olish bo‘yicha tegishli ishlarni amalga oshirish;
+                            <div><a class="post-item__title" href="#">{{ post.field }}</a>
+                                <p><b>{{ post.name }}</b><br><b>Telefon: </b>{{ post.phone }}<br><b>Faks:</b>
+                                    {{ post.faks }}<br><b>E-mail: </b>{{ post.email }}<br><b>Veb-sayt:</b>
+                                    {{ post.vebsayt }}</p>
+                                <button ot="{{ post.id }}" class="btn btn-primary">tarjimai xol</button>
+                                <button to="{{ post.id }}" class="btn btn-primary">Majburyatlari</button>
+                                <div id="tarjima_{{ post.id }}" style="display:none">{{ post.majburiyatlari|safe }}</div><br><br>
+                                <div id="info_{{ post.id }}" style="display:none">
+                                    <div style="text-align:justify;">
+                                        {{ post.tarjima_xol|safe }}
                                     </div>
-                                    <div style="text-align:justify;">d) 5 ta tashabbus ijrosini ta’minlash borasida
-                                        umumiy o‘rta ta’lim maktablarida o‘quvchi yoshlarning bo‘sh vaqtini mazmunli
-                                        tashkil etish, ularni madaniyat, san’at, jismoniy tarbiya va sportga keng jalb
-                                        etish, kitobxonlikni kuchaytirish yo‘nalishidagi faoliyatni muvofiqlashtirish;
-                                    </div>
-                                    <div style="text-align:justify;">e) umumiy o‘rta ta’lim maktabi o‘quvchilarining
-                                        bahorgi, yozgi, kuzgi, qishki ta’tillarda dam olishlarini rejalashtirish va
-                                        mazmunli o‘tkazilishini ta’minlash; </div>
-                                    <div style="text-align:justify;">j) Barkamol avlodni tarbiyalashda
-                                        “Oila-mahalla-ta’lim muassasasi” hamkorligini yanada rivojlantirish
-                                        chora-tadbirlari to‘g‘risidagi ishlarni amalga oshirish;</div>
-                                    <div style="text-align:justify;">z) ma’naviy-axloqiy tarbiya yo‘nalishida tuman
-                                        (shahar) miqyosida keng ko‘lamda turli xil tadbirlar (tarbiyaviy ishlar,
-                                        seminar, suhbat, o‘quv, ko‘rik-tanlovlar)ni rejalashtirish va ularning
-                                        o‘tkazilishini ta’minlash; </div>
-                                    <div style="text-align:justify;">i) ta’lim muassasalarida ma’naviy-ma’rifiy ishlar
-                                        bo‘yicha direktor o‘rinbosari, sinf rahbari, yoshlar yetakchisi faoliyatini
-                                        muvofiqlashtirish, ularning ish samaradorligi oshirilishini ta’minlash; </div>
-                                    <div style="text-align:justify;">k) tarbiyasi og‘ir bolalarni ta’lim muassasalariga
-                                        jalb qilish ishlarini amalga oshirish; </div>
-                                    <div style="text-align:justify;">l) o‘quvchilar orasida o‘zini-o‘zi boshqarish
-                                        tuzilmalari faoliyatini tashkil etish, bu borada O‘zbekiston yoshlar ittifoqi,
-                                        “Kamalak” bolalar tashkilotining tuman (shahar) bo‘limlari bilan hamkorlikda
-                                        faoliyat olib borilishini ta’minlash; </div>
-                                    <div style="text-align:justify;">m) tuman (shahar) sog‘liqni saqlash bo‘limlari
-                                        bilan hamkorlikda o‘quvchi-yoshlar o‘rtasida sog‘lom turmush tarzi va sog‘lom
-                                        muhitni targ‘ib qilish, giyohvandlikni oldini olish profilaktikasi va ekologik
-                                        ta’lim-tarbiya yo‘nalishi bo‘yicha tadbirlarni tashkil etish; </div>
-                                    <div style="text-align:justify;">n) ta’lim muassasalarida tarbiya fanining
-                                        o‘qitilishi bo‘yicha uslubiy yordamlar ko‘rsatish; </div>
-                                    <div style="text-align:justify;">o) O‘zbekiston Respublikasining Mehnat kodeksi
-                                        131-moddasida belgilangan bayram kunlari, shuningdek, “Vatan himoyachilari
-                                        kuni”, “So‘nggi qo‘ng‘iroq”, “Xalqaro bolalarni himoya qilish kuni”, “Bilimlar
-                                        kuni” va shu kabi nishonlanadigan bayram sanalariga bag‘ishlangan tadbirlarni
-                                        tashkil etilishini ta’minlash; </div>
-                                    <div style="text-align:justify;">p) kasbiy odob-axloq qoidalari, sanitariya-gigiyena
-                                        talablari, mehnatni muhofaza qilish, texnika va yong‘in xavfsizligi qoidalari
-                                        talablariga rioya qilish</div>
                                 </div>
-
                             </div>
+
                         </div>
-
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img
-                                        src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661770741_karimova-oripa-saidmuradovna.png">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">22.09.2022 / 03:58.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title" href="#">Ta’lim sifati monitoringi va attestatsiyasi bosh
-                                    inspektor metodisti</a>
-                                <p><b>Karimova Oripa Saidmuradovna</b><br><b>Telefon: </b>0 371
-                                    212-01-99<br><b>Faks:</b> 0 371 212-01-99<br><b>E-mail:</b>
-                                    yunsobodtalim@gmail.com<br><b>Veb-sayt:</b> www.yunusobodxtb.uz</p>
-                                <button ot="146" class="btn btn-primary">tarjimai xol</button>
-                                <button to="146" class="btn btn-primary">Majburyatlari</button>
-                                <div id="tarjima_146" style="display:none">
-                                    <div style="text-align:left;">1960 yil, Namangan viloyati<br>Ma’lumoti oliy. 1983 y.
-                                        Toshkent Davlat universitetini tamomlagan<br>Ma’lumoti bo‘yicha mutaxassisligi:
-                                        amaliy matematika</div>
-                                    <div style="text-align:center;"><b>MEHNAT FAOLIYАTI</b></div>
-                                    <div style="text-align:justify;">1983-1991 yy. O‘zbekiston Fanlar Akademiyasi
-                                        "Kibernetika" ilmiy tekshirish institutida muhandis<br>1992-1997 yy. Toshkent
-                                        shahar, Yunusobod tumani, 21-maktab o‘qituvchisi<br>1997-2004 yy. Toshkent
-                                        shahar, Yunusobod tumani, 21-maktab direktor o‘rinbosari<br>2004-2006 yy.
-                                        Toshkent shahar, Yunusobod tumani, 21-maktab direktori <br>2006-2006 yy.
-                                        Toshkent shahar, Yunusobod tumani, 21-maktab o‘qituvchisi. <br>2006-2011 yy.
-                                        Toshkent shahar, Yunusobod tumani xalq ta’limi bo‘limi DTS monitoringi
-                                        nazoratchisi<br>2011-2017 yy. Toshkent shahar, Yunusobod tumani xalq ta’limi
-                                        muassasalari faoliyatini metodik ta’minlash va tashkil etish bo‘limi DTSlarga
-                                        rioya etish monitoringini metodik ta’minlash kichik guruxi mutaxassisi <br>2017
-                                        y. x.v. Toshkent shahar, Yunusobod tumani xalq ta’limi bo‘limi ta’lim sifati
-                                        monitoringi va attestatsiyasi bosh inspektor metodisti </div>
-                                </div>
-                                <div id="info_146" style="display:none">
-                                    <div style="text-align:justify;">Lavozim vazifalari:</div>
-                                    <div style="text-align:justify;">a) umumiy o‘rta ta’lim muassasalarida ta’lim sifati
-                                        monitoringi jarayonini tashkil etish, o‘quvchilar tomonidan Davlat ta’lim
-                                        standartlari talablarining bajarilishi darajasi, o‘zlashtirishidagi nuqsonlar,
-                                        ularni keltirib chiqaradigan omillar, o‘qituvchi va o‘quvchilarning ta’limga oid
-                                        ehtiyojlarini aniqlash, aniqlangan nuqsonlarni bartaraf etish bo‘yicha takliflar
-                                        tayyorlash; </div>
-                                    <div style="text-align:justify;">b) bo‘limga yuklangan barcha vazifalar
-                                        bajarilishini ta’minlash, ta’lim sifatini takomillashtirish bo‘yicha takliflar
-                                        ishlab chiqish va bo‘lim mudiriga taqdim etish; </div>
-                                    <div style="text-align:justify;">v) ta’lim muassasalarining reytingini aniqlash
-                                        jarayonini tashkil etish; </div>
-                                    <div style="text-align:justify;">g) bo‘limning yillik ish rejasini, ta’lim
-                                        muassasalarini monitoring qilish reja-jadvali va dasturini tuzish hamda ijrosini
-                                        ta’minlash; </div>
-                                    <div style="text-align:justify;">d) ta’lim muassasalarining o‘quv-tarbiya jarayonini
-                                        yaxshilash bo‘yicha faoliyatini muvofiqlashtirish, ichki va tashqi monitoringini
-                                        tashkil etilishini ta’minlash, ta’lim sifatini yaxshilash borasida seminar va
-                                        konferensiyalar o‘tkazish; </div>
-                                    <div style="text-align:justify;">e) umumiy o‘rta ta’lim muassasalarining o‘rnak
-                                        ko‘rsatgan xodimlarini rag‘batlantirishning direktor jamg‘armasi mablag‘laridan
-                                        foydalanish tartibi va yo‘riqnoma talablari yuzasidan tegishli mas’ullar
-                                        ishtirokida seminarlar tashkil etish; </div>
-                                    <div style="text-align:justify;">j) kasb mahorati, sinfdan tashqari va tarbiyaviy
-                                        ishlari uchun ustama oladigan pedagoglar faoliyati monitoringini amalga
-                                        oshirish; </div>
-                                    <div style="text-align:justify;">z) ta’lim muassasalarida o‘quvchilar bilimining
-                                        davlat ta’lim standartlari va maktabdan tashqari ta’limga qo‘yilgan davlat
-                                        talablariga mosligini monitoring qilish, o‘tkazilgan monitoring natijalarini
-                                        muhokama qilish uchun tegishli ma’lumotlarni Hay’at yig‘ilishiga kiritish;
-                                    </div>
-                                    <div style="text-align:justify;">i) monitoring jarayonini tashkil etish va
-                                        o‘tkazishga, xalq ta’limi xodimlarini qayta tayyorlash va ularning malakasini
-                                        oshirish hududiy markazlarining o‘qituvchilari, metodik xizmat bo‘limlari
-                                        metodistlari, tajribali amaliyotchi o‘qituvchilardan iborat jamoatchi
-                                        ekspertlarni jalb etish; </div>
-                                    <div style="text-align:justify;">k) metodik xizmat xodimlari, o‘qituvchilar bilan
-                                        birga nazorat materiallari bazasini shakllantirish, sinflar, fanlar va mavzular
-                                        kesimida tayyorlangan ushbu materiallarni muntazam to‘ldirib borish; </div>
-                                    <div style="text-align:justify;">l) fan metodistlari bilan o‘zaro hamkorlik qilish,
-                                        o‘quvchilar bilimida aniqlangan bo‘shliqlarni bartaraf etish masalalari bo‘yicha
-                                        faoliyatni amalga oshirish; </div>
-                                    <div style="text-align:justify;">m) tuman tayanch ta’lim muassasalari negizida
-                                        ta’lim sifatini monitoring qilish va uni takomillashtirish, yangi pedagogik va
-                                        axborot-kommunikatsion texnologiyalarni joriy etish tadbirlarini o‘tkazish;
-                                    </div>
-                                    <div style="text-align:justify;">n) o‘quvchilarga ta’lim berish sifatini oshirishga
-                                        yo‘naltirilgan, davlat ta’lim standartlari va davlat talablari bajarilishini
-                                        o‘rganish bo‘yicha bilimlar bellashuvi, turli intellektual ko‘rik-tanlovlar va
-                                        musobaqalarni o‘tkazish; </div>
-                                    <div style="text-align:justify;">o) kasbiy odob-axloq qoidalari, sanitariya-gigiyena
-                                        talablari, mehnatni muhofaza qilish, texnika va yong‘in xavfsizligi qoidalari
-                                        talablariga rioya qilish. </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661773280_mashrab.jpg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">29.08.2022 / 04:40.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title" href="#">Maxsus ta`mirlash ekspluatatsiya xizmati bosh
-                                    muhandisi</a>
-                                <p><b>Raxmonov Mashrabjon G'aniyevich</b><br><b>Telefon:</b> 0 371
-                                    212-01-99<br><b>Faks:</b> 0 371 212-01-99<br><b>E-mail:</b>
-                                    yunsobodtalim@gmail.com<br><b>Veb-sayt:</b> www.yunusobodxtb.uz</p>
-                                <button ot="162" class="btn btn-primary">tarjimai xol</button>
-                                <button to="162" class="btn btn-primary">Majburyatlari</button>
-                                <div id="tarjima_162" style="display:none">
-                                    <div style="text-align:justify;">1985 yil, Farg‘ona viloyati</div>
-                                    <div style="text-align:justify;">Ma’lumoti oliy. 2008 y. Toshkent axborot
-                                        texnologiyalari universitetini tamomlagan</div>
-                                    <div style="text-align:justify;">Ma’lumoti bo‘yicha mutaxassisligi:
-                                        telekommunikatsiya</div>
-                                    <div style="text-align:center;"><b>MEHNAT FAOLIYАTI</b></div>
-                                    <div style="text-align:justify;">2008-2011 yy. Toshkent moliya instituti qoshidagi
-                                        moliya akademik litsey informatika o‘qituvchisi</div>
-                                    <div style="text-align:justify;">2017-2019 yy. Toshkent moliya instituti qoshidagi
-                                        moliya akademik litsey informatika o‘qituvchisi</div>
-                                    <div style="text-align:justify;">2020 y x.v. - Yunusobod tumani xalq ta’limi bo‘limi
-                                        maxsus ta’mirlash ekspluatatsiya xizmati boshlig‘i muhandis</div>
-                                </div>
-                                <div id="info_162" style="display:none">
-                                    <div style="text-align:justify;">Lavozim vazifalari:</div>
-                                    <div style="text-align:justify;">a) har yili 1 iyunga qadar mahalliy budjet
-                                        mablag‘lari hisobidan kelgusi moliya yilida bajariladigan joriy ta’mirlash
-                                        ishlari xamda talab etiladigan qurilish materiallari (ro‘yxat asosida),
-                                        xom-ashyo, butlovchi qismlar va zarur bo‘lgan asbob-uskunalar ro‘yxatlarini
-                                        shakllantirish;</div>
-                                    <div style="text-align:justify;">b) har yili 1 iyulga qadar Investitsiya dasturi
-                                        doirasida yangidan qurish,rekonstruksiya qilish va mukammal ta’mirlash zarur
-                                        bo‘lgan ta’lim muassasalari ro‘yxatlarini mahalliy hokimliklar bilan kelishilgan
-                                        holda tayyorlash, viloyatlar xalq ta’limi boshqarmalariga kiritish;</div>
-                                    <div style="text-align:justify;">v) budjetdan ajratiladigan mablag‘lar doirasida har
-                                        yili 1 sentabrga qadar ta’lim muassasalarining bino va inshootlari hamda
-                                        muxandislik-kommunikatsiya tizimlari joriy ta’mirlanishini yakunlash va ulardan
-                                        foydalanilishi yuzasidan tizimli monitoring yuritish;</div>
-                                    <div style="text-align:justify;">g) budjetdan ajratiladigan mablag‘lar doirasida har
-                                        yili 1 sentabrga qadar ta’lim muassasalarining bino va inshootlari hamda
-                                        muxandislik-kommunikatsiya tizimlari joriy ta’mirlanishini yakunlash va ulardan
-                                        foydalanilishi yuzasidan tizimli monitoring yuritish;</div>
-                                    <div style="text-align:justify;">d) fizika, kimyo laboratoriyalari va kompyuter sinf
-                                        xonalaridagi texnik vositalardan samarali, texnika xavfsizligi qoidalariga rioya
-                                        qilgan xolda foydalanish, shuningdek elektr tizimi va asbob-uskunalarini texnik
-                                        holatini muntazam ko‘rikdan o‘tkazib borish, yakuniy xulosa va nuqson
-                                        dalolatnomalari asosida ularni ta’mirlash yoki yangisiga almashtirish bo‘yicha
-                                        takliflar ishlab chiqish;</div>
-                                    <div style="text-align:justify;">e) ta’lim muassasalari bino va inshootlaridan
-                                        samarali, maqsadli foydalanishni tashkil etishda shakllantiradigan ma’lumotlarni
-                                        ta’lim muassasasining rahbari va uning xo‘jalik ishlari bo‘yicha o‘rinbosaridan
-                                        talab qilish; </div>
-                                    <div style="text-align:justify;">j) barcha xodimlarning kunlik bajargan ishlari
-                                        bo‘yicha boshqarmaga yozma ravishda ma’lumot kiritib borish.</div>
-                                    <div style="text-align:justify;">z) mehnatni muhofaza qilish, texnika va yong‘in
-                                        xavfsizligi qoidalariga barcha xodimlarni amal qilishiga mas’ul;</div>
-                                    <div style="text-align:justify;">i) hududiy “Yagona buyurtmachi xizmati” injiniring
-                                        kompaniyalari, homiylik tomonidan yangidan quriladigan, rekonstruksiya va
-                                        mukammal ta’mirlanadigan ta’lim obyektlarini foydalanishga qabul qilishda
-                                        ishtirok etish va ishlarni muvofiqlashtirish;</div>
-                                    <div style="text-align:justify;">y) kurilish-ta’mirlash jarayonlarida ishlarning
-                                        sifati, belgilangan grafik asosida ishlarni tugri tashkil etish yuzasidan
-                                        o‘rganishlar xamda monitoring ishlarini olib borish va tegishli takliflar
-                                        tayyorlash;</div>
-                                </div>
-
-                            </div>
-                        </div>
+                        {% endfor %}
 
 
                         <div class="text-center">
+                            {% if page_obj.has_other_pages %}
                             <ul class="pagination">
-                                <li><span>Oldingi</span></li>
-                                <li><span>1</span> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/apparat-xodimlari/page/2/">2</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/apparat-xodimlari/page/3/">3</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/apparat-xodimlari/page/4/">4</a> <a
-                                        href="https://yummtb.uz/xalq-talimi-bolimi/apparat-xodimlari/page/5/">5</a>
-                                </li>
-                                <li><a href="https://yummtb.uz/xalq-talimi-bolimi/apparat-xodimlari/page/2/">Keyingi</a>
-                                </li>
+                                {% if page_obj.has_previous %}
+                                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                                            {% else %}
+                                                <li><span>Oldingi</span></li>
+                                            {% endif %}
+                                <li><a href="?page=1">1</a>
+                
+                                    {% if page_obj.number > 4 %}
+                                    <span class="nav_ext">...</span>
+                                    {% endif %} 
+                                    {% for num in page_obj.paginator.page_range %}
+                                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                                        {% if num == page_obj.number %}
+                                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                                        {% else %}
+                                                        <a href="?page={{ num }}">{{ num }}</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            <!-- Многоточие перед последней страницей, если нужно -->
+                                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                                <span>...</span>
+                                            {% endif %}
+                                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                                            {% if page_obj.has_next %}
+                                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                                        {% else %}
+                                            <li><span>Keyingi</span></li>
+                                        {% endif %}
                             </ul>
+                            {% endif %}
                         </div>
-
-
-
     </div>
 {% endblock %}
