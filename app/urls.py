@@ -10,6 +10,7 @@ urlpatterns = [
     path('xalq-talimi-bolimi/rahbariyat-qabul-kunlari/' , rahbariyat_qabul_kunlari, name='rahbariyat-qabul-kunlari'),
     path('xalq-talimi-bolimi/bolim-nizomi/' , bolim_nizomi, name='bolim-nizomi'),
     path('xalq-talimi-bolimi/talim-muassasalari/' ,talim_muassasalari, name='talim-muassasalari'),
+    path('xalq-talimi-bolimi/talim-muassasalari/<slug:slug>', talim_muassa, name='talim_muassa'),
     path('xalq-talimi-bolimi/mtm/' , maktabgacha_talim_tashkiloti, name='mtm'),
     path('xalq-talimi-bolimi/bolim-ish-kun-tartibi/' , bolim_ish_kun_tartibi, name='bolim-ish-kun-tartibi'),
     path('xalq-talimi-bolimi/bosh-ish-orinlari/' , bosh_ish_orinlari, name='bosh-ish-orinlari'),

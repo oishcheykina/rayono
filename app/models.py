@@ -131,6 +131,7 @@ class Bolim_Nizomi(models.Model):
         
 class Principals(models.Model): #direktorlar
     name = models.CharField(max_length=200, null=True)
+    slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to='principal_photo/', null=True)
     phone_number = models.CharField(max_length=255, null=True)
     email = models.CharField(max_length=255, null=True)
@@ -145,7 +146,7 @@ class Principals(models.Model): #direktorlar
         return self.name
     
     def get_absolute_url(self):
-        return reverse("more", kwargs={"slug": self.slug})
+        return reverse("talim_muassa", kwargs={"slug": self.slug})
     
     class Meta:
         verbose_name = 'Direktor'

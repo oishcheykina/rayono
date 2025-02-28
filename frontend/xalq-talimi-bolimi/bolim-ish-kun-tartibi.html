@@ -22,9 +22,8 @@
                             <h3 rel="bookmark">Bo`lim ish kun tartibi</h3>
                         </h2>
                         <div class="entry-meta">
-                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">25-08-2022,
-                                    12:58</span></span>
-                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
+                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ kun_tartib_added.created_at|date:"j-m-Y, H:i" }}</span></span>
+                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh
                                     sahifa</a> / Bo‘lim ish kun tartibi</span>
                         </div>
 
@@ -39,40 +38,13 @@
                                                 <td width="240"><b>Иш вақти</b></td>
                                                 <td width="227"><b>Тушлик вақти</b></td>
                                             </tr>
+                                            {% for day in kun_tartibi %}
                                             <tr>
-                                                <td width="227">Душанба</td>
-                                                <td width="240">09:00 дан 18:00 гача</td>
-                                                <td width="227">13:00 дан 14:00 гача</td>
+                                                <td width="227">{{ day.day }}</td>
+                                                <td width="240">{{ day.work_time }}</td>
+                                                <td width="227">{{ day.lunch_time }}</td>
                                             </tr>
-                                            <tr>
-                                                <td width="227">Сешанба</td>
-                                                <td width="240">09:00 дан 18:00 гача</td>
-                                                <td width="227">13:00 дан 14:00 гача</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="227">Чоршанба</td>
-                                                <td width="240">09:00 дан 18:00 гача</td>
-                                                <td width="227">13:00 дан 14:00 гача</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="227">Пайшанба</td>
-                                                <td width="240">09:00 дан 18:00 гача</td>
-                                                <td width="227">13:00 дан 14:00 гача</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="227">Жума</td>
-                                                <td width="240">09:00 дан 18:00 гача</td>
-                                                <td width="227">13:00 дан 14:00 гача</td>
-                                            </tr>
-                                            <tr>
-                                                <td width="227">Шанба</td>
-                                                <td width="240">Дам олиш куни</td>
-                                                <td width="227"> </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="227">Якшанба</td>
-                                                <td width="240">Дам олиш куни</td>
-                                            </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                     </p>

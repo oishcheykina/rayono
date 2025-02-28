@@ -21,9 +21,8 @@
                             <h3 rel="bookmark">Bo&#039;sh ish o&#039;rinlari</h3>
                         </h2>
                         <div class="entry-meta">
-                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">30-11-2024,
-                                    15:28</span></span>
-                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
+                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ bosh_ish_orinlar.created_at|date:"j-m-Y, H:i" }}</span></span>
+                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh
                                     sahifa</a> / Bo&#039;sh ish o&#039;rinlari</span>
                         </div>
 
@@ -31,55 +30,7 @@
                             <div class="col-lg-12">
                                 <div class="default-content">
                                     <p>
-                                    <div style="text-align:justify;">Nomzod haqidagi ma’lumotlar belgilangan tartibda
-                                        o‘rganib chiqilgach, ma’lumotlariga ko‘ra talablarga javob beradigan nomzod
-                                        suhbatga taklif etiladi. Tegishli rahbarlar bilan suhbatdan muvaffaqiyatli
-                                        o‘tgan nomzod bo‘lim rahbari bilan shaxsan suhbatdan o‘tadi.</div>
-                                    <div style="text-align:justify;">Saralash va suhbat bosqichidan muvaffaqiyatli
-                                        o‘tgan nomzod bilan mehnat shartnomasi tuziladi va uni ishga qabul qilish
-                                        to‘g‘risida bo‘lim rahbarining buyrug‘i qabul qilinadi. Nomzodning tayyorgarligi
-                                        va malakasidan kelib chiqib, bo‘lim rahbari tomonidan 3 yoki 1 oylik sinov
-                                        muddati belgilanishi mumkin.</div>
-                                    <div style="text-align:justify;">Ishga qabul qilingan xodimga barcha ish sharoitlari
-                                        yaratib beriladi. Xodimning ijtimoiy himoyasi qonunchilikda belgilangan tartibda
-                                        amalga oshiriladi, uning manfaatlari kasaba uyushmasi tomonidan himoyalanadi.
-                                    </div>
-                                    <div style="text-align:justify;"><br></div><b>01.12.2024 yil holatiga bo‘sh ish
-                                        o‘rinlari</b><br><br>
-                                    <div style="text-align:justify;"><b>Yunusobod tumani maktabgacha va maktab ta’limi
-                                            bo‘limida:</b></div>
-                                    <div style="text-align:justify;">Hisobchi - 1ta </div>
-                                    <div style="text-align:justify;">Maktabgacha ta’lim tashkilotlari faoliyatini
-                                        muvofiqlashtirish sho’basi metodisti - 1 ta </div>
-                                    <div style="text-align:justify;">Elektromantyor - 1 ta </div>
-                                    <div style="text-align:justify;">Santexnik - 1 ta </div>
-                                    <div style="text-align:justify;">Yengil avtomobil haydovchi - 2 ta </div>
-                                    <div style="text-align:justify;"><br></div>
-                                    <div style="text-align:justify;"><b>Umumta'lim maktablarida: Ta’lim rus tilida</b>
-                                    </div>
-                                    <div style="text-align:justify;">5 - sonli MTM - Musiqa madaniyati 0,5 stavka;<br>51
-                                        - sonli MTM – Geografiya 05, Informatika 05, Matematika 05 stavka;<br>58 - sonli
-                                        MTM - Matematika 1, Fizika 1, Biologiya1 stavka;<br>88 - sonli MTM -
-                                        Boshlang‘ich ta’lim 1 stavka; <br>98 - sonli MTM - Geografiya 1 stavka;<br>240 -
-                                        sonli MTM - Rus tili va adabiyoti 1 stavka, Ximiya 1 stavka;</div>
-                                    <div style="text-align:justify;"><br></div>
-                                    <div style="text-align:justify;"><b>Мaktabgacha ta’lim tashkilotlaida:</b></div>
-                                    <div style="text-align:justify;">136 - sonli MMT - Musiqa rahbari 1 ta, tarbiyachi 1
-                                        ta, hamshira 1 ta, tarbiyachi yordamchisi 2 ta, hovli supuruvchi 1 ta;</div>
-                                    <div style="text-align:justify;">154 - sonli MMT - Tarbiyachi 1 ta;</div>
-                                    <div style="text-align:justify;">160 - sonli MMT - Xo‘jalik mudiri 1 ta;</div>
-                                    <div style="text-align:justify;">175 - sonli MMT - J/t yo‘riqchisi 1 ta, hovli
-                                        supuruvchi (0,5) 1 ta;</div>
-                                    <div style="text-align:justify;">221 - sonli MMT - Metodist 1 ta, musiqa rahbari
-                                        (0,5) 1 ta;</div>
-                                    <div style="text-align:justify;">253 - sonli MMT - Hovli supuruvchi 2 ta;</div>
-                                    <div style="text-align:justify;">301 - sonli MMT - Tarbiyachi 2 ta;</div>
-                                    <div style="text-align:justify;">499 - sonli MMT - J/t yo‘riqchisi 1 ta, til
-                                        o‘qituvchisi 1 ta, farrosh (0,5) 1 ta;</div>
-                                    <div style="text-align:justify;">511 - sonli MMT - Tarbiyachi 2 ta, tarbiyachi
-                                        yordamchisi 1 ta, kir yuvuvchi 1 ta;</div>
-                                    <div style="text-align:justify;">366 - sonli MMT - Musiqa rahbari (0,5) 1 ta;</div>
-                                    <br><br><br>
+                                        {{ bosh_ish_orinlar.content|safe }}
                                     </p>
                                 </div>
                             </div>

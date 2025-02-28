@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+    <div class="for-acquaintance">
+                    <style>
+    .default-content img {
+        max-width: 100%;
+    }
+	iframe { 
+        display: block !important;
+        height: 500px !important;
+    
+    }
+</style>
+<h2 class="entry-title">
+    <h3 rel="bookmark">{{ principal.field }}</h3>
+</h2>
+<div class="entry-meta">
+    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ principal.created_at|date:"j-m-Y, H:i" }}</span></span>
+    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Ta’lim muassasalari</span>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="default-content">
+            <p>
+                <div style="text-align:center;"><img src="{{ principal.image.url }}" class="fr-fic fr-dib" style="width:278px;" alt=""></div><div style="text-align:center;"><br></div><div style="text-align:center;"><b>{{ principal.name }}</b></div><div style="text-align:center;"><b>TELEFON: </b>{{ principal.phone_number }}</div><div style="text-align:center;"><b>VEB-SAYT:</b> {{ principal.veb_sayt }}</div><div style="text-align:center;"><b>E-MAIL:</b> {{ principal.email }} </div><div style="text-align:center;"><b>QABUL KUNLARI: </b>{{ principal.reception_days }}</div><br><br>{{ principal.date_of_birth }}<br>{{ principal.education|linebreaks }}
+            </p>
+        </div>
+    </div>
+</div>
+
+
+                    
+    </div>
+{% endblock %}

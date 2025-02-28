@@ -128,6 +128,17 @@ def talim_muassasalari(request):
     }
     return render(request , 'xalq-talimi-bolimi/talim-muassasalari.html', dic)
 
+def talim_muassa(request, slug):
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    principal = get_object_or_404(Principals, slug=slug)
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'principal': principal,
+    }
+    return render(request , 'xalq-talimi-bolimi/talim_muassa.html', dic)
+
 def maktabgacha_talim_tashkiloti(request):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
@@ -140,13 +151,39 @@ def maktabgacha_talim_tashkiloti(request):
     return render(request , 'xalq-talimi-bolimi/mtm.html', dic)
 
 def bolim_ish_kun_tartibi(request):
-        return render(request , 'xalq-talimi-bolimi/bolim-ish-kun-tartibi.html')
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    kun_tartib_added = Kun_Tartibi.objects.first()
+    kun_tartibi = Kun_Tartibi.objects.all()
+    dic ={
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'kun_tartib_added': kun_tartib_added,
+        'kun_tartibi': kun_tartibi,
+    }
+    return render(request , 'xalq-talimi-bolimi/bolim-ish-kun-tartibi.html', dic)
 
 def bosh_ish_orinlari(request):
-        return render(request , 'xalq-talimi-bolimi/bosh-ish-orinlari.html')
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    bosh_ish_orinlar = Bosh_orinlar.objects.first()
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'bosh_ish_orinlar': bosh_ish_orinlar,
+    }
+    return render(request , 'xalq-talimi-bolimi/bosh-ish-orinlari.html', dic)
 
 def bolim_manzili(request):
-        return render(request , 'xalq-talimi-bolimi/bolim-manzili.html')
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    manzil = Bolim_manzili.objects.first()
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+       'manzil': manzil,
+    }
+    return render(request , 'xalq-talimi-bolimi/bolim-manzili.html', dic)
 
 # O'QITUVCHILARGA
 

@@ -1,19 +1,8 @@
-<<<<<<< HEAD
-
 {% extends "base.html" %}
 {% load static %}
 
 {% block content %}
-
-
-
                     <div class="for-acquaintance">
-=======
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-    <div class="for-acquaintance">
->>>>>>> 55f51ddd2f918625e24022bd95552cb2bb66e3ff
 
                         <style>
                             .default-content img {
@@ -30,9 +19,8 @@
                             <h3 rel="bookmark">Bo`lim manzili</h3>
                         </h2>
                         <div class="entry-meta">
-                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">25-08-2022,
-                                    13:06</span></span>
-                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh
+                            <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ manzil.created_at|date:"j-m-Y, H:i" }}</span></span>
+                            <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh
                                     sahifa</a> / Bo`lim manzili</span>
                         </div>
 
@@ -40,28 +28,10 @@
                             <div class="col-lg-12">
                                 <div class="default-content">
                                     <p>
-                                        <b>Manzil: </b>100099, Toshkent shahar, Yunusobod tumani, K.Zaripov ko‘chasi 7
-                                        uy <br><b>Tel:</b> (0 371) 212-01-99<br><b>Faks:</b> (0
-                                        371)212-01-99<br><b>Elektron pochta:</b> yunusobodtxtb212@gmail.com<br><b>Dam
-                                            olish kunlari: </b>shanba va yakshanba <br><b>Mo‘ljal: </b>Venetsiya
-                                        restorani<br><b>Bekat: </b>9-67-71<b> </b>yo‘nalishdagi avtobuslar
-                                        bekati<br><br><br><br><br><br>
+                                        {{ manzil.content|safe }}
                                     </p>
                                 </div>
                             </div>
                         </div>
-
-
-
-<<<<<<< HEAD
                     </div>
-
-
-
-
     {% endblock %}
-
-=======
-    </div>
-{% endblock %}
->>>>>>> 55f51ddd2f918625e24022bd95552cb2bb66e3ff
