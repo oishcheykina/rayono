@@ -191,10 +191,54 @@ def oqituvchilarga(request):
     return render(request,'oqituvchilarga/oqituvchilarga.html' )
 
 def dars_ishlanmalar(request):
-    return render(request,'oqituvchilarga/dars-ishlanmalar.html' )
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dars_ishlanmalar = Dars_Ishlanmalar.objects.all()
+    paginator = Paginator(dars_ishlanmalar, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'page_obj': page_obj,
+    }
+    return render(request,'oqituvchilarga/dars-ishlanmalar.html', dic )
+
+def dars_ishlanma(request, slug):
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dars_ishlanma = get_object_or_404(Dars_Ishlanmalar, slug=slug)
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'dars_ishlanma': dars_ishlanma,
+    }
+    return render(request,'oqituvchilarga/dars-ishlanma.html', dic )
 
 def fanlar_boyicha_testlar(request):
-     return render(request,'oqituvchilarga/fanlar-boyicha-testlar.html' )
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    fan_testlar = Fan_Testlar.objects.all()
+    paginator = Paginator(fan_testlar, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'page_obj': page_obj,
+    }
+    return render(request,'oqituvchilarga/fanlar-boyicha-testlar.html', dic )
+
+def fan_test(request, slug):
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    fan_test = get_object_or_404(Fan_Testlar, slug=slug)
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'fan_test': fan_test,
+    }
+    return render(request,'oqituvchilarga/fan-test.html', dic )
 
 def davlat_dasturlari(request):
      return render(request,'oqituvchilarga/davlat-dasturlari.html' )
@@ -203,11 +247,42 @@ def kasaba_uyishmasi(request):
      return render(request,'oqituvchilarga/kasaba-uyishmasi.html' )
 
 def huquq_va_majburiyatlar(request):
-     return render(request,'oqituvchilarga/huquq-va-majburiyatlar.html' )
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    qonun = Talim_Qonun.objects.first()
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'qonun': qonun,
+    }
+    return render(request,'oqituvchilarga/huquq-va-majburiyatlar.html', dic)
 
 def oqituvchilar_malakasini_oshirish(request):
-     return render(request,'oqituvchilarga/oqituvchilar-malakasini-oshirish.html' )
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    malaka_oshirish = Malaka_Oshirish.objects.all()
+    last_malaka = Malaka_Oshirish.objects.order_by('-created_at').first()
+    paginator = Paginator(malaka_oshirish, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'page_obj': page_obj,
+        'last_malaka': last_malaka,     # Общее количество малакасов
+    }
+    return render(request,'oqituvchilarga/oqituvchilar-malakasini-oshirish.html', dic)
 
+def malaka(request, slug):
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    malaka = get_object_or_404(Malaka_Oshirish, slug=slug)
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'malaka': malaka,
+    }
+    return render(request,'oqituvchilarga/malaka-oshirish.html', dic)
 
 #MATBUOT-XIMATI
 

@@ -6,82 +6,62 @@
 
 {% block content %}
 
-                <div class="for-acquaintance">
-                    
-                    
-
-<div class="post-item d-flex jusify-content-between">
+    <div class="for-acquaintance">
+        {% for post in page_obj %}         
+        <div class="post-item d-flex jusify-content-between">
     <div class="post-item__preview">
         <div class="post-item__img">
-            <img src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661860112_134a8134f0c81a54b55dbbc2ca3ae75e.jpg">
+            <img src="{{ post.image.url }}">
         </div>
         <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">30.08.2022 / 04:48.</div>
+            <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
             <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
         </div>
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/o039qituvchilarga/fanlar-bo039yicha-testlar/177-boshlangich-va-maxsus-talim-malaka-oshirish-kursi-uchun-testlar.html">Boshlang‘ich va maxsus ta’lim malaka oshirish kursi uchun testlar</a>
+    <div><a class="post-item__title" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         <p>...</p>
     </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661859437_kartinka_uchitel_s_ukazkoj.png">
         </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">30.08.2022 / 04:36.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
+        {% endfor %}
+
+        <div class="text-center">
+            {% if page_obj.has_other_pages %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
+                                <li><span>Oldingi</span></li>
+                            {% endif %}
+                <li><a href="?page=1">1</a>
+
+                    {% if page_obj.number > 4 %}
+                    <span class="nav_ext">...</span>
+                    {% endif %} 
+                    {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                        {% else %}
+                                        <a href="?page={{ num }}">{{ num }}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <span>...</span>
+                            {% endif %}
+                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                        {% else %}
+                            <li><span>Keyingi</span></li>
+                        {% endif %}
+            </ul>
+            {% endif %}
         </div>
+              
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/o039qituvchilarga/fanlar-bo039yicha-testlar/175-pedagogika-psixologiya-va-talim-texnologiyasi-malaka-oshirish-kursi-uchun-testlar-toplami.html">Pedagogika, psixologiya va ta’lim texnologiyasi malaka oshirish kursi uchun testlar to‘plami</a>
-        <p>...</p>
-    </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661858774_png-clipart-quiz-computer-icons-general-knowledge-question-others-blue-game.png">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">30.08.2022 / 04:25.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/o039qituvchilarga/fanlar-bo039yicha-testlar/174-aniq-va-tabiiy-fanlar-malaka-oshirish-kursi-boyicha-testlar-toplami.html">Aniq  va tabiiy fanlar malaka oshirish kursi bo‘yicha testlar to‘plami</a>
-        <p>...</p>
-    </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661857880_9f0aa39506d10de0f22cbd49483d276d.jpg">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">30.08.2022 / 04:10.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/o039qituvchilarga/fanlar-bo039yicha-testlar/173-tillarni-oqitish-malaka-oshirish-kursi-boyicha-testlar-toplami.html">Tillarni o‘qitish malaka oshirish kursi bo‘yicha testlar to‘plami</a>
-        <p>...</p>
-    </div>
-</div>
-
-
-
-                    
-                </div>
-
-
-
 
 {% endblock %}

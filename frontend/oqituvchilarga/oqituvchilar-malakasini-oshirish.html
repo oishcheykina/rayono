@@ -7,78 +7,63 @@
 
 {% block content %}
 
+    <div class="for-acquaintance">
 
-
-
-                    <div class="for-acquaintance">
-
-
-
+                        {% for post in page_obj %}
                         <div class="post-item d-flex jusify-content-between">
                             <div class="post-item__preview">
                                 <div class="post-item__img">
-                                    <img src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661835319_tarb2.jpeg">
+                                    <img src="{{ post.image.url }}">
                                 </div>
                                 <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">30.08.2022 / 09:40.</div>
+                                    <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
                                     <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
                                 </div>
                             </div>
                             <div><a class="post-item__title"
-                                    href="https://yummtb.uz/o039qituvchilarga/oqituvchilar-malakasini-oshirish/167-kasbiy-va-pedagogik-qayta-tayyorlash.html">Kasbiy
-                                    va pedagogik qayta tayyorlash</a>
+                                    href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                                 <p>...</p>
                             </div>
                         </div>
+                        {% endfor %}
 
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img
-                                        src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661835022_korean_zoom_online_classes_instagram_post_-_sdelano_s_pomoschju_postermywall_3_3_nvqaz2f.jpeg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">25.08.2022 / 09:50.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title"
-                                    href="https://yummtb.uz/o039qituvchilarga/oqituvchilar-malakasini-oshirish/168-chet-tili-koreys-tili-oqituvchisi-qayta-tayyorlash-kurslariga-qabul-elon-qilinadi.html">Chet
-                                    tili (Koreys tili) o‘qituvchisi qayta tayyorlash kurslariga qabul EʼLON
-                                    qilinadi!!!</a>
-                                <p>...</p>
-                            </div>
+                        <div class="text-center">
+                            {% if page_obj.has_other_pages %}
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                                            {% else %}
+                                                <li><span>Oldingi</span></li>
+                                            {% endif %}
+                                <li><a href="?page=1">1</a>
+                
+                                    {% if page_obj.number > 4 %}
+                                    <span class="nav_ext">...</span>
+                                    {% endif %} 
+                                    {% for num in page_obj.paginator.page_range %}
+                                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                                        {% if num == page_obj.number %}
+                                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                                        {% else %}
+                                                        <a href="?page={{ num }}">{{ num }}</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            <!-- Многоточие перед последней страницей, если нужно -->
+                                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                                <span>...</span>
+                                            {% endif %}
+                                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                                            {% if page_obj.has_next %}
+                                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                                        {% else %}
+                                            <li><span>Keyingi</span></li>
+                                        {% endif %}
+                            </ul>
+                            {% endif %}
                         </div>
-
-
-
-                        <div class="post-item d-flex jusify-content-between">
-                            <div class="post-item__preview">
-                                <div class="post-item__img">
-                                    <img
-                                        src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661837255_channels4_profile.jpg">
-                                </div>
-                                <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">22.08.2022 / 10:04.</div>
-                                    <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-                                </div>
-                            </div>
-                            <div><a class="post-item__title"
-                                    href="https://yummtb.uz/o039qituvchilarga/oqituvchilar-malakasini-oshirish/169-xalq-talimi-tizimida-pedagog-kadrlarni-qayta-tayyorlash-ishlarini-yanada-takomillashtirish-togrisidagi-buyrugi.html">Xalq
-                                    taʼlimi tizimida pedagog kadrlarni qayta tayyorlash ishlarini yanada
-                                    takomillashtirish to‘g‘risidagi buyrug`i</a>
-                                <p>...</p>
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-
-
-
+    </div>
 
 {% endblock %}

@@ -3,28 +3,65 @@
 
 {% block content %}
 
-                    <div class="for-acquaintance">
-
-                        <div class="post-item d-flex jusify-content-between">
+    <div class="for-acquaintance">
+        {% for post in page_obj %}
+        <div class="post-item d-flex jusify-content-between">
                             <div class="post-item__preview">
                                 <div class="post-item__img">
                                     <img
-                                        src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661840337_depositphotos_192671974-stock-photo-children-in-chemical-lesson.jpg">
+                                        src="{{ post.image.url }}">
                                 </div>
                                 <div class="post-item__stats d-flex justify-content-between">
-                                    <div class="post-item__date">30.08.2022 / 11:13.</div>
+                                    <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
                                     <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
                                 </div>
                             </div>
                             <div><a class="post-item__title"
-                                    href="https://yummtb.uz/o039qituvchilarga/dars-ishlanmalar/170-fizika-fanidan-yillik-dars-ishlanmalar.html">Fizika
-                                    fanidan yillik dars ishlanmalar</a>
+                                    href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                                 <p>...</p>
                             </div>
-                        </div>
+        </div>
+        {% endfor %}
 
+        <div class="text-center">
+            {% if page_obj.has_other_pages %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
+                                <li><span>Oldingi</span></li>
+                            {% endif %}
+                <li><a href="?page=1">1</a>
 
-                    </div>
+                    {% if page_obj.number > 4 %}
+                    <span class="nav_ext">...</span>
+                    {% endif %} 
+                    {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                        {% else %}
+                                        <a href="?page={{ num }}">{{ num }}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <span>...</span>
+                            {% endif %}
+                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                        {% else %}
+                            <li><span>Keyingi</span></li>
+                        {% endif %}
+            </ul>
+            {% endif %}
+        </div>
 
-                    {% endblock %}
+    </div>
+
+{% endblock %}
 

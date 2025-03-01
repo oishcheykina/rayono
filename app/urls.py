@@ -36,12 +36,15 @@ urlpatterns = [
     path('oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish', yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish, name='yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish'),
 
     path('oqituvchilarga/fanlar-boyicha-testlar/', fanlar_boyicha_testlar, name='fanlar-boyicha-testlar'),
+    path('oqituvchilarga/fanlar-boyicha-testlar/<slug:slug>', fan_test, name='fan-test'),
     path('oqituvchilarga/davlat-dasturlari/', davlat_dasturlari, name='davlat-dasturlari'),
     path('oqituvchilarga/kasaba-uyishmasi/', kasaba_uyishmasi, name='kasaba-uyishmasi'),
     path('oqituvchilarga/oqituvchilarga/', oqituvchilarga, name='oqituvchilarga'),
     path('oqituvchilarga/dars-ishlanmalar/', dars_ishlanmalar, name='dars-ishlanmalar'),
+    path('oqituvchilarga/dars-ishlanmalar/<slug:slug>', dars_ishlanma, name='dars-ishlanma'),
     path('oqituvchilarga/huquq-va-majburiyatlar/', huquq_va_majburiyatlar ),
-    path('oqituvchilarga/oqituvchilar-malakasini-oshirish/', oqituvchilar_malakasini_oshirish ),
+    path('oqituvchilarga/oqituvchilar-malakasini-oshirish/', oqituvchilar_malakasini_oshirish, name='oqituvchilar-malakasini-oshirish' ),
+    path('oqituvchilarga/oqituvchilar-malakasini-oshirish/<slug:slug>', malaka, name='malaka' ),
 
     path('ota-onalarga/ota-onalarga/', ota_onalarga),
     path('ota-onalarga/bolani-bogchaga-joylashtirish-uchun-ariza-berish/', bolani_bogchaga_joylashtirish_uchun_ariza_berish),

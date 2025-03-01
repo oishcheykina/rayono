@@ -203,6 +203,7 @@ class Bolim_manzili(models.Model):
         
 #oqituvchilarga
 class Malaka_Oshirish(models.Model):
+    slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200)
     content = RichTextUploadingField()
     image = models.ImageField(upload_to='malaka_oshirish/', null=True, blank=True)
@@ -211,15 +212,22 @@ class Malaka_Oshirish(models.Model):
     def __str__(self):
         return self.title
     
+    def get_absolute_url(self):
+        return reverse("malaka", kwargs={"slug": self.slug})
+    
     class Meta:
         verbose_name = 'Malaka oshirish'
         verbose_name_plural = 'Malaka oshirish'
         
 class Dars_Ishlanmalar(models.Model):
+    slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200)
     content = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='dars_ishlanmalari/', null=True, blank=True)
+    
+    def get_absolute_url(self):
+        return reverse("dars-ishlanma", kwargs={"slug": self.slug})
     
     def __str__(self):
         return self.title
@@ -229,10 +237,14 @@ class Dars_Ishlanmalar(models.Model):
         verbose_name_plural = 'Dars ishlanmalar'
         
 class Fan_Testlar(models.Model):
+    slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200)
     content = RichTextUploadingField()
     image = models.ImageField(upload_to='oqituvchilarga/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now=True)
+    
+    def get_absolute_url(self):
+        return reverse("fan-test", kwargs={"slug": self.slug})
     
     def __str__(self):
         return self.title
@@ -242,10 +254,14 @@ class Fan_Testlar(models.Model):
         verbose_name_plural = 'Fan testlar'
         
 class Davlat_Dasturlari(models.Model):
+    slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to='davlat_dasturlari/', null=True, blank=True)
     title = models.CharField(max_length=200)
     content = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    def get_absolute_url(self):
+        return reverse("more", kwargs={"slug": self.slug})
     
     def __str__(self):
         return self.title
