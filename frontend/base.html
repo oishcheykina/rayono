@@ -216,7 +216,7 @@
     </div>
     </div>
     
-    
+
     
     
     
@@ -255,126 +255,50 @@
     {% block content %}
     
     {% endblock %}
+    
     <div class="container mt-4">
-        <h3 class="title-1">Yangiliklar</h3>
+        <h3 class="text-center mb-4">Video galereya</h3>
         <div class="row">
-            <!-- Card 1 -->
 
+            {% for video in videos %}
             <div class="col-md-3">
                 <div class="card">
-                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 1">
+                    <img src="{{ video.image.url }}" class="card-img-top" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">Yangilik 1</h5>
-                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                        <a href="#" class="btn btn-primary">Batafsil</a>
+                        <h5 class="card-title">{{ video.title }}</h5>
+                        <a href="{{ video.video }}" class="btn btn-danger" target="_blank">Videoni ko‘rish</a>
                     </div>
                 </div>
             </div>
-            
-            <!-- Card 2 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Yangilik 2</h5>
-                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                        <a href="#" class="btn btn-primary">Batafsil</a>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Card 3 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Yangilik 3</h5>
-                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                        <a href="#" class="btn btn-primary">Batafsil</a>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Card 4 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Yangilik 4</h5>
-                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                        <a href="#" class="btn btn-primary">Batafsil</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="row mt-4">
-            <!-- Card 5 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 5">
-                    <div class="card-body">
-                        <h5 class="card-title">Yangilik 5</h5>
-                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                        <a href="#" class="btn btn-primary">Batafsil</a>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Card 6 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 6">
-                    <div class="card-body">
-                        <h5 class="card-title">Yangilik 6</h5>
-                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                        <a href="#" class="btn btn-primary">Batafsil</a>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Card 7 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://avatars.mds.yandex.net/i?id=d509c909b7ed8ad047db3aa2c9c4a98ae68acc75-10289922-images-thumbs&n=13" class="card-img-top" alt="Yangilik 7">
-                    <div class="card-body">
-                        <h5 class="card-title">Yangilik 7</h5>
-                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                        <a href="#" class="btn btn-primary">Batafsil</a>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Card 8 -->
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="https://ogoh.uz/wp-content/uploads/2023/07/photo_2023-07-24_21-41-32.jpg" class="card-img-top" alt="Yangilik 8">
-                    <div class="card-body">
-                        <h5 class="card-title">Yangilik 8</h5>
-                        <p class="card-text">Bu yerda qisqacha tavsif bo‘ladi.</p>
-                        <a href="#" class="btn btn-primary">Batafsil</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>          
+
+
 
 
     <div class="container mt-4">
         <h3 class="text-center mb-4">📸 Foto Galereya</h3>
         <div class="row">
-      
+      {% for photo in photos %}
             <!-- Image 1 -->
             <div class="col-md-3">
                 <div class="card">
-                    <img src="{{ photo.image.url }}" alt="" onclick="openFullscreen(this)">
+                    {% if photo.image %}
+                <img src="{{ photo.image.url }}" alt="" onclick="openFullscreen(this)">
+                        {% else %}
+                            <p>Rasm yo‘q</p>
+                        {% endif %}
                 </div>
             </div>
 
-           
+           {% endfor %}
         </div>
     </div>
 
+
+
+    
     <!-- Fullscreen Modal -->
     <div class="fullscreen-modal" id="fullscreenModal" onclick="closeFullscreen()">
         <img id="fullscreenImage" src="" alt="Kattalashtirilgan rasm">

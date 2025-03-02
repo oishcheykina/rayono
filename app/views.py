@@ -11,11 +11,15 @@ def home(request):
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'page_obj': page_obj,
         'yil_dasturi': yil_dasturi,
         'last_post': last_post,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request, 'index.html', dic)
 
