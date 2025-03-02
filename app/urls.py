@@ -38,6 +38,7 @@ urlpatterns = [
     path('oqituvchilarga/fanlar-boyicha-testlar/', fanlar_boyicha_testlar, name='fanlar-boyicha-testlar'),
     path('oqituvchilarga/fanlar-boyicha-testlar/<slug:slug>', fan_test, name='fan-test'),
     path('oqituvchilarga/davlat-dasturlari/', davlat_dasturlari, name='davlat-dasturlari'),
+    path('oqituvchilarga/davlat-dastur/<slug:slug>', davlat_dastur, name='davlat_dastur'),
     path('oqituvchilarga/kasaba-uyishmasi/', kasaba_uyishmasi, name='kasaba-uyishmasi'),
     path('oqituvchilarga/oqituvchilarga/', oqituvchilarga, name='oqituvchilarga'),
     path('oqituvchilarga/dars-ishlanmalar/', dars_ishlanmalar, name='dars-ishlanmalar'),

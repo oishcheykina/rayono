@@ -323,6 +323,10 @@ def fan_test(request, slug):
     return render(request,'oqituvchilarga/fan-test.html', dic )
 
 def davlat_dasturlari(request):
+    davlat_dasturlari = Davlat_Dasturlari.objects.all().order_by('-created_at')
+    paginator = Paginator(davlat_dasturlari, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
     videos = Video_Galereya.objects.all()
     photos = Photo.objects.all()
     boss = Boss.objects.first()
@@ -332,8 +336,24 @@ def davlat_dasturlari(request):
         'boss': boss,
         'photos': photos ,
         'videos': videos ,
+        'page_obj': page_obj,
     }      
     return render(request,'oqituvchilarga/davlat-dasturlari.html', dic )
+
+def davlat_dastur(request, slug):
+    davlat_dastur = get_object_or_404(Davlat_Dasturlari, slug=slug)
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+        'davlat_dastur': davlat_dastur,
+    }      
+    return render(request,'oqituvchilarga/davlat-dastur.html', dic )
 
 def kasaba_uyishmasi(request):
     videos = Video_Galereya.objects.all()

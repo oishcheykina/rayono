@@ -1,93 +1,65 @@
-
 {% extends "base.html" %}
 {% load static %}
 
 {% block content %}
 
-
-
-                <div class="for-acquaintance">
-                    
-                    
-
-<div class="post-item d-flex jusify-content-between">
+    <div class="for-acquaintance">
+        {% for post in page_obj %}
+        <div class="post-item d-flex jusify-content-between">
     <div class="post-item__preview">
         <div class="post-item__img">
-            <img src="/uploads/posts/2024-02/1709014062_f99ebbc61fb38096b49c63f00d1a1c46.jpg">
+            <img src="{{ post.image.url }}">
         </div>
         <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">27.02.2024 / 11:08.</div>
+            <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
             <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
         </div>
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/o039qituvchilarga/davlat-dasturlari/874-2024-yil-yoshlar-va-biznesni-qollab-quvvatlash-yili-davlat-dasturi.html">2024 yil - Yoshlar va biznesni qo‘llab-quvvatlash yili davlat dasturi</a>
+    <div><a class="post-item__title" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         <p>...</p>
     </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="https://yunusobodxtb.uz/uploads/posts/2023-03/1678432626_1673592855_2023.jpg">
         </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">13.01.2023 / 11:53.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
+        {% endfor %}
+
+        <div class="text-center">
+            {% if page_obj.has_other_pages %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
+                                <li><span>Oldingi</span></li>
+                            {% endif %}
+                <li><a href="?page=1">1</a>
+
+                    {% if page_obj.number > 4 %}
+                    <span class="nav_ext">...</span>
+                    {% endif %} 
+                    {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                        {% else %}
+                                        <a href="?page={{ num }}">{{ num }}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <span>...</span>
+                            {% endif %}
+                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                        {% else %}
+                            <li><span>Keyingi</span></li>
+                        {% endif %}
+            </ul>
+            {% endif %}
         </div>
+           
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/o039qituvchilarga/davlat-dasturlari/447-2023-yil-insonga-etibor-va-sifatli-talim-yili.html">2023 yil - Insonga e’tibor va sifatli ta’lim yili davlat dasturi</a>
-        <p>...</p>
-    </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="https://yunusobodxtb.uz/uploads/posts/2023-01/1673592670_2022.jpg">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">25.05.2022 / 05:09.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/o039qituvchilarga/davlat-dasturlari/134-2022-yil-inson-qadrini-uluglash-va-faol-mahalla-yili-davlat-dasturi.html">2022 yil - Inson qadrini ulug‘lash va faol mahalla yili davlat dasturi</a>
-        <p>...</p>
-    </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="https://yunusobodxtb.uz/uploads/posts/2023-01/1673592732_2021.jpg">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">22.08.2021 / 05:20.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/o039qituvchilarga/davlat-dasturlari/135-2021-yil-yoshlarni-qollab-quvvatlash-va-aholi-salomatligini-mustahkamlash-yili-davlat-dasturi.html">2021 yil - Yoshlarni qo‘llab-quvvatlash va aholi salomatligini mustahkamlash yili davlat dasturi</a>
-        <p>...</p>
-    </div>
-</div>
-
-<div class="text-center">
-   <ul class="pagination">
-      <li><span>Oldingi</span></li>
-      <li><span>1</span> <a href="https://yummtb.uz/o039qituvchilarga/davlat-dasturlari/page/2/">2</a> </li>
-      <li><a href="https://yummtb.uz/o039qituvchilarga/davlat-dasturlari/page/2/">Keyingi</a></li>
-  </ul>
-</div>
-
-
-                    
-                </div>
-
 
 {% endblock %}
 
