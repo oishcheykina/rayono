@@ -27,6 +27,8 @@ def more(request, slug):
     boss = Boss.objects.first()
     post = get_object_or_404(Post, slug=slug)
     viewed_news = request.session.get('viewed_news', [])
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
 
     if slug not in viewed_news:
         post.views += 1
@@ -38,6 +40,8 @@ def more(request, slug):
         'boss': boss,
         'post': post,
         'yil_dasturi': yil_dasturi,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request, 'more.html', dic)
 def xalq_talimi_bolimi(request):
@@ -47,10 +51,14 @@ def xalq_talimi_bolimi(request):
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'page_obj': page_obj,
         'yil_dasturi': yil_dasturi,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/xalq-talimi-bolimi.html', dic)
 
@@ -61,10 +69,14 @@ def rahbariyat(request):
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'page_obj': page_obj,
         'yil_dasturi': yil_dasturi,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request, 'xalq-talimi-bolimi/rahbariyat.html', dic)
 
@@ -75,10 +87,14 @@ def apparat_xodimlari(request):
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'page_obj': page_obj,
         'yil_dasturi': yil_dasturi,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/apparat-xodimlari.html', dic)
 
@@ -86,11 +102,15 @@ def tarkibiy_tuzilma(request):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     tarkibiy_tuzilma = Tarkibiy_Tuzilma.objects.first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     
     dic = {
         'boss': boss,
         'tarkibiy_tuzilma': tarkibiy_tuzilma,
         'yil_dasturi': yil_dasturi,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/tarkibiy-tuzilma.html', dic)
 
@@ -99,11 +119,15 @@ def rahbariyat_qabul_kunlari(request):
     qabul_kuni = Qabul_Kunlari.objects.first()
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'qabul_kuni': qabul_kuni,
         'qabul_kunlari': qabul_kunlari,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/rahbariyat-qabul-kunlari.html', dic)
 
@@ -111,10 +135,14 @@ def bolim_nizomi(request):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     nizom = Qabul_Kunlari.objects.first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'nizom': nizom,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/bolim-nizomi.html', dic)
 
@@ -125,10 +153,14 @@ def talim_muassasalari(request):
     paginator = Paginator(direktorlar, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'page_obj': page_obj,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/talim-muassasalari.html', dic)
 
@@ -136,10 +168,14 @@ def talim_muassa(request, slug):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     principal = get_object_or_404(Principals, slug=slug)
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'principal': principal,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/talim_muassa.html', dic)
 
@@ -147,10 +183,14 @@ def maktabgacha_talim_tashkiloti(request):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     talim_tashkiloti = Talim_Tashkiloti.objects.first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'talim_tashkiloti': talim_tashkiloti,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/mtm.html', dic)
 
@@ -159,11 +199,15 @@ def bolim_ish_kun_tartibi(request):
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     kun_tartib_added = Kun_Tartibi.objects.first()
     kun_tartibi = Kun_Tartibi.objects.all()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic ={
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'kun_tartib_added': kun_tartib_added,
         'kun_tartibi': kun_tartibi,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/bolim-ish-kun-tartibi.html', dic)
 
@@ -171,10 +215,14 @@ def bosh_ish_orinlari(request):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     bosh_ish_orinlar = Bosh_orinlar.objects.first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'bosh_ish_orinlar': bosh_ish_orinlar,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/bosh-ish-orinlari.html', dic)
 
@@ -182,17 +230,31 @@ def bolim_manzili(request):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     manzil = Bolim_manzili.objects.first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
-        'boss': boss,
-        'yil_dasturi': yil_dasturi,
-       'manzil': manzil,
+    'boss': boss,
+    'yil_dasturi': yil_dasturi,
+    'manzil': manzil,
+    'photos': photos ,
+    'videos': videos ,
     }
     return render(request , 'xalq-talimi-bolimi/bolim-manzili.html', dic)
 
 # O'QITUVCHILARGA
 
 def oqituvchilarga(request):
-    return render(request,'oqituvchilarga/oqituvchilarga.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oqituvchilarga/oqituvchilarga.html' , dic )
 
 def dars_ishlanmalar(request):
     boss = Boss.objects.first()
@@ -201,10 +263,14 @@ def dars_ishlanmalar(request):
     paginator = Paginator(dars_ishlanmalar, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'page_obj': page_obj,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request,'oqituvchilarga/dars-ishlanmalar.html', dic )
 
@@ -212,10 +278,14 @@ def dars_ishlanma(request, slug):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     dars_ishlanma = get_object_or_404(Dars_Ishlanmalar, slug=slug)
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'dars_ishlanma': dars_ishlanma,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request,'oqituvchilarga/dars-ishlanma.html', dic )
 
@@ -226,10 +296,14 @@ def fanlar_boyicha_testlar(request):
     paginator = Paginator(fan_testlar, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'page_obj': page_obj,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request,'oqituvchilarga/fanlar-boyicha-testlar.html', dic )
 
@@ -237,27 +311,55 @@ def fan_test(request, slug):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     fan_test = get_object_or_404(Fan_Testlar, slug=slug)
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'fan_test': fan_test,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request,'oqituvchilarga/fan-test.html', dic )
 
 def davlat_dasturlari(request):
-     return render(request,'oqituvchilarga/davlat-dasturlari.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oqituvchilarga/davlat-dasturlari.html', dic )
 
 def kasaba_uyishmasi(request):
-     return render(request,'oqituvchilarga/kasaba-uyishmasi.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oqituvchilarga/kasaba-uyishmasi.html' )
 
 def huquq_va_majburiyatlar(request):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     qonun = Talim_Qonun.objects.first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'qonun': qonun,
+        'photos': photos ,
+        'videos': videos ,
     }
     return render(request,'oqituvchilarga/huquq-va-majburiyatlar.html', dic)
 
@@ -269,11 +371,15 @@ def oqituvchilar_malakasini_oshirish(request):
     paginator = Paginator(malaka_oshirish, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'page_obj': page_obj,
-        'last_malaka': last_malaka,     # Общее количество малакасов
+        'last_malaka': last_malaka,   
+        'photos': photos ,
+        'videos': videos ,  # Общее количество малакасов
     }
     return render(request,'oqituvchilarga/oqituvchilar-malakasini-oshirish.html', dic)
 
@@ -281,35 +387,111 @@ def malaka(request, slug):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     malaka = get_object_or_404(Malaka_Oshirish, slug=slug)
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
     dic = {
         'boss': boss,
         'yil_dasturi': yil_dasturi,
         'malaka': malaka,
+        'photos': photos ,
+        'videos': videos , 
     }
     return render(request,'oqituvchilarga/malaka-oshirish.html', dic)
 
 #MATBUOT-XIMATI
 
 def elonlar(request):
-     return render(request,'matbuot-xizmati/elonlar.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }
+    return render(request,'matbuot-xizmati/elonlar.html' ,dic)
 
 def bolim_ish_rejasi(request):
-     return render(request,'matbuot-xizmati/bolim-ish-rejasi.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }
+    return render(request,'matbuot-xizmati/bolim-ish-rejasi.html',dic )
 
 def fotogalereya(request):
-     return render(request,'matbuot-xizmati/fotogalereya.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }
+    return render(request,'matbuot-xizmati/fotogalereya.html',dic )
 
 def maruzalar(request):
-     return render(request,'matbuot-xizmati/maruzalar.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }       
+    return render(request,'matbuot-xizmati/maruzalar.html'  , dic)
 
 def matbuot_xizmati(request):
-     return render(request,'matbuot-xizmati/matbuot-xizmati.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }       
+    return render(request,'matbuot-xizmati/matbuot-xizmati.html' , dic )
 
 def tadbirlar_rejasi(request):
-     return render(request,'matbuot-xizmati/tadbirlar-rejasi.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }       
+    return render(request,'matbuot-xizmati/tadbirlar-rejasi.html' , dic )
 
 def videogalereya(request):
-     return render(request,'matbuot-xizmati/videogalereya.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }       
+    return render(request,'matbuot-xizmati/videogalereya.html' , dic )
 
 def yangiliklar(request):
     boss = Boss.objects.first()
@@ -318,67 +500,231 @@ def yangiliklar(request):
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
     yil_dasturi = Yil_Dasturi.objects.first()
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
     dic = {
         'boss': boss,
         'page_obj': page_obj,
         'yil_dasturi': yil_dasturi,
+                'photos': photos ,
+        'videos': videos ,
     }
     return render(request,'matbuot-xizmati/yangiliklar.html', dic )
 
 #FAOLIYAT
 
 def besh_muhim_tashabbus(request):
-     return render(request,'faoliyat/besh-muhim-tashabbus.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'faoliyat/besh-muhim-tashabbus.html' , dic )
 
 def faoliyat(request):
-     return render(request,'faoliyat/faoliyat.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'faoliyat/faoliyat.html' , dic )
 
 def korrupsiyaga_qarshi_kurash(request):
-     return render(request,'faoliyat/korrupsiyaga-qarshi-kurash.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'faoliyat/korrupsiyaga-qarshi-kurash.html' , dic )
 
 def talimga_doir_terminlar(request):
-     return render(request,'faoliyat/talimga-doir-terminlar.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'faoliyat/talimga-doir-terminlar.html' , dic )
 
 #OQUVCHILARGA
 
 def oquvchilarga(request):
-     return render(request,'oquvchilarga/oquvchilarga.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oquvchilarga/oquvchilarga.html' , dic )
 
 def davlat_ramzlari(request):
-     return render(request,'oquvchilarga/davlat-ramzlari.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oquvchilarga/davlat-ramzlari.html' , dic )
 
 def imtihon_materiallari(request):
-     return render(request,'oquvchilarga/imtihon-materiallari.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oquvchilarga/imtihon-materiallari.html' , dic )
 
 def yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish(request):
-     return render(request,'oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish.html' )
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish.html' , dic )
 
 
 #OTA-ONALARGA
 
 def ota_onalarga(request):
-     return render(request , 'ota-onalarga/ota-onalarga.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'ota-onalarga/ota-onalarga.html' , dic)
 
 def bolani_bogchaga_joylashtirish_uchun_ariza_berish(request):
-     return render(request , 'ota-onalarga/bolani-bogchaga-joylashtirish-uchun-ariza-berish.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'ota-onalarga/bolani-bogchaga-joylashtirish-uchun-ariza-berish.html' , dic)
 
 def bolalarni_bogchaga_qabul_navbatini_tekshirish(request):
-     return render(request , 'ota-onalarga/bolalarni-bogchaga-qabul-navbatini-tekshirish.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'ota-onalarga/bolalarni-bogchaga-qabul-navbatini-tekshirish.html' , dic)
 
 def bogcha_tolovlari_togrisida_malumot(request):
-     return render(request , 'ota-onalarga/bogcha-tolovlari-togrisida-malumot.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'ota-onalarga/bogcha-tolovlari-togrisida-malumot.html' , dic)
 
 def bolani_maktabning_birinchi_sinfiga_joylashtirishga_ariza_yuborish(request):
-     return render(request , 'ota-onalarga/bolani-maktabning-birinchi-sinfiga-joylashtirishga-ariza-yuborish.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'ota-onalarga/bolani-maktabning-birinchi-sinfiga-joylashtirishga-ariza-yuborish.html' , dic)
 
 def maktabga_oquvchilarni_qabul_qilish(request):
-     return render(request , 'ota-onalarga/maktabga-oquvchilarni-qabul-qilish.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'ota-onalarga/maktabga-oquvchilarni-qabul-qilish.html , ', dic)
 
 def bolalarni_bir_maktabdan_boshqa_maktabga_kochirish_uchun_ariza_yuborish(request):
-     return render(request , 'ota-onalarga/bolalarni-bir-maktabdan-boshqa-maktabga-kochirish-uchun-ariza-yuborish.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'ota-onalarga/bolalarni-bir-maktabdan-boshqa-maktabga-kochirish-uchun-ariza-yuborish.html' , dic)
 
 def xorijiy_fuqarolar_uchun_bolalarini_maktabga_joylashtirish(request):
-     return render(request , 'ota-onalarga/xorijiy-fuqarolar-uchun-bolalarini-maktabga-joylashtirish.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'ota-onalarga/xorijiy-fuqarolar-uchun-bolalarini-maktabga-joylashtirish.html' , dic)
 
 
 
@@ -386,16 +732,67 @@ def xorijiy_fuqarolar_uchun_bolalarini_maktabga_joylashtirish(request):
 
 
 def normativ_hujjatlar(request):
-     return render(request , 'normativ-hujjatlar/normativ-hujjatlar.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }    
+    return render(request , 'normativ-hujjatlar/normativ-hujjatlar.html' , dic)
 
 def prezident_qaror_va_farmonlari(request):
-     return render(request , 'normativ-hujjatlar/prezident-qaror-va-farmonlari.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'normativ-hujjatlar/prezident-qaror-va-farmonlari.html' , dic)
 
 def maktabgacha_va_maktab_talim_vazirligi_hayat_qarorlari(request):
-     return render(request , 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-hayat-qarorlari.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+          
+    return render(request , 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-hayat-qarorlari.html' , dic)
 
 def maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari(request):
-     return render(request , 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari.html' , dic)
 
 def yunusobod_tumani_maktabgacha_va_maktab_talimi_bolimining_meyoriy_hujjatlari(request):
-     return render(request , 'normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari.html')
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request , 'normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari.html' , dic)
