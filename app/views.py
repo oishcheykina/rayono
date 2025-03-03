@@ -613,6 +613,45 @@ def davlat_ramzlari(request):
     }      
     return render(request,'oquvchilarga/davlat-ramzlari.html' , dic )
 
+def gerb(request):
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oquvchilarga/gerb.html' , dic )
+
+def gimn(request):
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oquvchilarga/gimn.html' , dic )
+
+def flag(request):
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos ,
+        'videos': videos ,
+    }      
+    return render(request,'oquvchilarga/flag.html' , dic )
+
 def imtihon_materiallari(request):
     videos = Video_Galereya.objects.all()
     photos = Photo.objects.all()

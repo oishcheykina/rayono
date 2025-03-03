@@ -31,6 +31,9 @@ urlpatterns = [
     path('faoliyat/talimga-doir-terminlar/', talimga_doir_terminlar, name='talimga-doir-terminlar'),
 
     path('oquvchilarga/oquvchilarga/', oquvchilarga, name='oquvchilarga'),
+    path('oquvchilarga/davlat-ramzlari/gerb', gerb, name='gerb'),
+    path('oquvchilarga/davlat-ramzlari/bayrog', flag, name='flag'),
+    path('oquvchilarga/davlat-ramzlari/madhiya', gimn, name='gimn'),
     path('oquvchilarga/davlat-ramzlari/', davlat_ramzlari, name='davlat-ramzlari'),
     path('oquvchilarga/imtihon-materiallari/', imtihon_materiallari, name='imtihon-materiallari'),
     path('oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish', yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish, name='yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish'),
