@@ -266,7 +266,7 @@
                     <img src="{{ video.image.url }}" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">{{ video.title }}</h5>
-                        <a href="{{ video.video }}" class="btn btn-danger" target="_blank">Videoni ko‘rish</a>
+                        <a href="{{ video.get_absolute_url }}" class="btn btn-danger" target="_blank">Videoni ko‘rish</a>
                     </div>
                 </div>
             </div>

@@ -366,7 +366,7 @@ def kasaba_uyishmasi(request):
         'photos': photos ,
         'videos': videos ,
     }      
-    return render(request,'oqituvchilarga/kasaba-uyishmasi.html' )
+    return render(request,'oqituvchilarga/kasaba-uyishmasi.html', dic )
 
 def huquq_va_majburiyatlar(request):
     boss = Boss.objects.first()
