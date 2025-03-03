@@ -6,13 +6,13 @@ from .models import *
 def home(request):
     boss = Boss.objects.first()
     posts = Post.objects.all().order_by('-created_at')  
-    last_post = Post.objects.order_by('-created_at').first()
+    last_post = Post.objects.exclude(category__name="Elon").order_by('-created_at').first()
     paginator = Paginator(posts, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    photos = Photo.objects.all()
-    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all().order_by('-created_at')[:4]
+    videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     dic = {
         'boss': boss,
         'page_obj': page_obj,
@@ -425,13 +425,16 @@ def elonlar(request):
     photos = Photo.objects.all()
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    photos = Photo.objects.all()
-    videos = Video_Galereya.objects.all()
+    posts = Post.objects.filter(category__name="Elon").order_by('-created_at')  
+    paginator = Paginator(posts, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
     dic = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos ,
         'videos': videos ,
+        'page_obj': page_obj,  # Объекты постов для текущей страницы
     }
     return render(request,'matbuot-xizmati/elonlar.html' ,dic)
 
@@ -453,13 +456,33 @@ def fotogalereya(request):
     photos = Photo.objects.all()
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    photo_main = Photo.objects.all().order_by('-created_at')
+    paginator = Paginator(photo_main, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
     dic = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos ,
         'videos': videos ,
+        'page_obj': page_obj,  # Объекты фотографий для текущей страницы
     }
     return render(request,'matbuot-xizmati/fotogalereya.html',dic )
+
+def foto(request, slug):
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    photo = get_object_or_404(Photo, slug=slug)
+    photos = Photo.objects.all()
+    videos = Video_Galereya.objects.all()
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'photo': photo,
+        'photos': photos ,
+        'videos': videos ,
+    }
+    return render(request,'matbuot-xizmati/foto.html', dic)
 
 def maruzalar(request):
     videos = Video_Galereya.objects.all()
@@ -505,17 +528,36 @@ def videogalereya(request):
     photos = Photo.objects.all()
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    videos_main = Video_Galereya.objects.all().order_by('-created_at')
+    paginator = Paginator(videos_main, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
     dic = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos ,
         'videos': videos ,
+        'page_obj': page_obj,  # Объекты видеографий для текущей страницы
     }       
     return render(request,'matbuot-xizmati/videogalereya.html' , dic )
 
+def video(request, slug):
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    video = get_object_or_404(Video_Galereya, slug=slug)
+    videos = Video_Galereya.objects.all()
+    photos = Photo.objects.all()
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'video': video,
+        'photos': photos ,
+        'videos': videos ,
+    }
+    return render(request,'matbuot-xizmati/video.html', dic )
 def yangiliklar(request):
     boss = Boss.objects.first()
-    posts = Post.objects.all().order_by('-created_at')  
+    posts = Post.objects.exclude(category__name="Elon").order_by('-created_at')  
     paginator = Paginator(posts, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)

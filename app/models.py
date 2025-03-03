@@ -2,11 +2,18 @@ from django.db import models
 from django.urls import reverse
 from ckeditor_uploader.fields import RichTextUploadingField
 
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     image = models.ImageField(upload_to='post_images/')
     slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200, unique=True)
     content = RichTextUploadingField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="posts", null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     views = models.PositiveIntegerField(default=0)
     
@@ -396,10 +403,14 @@ class Xorijiy_Fuqarolar(models.Model):
         
 #matbuot hizmati
 class Video_Galereya(models.Model):
+    slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200)
     video = models.URLField()
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='video_galereya_images/')
+    
+    def get_absolute_url(self):
+        return reverse("video", kwargs={"slug": self.slug})
     
     def __str__(self):
         return self.title
@@ -408,32 +419,6 @@ class Video_Galereya(models.Model):
         verbose_name = 'Video galereya'
         verbose_name_plural = 'Video galereya'
         
-class Announcement(models.Model):
-    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
-    slug = models.SlugField(unique=True)
-    title = models.CharField(max_length=200, unique=True)
-    content = RichTextUploadingField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.title
-    
-    # def get_absolute_url(self):
-    #     return reverse("announcement", kwargs={"slug": self.slug})
-    
-    class Meta:
-        verbose_name = "E'lon"
-        verbose_name_plural = "E'lonlar"
-        
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)  # Сохраняем новый пост
-
-        # Проверяем количество постов
-        if Announcement.objects.count() > 100:
-            oldest = Announcement.objects.order_by('created_at').first()  # Самый старый пост
-            if oldest:
-                oldest.delete()
-                
 class Photo(models.Model):
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     slug = models.SlugField(unique=True)
@@ -444,8 +429,8 @@ class Photo(models.Model):
     def __str__(self):
         return self.title
     
-    # def get_absolute_url(self):
-    #     return reverse("announcement", kwargs={"slug": self.slug})
+    def get_absolute_url(self):
+        return reverse("foto", kwargs={"slug": self.slug})
     
     class Meta:
         verbose_name = 'Foto'

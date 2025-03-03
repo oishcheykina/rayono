@@ -19,10 +19,12 @@ urlpatterns = [
     path('matbuot-xizmati/elonral/', elonlar, name= 'elonlar'),
     path('matbuot-xizmati/bolim-ish-rejasi/', bolim_ish_rejasi, name= 'bolim-ish-rejasi'),
     path('matbuot-xizmati/fotogalereya/', fotogalereya, name= 'fotogalereya'),
+    path('matbuot-xizmati/fotogalereya/<slug:slug>', foto, name= 'foto'),
     path('matbuot-xizmati/maruzalar/', maruzalar, name= 'maruzalar'),
     path('matbuot-xizmati/matbuot-xizmati/', matbuot_xizmati, name= 'matbuot-xizmati'),
     path('matbuot-xizmati/tadbirlar-rejasi/', tadbirlar_rejasi, name= 'tadbirlar-rejasi'),
     path('matbuot-xizmati/videogalereya/', videogalereya, name= 'videogalereya'),
+    path('matbuot-xizmati/videogalereya/<slug:slug>', video, name= 'video'),
     path('matbuot-xizmati/yangiliklar/', yangiliklar, name= 'yangiliklar'),
 
     path('faoliyat/besh-muhim-tashabbus/', besh_muhim_tashabbus, name='besh-muhim-tashabbus'),

@@ -2,85 +2,61 @@
 {% load static %}
 
 {% block content %}
-                <div class="for-acquaintance">
-                    
-                    
-
-<div class="post-item d-flex jusify-content-between">
+    <div class="for-acquaintance">
+        {% for post in page_obj %}
+        <div class="post-item d-flex jusify-content-between">
     <div class="post-item__preview">
         <div class="post-item__img">
-            <img src="/uploads/posts/2025-02/1738575318_1727071660_1727071567135.png">
+            <img src="{{ post.image.url }}">
         </div>
         <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">03.02.2025 / 02:35.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
+            <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
+            <div class="post-item__views"><i class="png-icon png-icon-eye"></i>{{ post.views }}</div>
         </div>
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/matbuot-xizmati/yangiliklar/1282-men-giyohvandlikka-qarshiman-korik-tanloviga-start-berildi.html">“Men giyohvandlikka qarshiman” ko‘rik-tanloviga start berildi</a>
-        <p>Maktabgacha va maktab taʼlimi vazirligi tomonidan Oliy taʼlim, fan va innovatsiyalar vazirligi hamda Milliy markaz bilan hamkorlikda o‘quvchilar o‘rtasida “Men giyohvandlikka qarshiman!” shiori ostidagi ko‘rik-tanloviga start berildi. ➖ Tanlovdan...</p>
+    <div><a class="post-item__title" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        <p>{{ post.content|safe|truncatechars:230 }}</p>
     </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="/uploads/posts/2025-02/1738513814_1727071660_1727071567135.png">
         </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">02.02.2025 / 09:30.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
+        {% endfor %}
+
+        <div class="text-center">
+            {% if page_obj.has_other_pages %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
+                                <li><span>Oldingi</span></li>
+                            {% endif %}
+                <li><a href="?page=1">1</a>
+
+                    {% if page_obj.number > 4 %}
+                    <span class="nav_ext">...</span>
+                    {% endif %} 
+                    {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                        {% else %}
+                                        <a href="?page={{ num }}">{{ num }}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <span>...</span>
+                            {% endif %}
+                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                        {% else %}
+                            <li><span>Keyingi</span></li>
+                        {% endif %}
+            </ul>
+            {% endif %}
         </div>
+           
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/matbuot-xizmati/e039lonlar/1280-joriy-yilda-pedagoglarni-attestatsiyadan-otkazishga-doir-zarur-adabiyotlar-royxati-tasdiqlandi.html">Joriy yilda pedagoglarni attestatsiyadan oʻtkazishga doir zarur adabiyotlar roʻyxati tasdiqlandi</a>
-        <p>Maktabgacha va maktab taʻlimi vazirligi tizimidagi Pedagogik mahorat va xalqaro baholash ilmiy-amaliy markazi tomonidan joriy yilda umumtaʻlim tashkilotlari pedagoglarini attestatsiyadan oʻtkazishga doir sinov materiallari ishlab chiqildi va...</p>
-    </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="/uploads/posts/2025-01/1737960622_photo_2025-01-27_11-47-42.jpg">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">27.01.2025 / 11:50.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/matbuot-xizmati/e039lonlar/1270-qatiy-eslatma.html">QAT’IY ESLATMA!</a>
-        <p>Hurmatli xorijiy tillardan dars beruvchi ustozlar! ✍️ Vazirlar Mahkamasining 2021-yil 19-maydagi "Xorijiy tillarni oʻrganishni ommalashtirishni samarali tashkil etish chora-tadbirlari toʻgʻrisida"gi qaroriga muvofiq: ➖ 2025/2026-oʻquv yiliga qadar...</p>
-    </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="/uploads/posts/2025-01/1736153682_1727071660_1727071567135.png">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">06.01.2025 / 01:55.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/matbuot-xizmati/e039lonlar/1246-hurmatli-pedagoglar-va-ota-onalar.html">Hurmatli pedagoglar va ota-onalar!</a>
-        <p> Joriy yilning 8-yanvar kuni soat 15:00 da Maktabgacha va maktab taʼlimi vazirligi tomonidan maktab ta’limi sohasida davlat xizmatlari ko‘rsatilishi jarayonlariga bagʻishlangan jonli muloqot tashkil etiladi. ❗️Muloqot doirasida vazirlik mas’ullari...</p>
-    </div>
-</div>
-
-<div class="text-center">
-   <ul class="pagination">
-      <li><span>Oldingi</span></li>
-      <li><span>1</span> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/2/">2</a> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/3/">3</a> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/4/">4</a> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/5/">5</a> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/6/">6</a> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/7/">7</a> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/8/">8</a> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/9/">9</a> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/10/">10</a> <span class="nav_ext">...</span> <a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/22/">22</a></li>
-      <li><a href="https://yummtb.uz/matbuot-xizmati/e039lonlar/page/2/">Keyingi</a></li>
-  </ul>
-</div>
-
-
-                    
-                </div>
 {% endblock %}

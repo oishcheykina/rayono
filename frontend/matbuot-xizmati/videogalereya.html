@@ -2,82 +2,61 @@
 {% load static %}
 
 {% block content %}
-                <div class="for-acquaintance">
-    <div class="post-item d-flex jusify-content-between">
+    <div class="for-acquaintance">
+        {% for post in page_obj %}
+        <div class="post-item d-flex jusify-content-between">
         <div class="post-item__preview">
              <div class="post-item__img">
-                <img src="/uploads/posts/2024-09/1727109644_1727109589096.png">
+                <img src="{{ post.image.url }}">
         </div>
         <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">23.09.2024 / 09:29.</div>
+            <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
             <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
         </div>
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/matbuot-xizmati/videogalereya/1133-tinchlik-shukronasi.html">Tinchlik shukronasi</a>
+    <div><a class="post-item__title" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         <p>...</p>
     </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="/uploads/posts/2024-04/1712295167_photo_2024-04-03_18-25-04-2.jpg">
         </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">05.04.2024 / 10:32.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
+        {% endfor %}
+
+        <div class="text-center">
+            {% if page_obj.has_other_pages %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
+                                <li><span>Oldingi</span></li>
+                            {% endif %}
+                <li><a href="?page=1">1</a>
+
+                    {% if page_obj.number > 4 %}
+                    <span class="nav_ext">...</span>
+                    {% endif %} 
+                    {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                        {% else %}
+                                        <a href="?page={{ num }}">{{ num }}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <span>...</span>
+                            {% endif %}
+                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                        {% else %}
+                            <li><span>Keyingi</span></li>
+                        {% endif %}
+            </ul>
+            {% endif %}
         </div>
+              
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/matbuot-xizmati/videogalereya/912-shavkat-mirziyoyev-toshkent-shahri-yunusobod-tumanidagi-5-umumtalim-maktabida-boldi.html">Shavkat Mirziyoyev Toshkent shahri Yunusobod tumanidagi 5-umumta’lim maktabida bo’ldi</a>
-        <p>...</p>
-    </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="/uploads/posts/2024-04/1712295934_photo_2024-04-03_18-25-14.jpg">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">04.04.2024 / 10:40.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/matbuot-xizmati/videogalereya/913-maktabimizda-xalqaro-talis-2024-tadqiqotining-asosiy-sorovnoma-jarayonlari.html">Yunusobod tumanidagi 5-umumta’lim maktabida Xalqaro TALIS 2024 tadqiqotining asosiy so’rovnoma jarayonlari</a>
-        <p>...</p>
-    </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="/uploads/posts/2024-03/1710573544_csrimvxp49yyqom1qi5e6da81aohxi9m_normal.jpg">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">11.03.2024 / 12:19.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/matbuot-xizmati/videogalereya/891-9-idumning-7-a-sinf-oquvchisi-mahmudova-marjonaning-chiqindilardan-holi-hayot-mavzusida-tayyorlangan-videolavha.html">9-IDUMning 7 A-sinf o&#039;quvchisi Mahmudova Marjonaning &quot;Chiqindilardan holi hayot&quot; mavzusida tayyorlangan videolavha</a>
-        <p>...</p>
-    </div>
-</div>
-
-<div class="text-center">
-   <ul class="pagination">
-      <li><span>Oldingi</span></li>
-      <li><span>1</span> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/2/">2</a> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/3/">3</a> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/4/">4</a> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/5/">5</a> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/6/">6</a> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/7/">7</a> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/8/">8</a> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/9/">9</a> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/10/">10</a> <span class="nav_ext">...</span> <a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/12/">12</a></li>
-      <li><a href="https://yummtb.uz/matbuot-xizmati/videogalereya/page/2/">Keyingi</a></li>
-  </ul>
-</div>
-
-
-                    
-                </div>
 {% endblock %}
