@@ -19,15 +19,15 @@
     <h3 rel="bookmark">O‘rta taʼlim to‘g‘risida shahodatnomaning dublikatni berish</h3>
 </h2>
 <div class="entry-meta">
-    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">25-08-2022, 15:58</span></span>
-    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh sahifa</a> / Yo‘qolgan shahodatnomani tiklash uchun ariza berish</span>
+    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ post.created_at|date:"j-m-Y, H:i" }}</span></span>
+    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Yo‘qolgan shahodatnomani tiklash uchun ariza berish</span>
 </div>
 
 <div class="row">
     <div class="col-lg-12">
         <div class="default-content">
             <p>
-                <h3 style="text-align:center;"> <img src="https://yunusobodxtb.uz/uploads/posts/2022-08/1661426111_3593.jpg" class="fr-fic fr-dib" style="width:312px;" alt=""></h3><h3 style="text-align:center;"><a href="https://my.gov.uz/oz/service/477" rel="external noopener noreferrer"><b>Yagona interaktiv davlat xizmatlari portali orqali onlayn shahodatnomaning dublikatni olish</b></a></h3><br><div style="text-align:justify;"><b>Bu qanday ishlaydi?</b></div><div style="text-align:justify;">Ariza beruvchi YIDXPda ro‘yxatdan va/yoki avtorizatsiyadan o‘tadi va so‘rov yuboradi</div><div style="text-align:justify;"><br></div><div style="text-align:justify;"><b>Tashkilot</b></div><div style="text-align:justify;">O‘zbekiston Respublikasi Xalq ta’limi vazirligi</div><br><div style="text-align:justify;"><b>Bog‘lanish</b></div><div style="text-align:justify;">+998 71-241-01-86</div><div style="text-align:justify;">+998 71-202-09-09</div><br><div style="text-align:justify;"><b>Xizmatdan foydalanuvchilar</b></div><div style="text-align:justify;">Jismoniy shaxslar</div><br><div style="text-align:justify;"><b>Xizmatni ko&#96;rsatish uchun kerak bo&#96;ladigan hujjatlar</b></div><div style="text-align:justify;">Talab etilmaydi</div><br><div style="text-align:justify;"><b>Xizmatni ko&#96;rsatish muddati</b></div><div style="text-align:justify;">5 ish kunida</div>(qo‘shimcha 5 ish kuni)<br><br><div style="text-align:justify;"><b>Xizmat narxi</b></div><div style="text-align:justify;">Bepul</div>
+                {{ post.content|safe }}
             </p>
         </div>
     </div>

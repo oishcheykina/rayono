@@ -657,11 +657,13 @@ def imtihon_materiallari(request):
     photos = Photo.objects.all()
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    post = Imtihon_Materiallari.objects.order_by('-created_at').first()
     dic = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos ,
         'videos': videos ,
+        'post': post,  # Для отображения первого поста в шаблоне
     }      
     return render(request,'oquvchilarga/imtihon-materiallari.html' , dic )
 
@@ -670,11 +672,13 @@ def yoqolgan_shahodatnomani_tiklash_uchun_ariza_berish(request):
     photos = Photo.objects.all()
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    post = Shahodatnomani_Tiklash.objects.order_by('-created_at').first()
     dic = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos ,
         'videos': videos ,
+        'post': post,  # Для отображения первого поста в шаблоне
     }      
     return render(request,'oquvchilarga/yoqolgan-shahodatnomani-tiklash-uchun-ariza-berish.html' , dic )
 

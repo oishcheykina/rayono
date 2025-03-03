@@ -287,6 +287,7 @@ class Talim_Qonun(models.Model):
 class Imtihon_Materiallari(models.Model):
     title = models.CharField(max_length=200)
     content = RichTextUploadingField(blank=True)
+    yil = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
