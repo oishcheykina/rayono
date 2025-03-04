@@ -554,4 +554,18 @@ class Tuman_Hujjatlari(models.Model):
     class Meta:
         verbose_name = "Tuman me'yoriy hujjatlar"
         verbose_name_plural = "Tuman me'yoriy hujjatlar"
-        
+    
+    
+#left sidebar uchun model
+
+class LeftSidebar(models.Model):
+    maktablar_soni = models.PositiveIntegerField()
+    oquvchilar_soni = models.PositiveIntegerField()
+    oqituvchilar_soni = models.PositiveIntegerField()
+    
+    def __str__(self):
+        return "Left Sidebar"
+    
+    class Meta:
+        verbose_name = "Maktablar Soni"
+        verbose_name_plural = "Maktablar Soni"

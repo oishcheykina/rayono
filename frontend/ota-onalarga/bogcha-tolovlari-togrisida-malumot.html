@@ -20,15 +20,15 @@
     <h3 rel="bookmark">Maktabgacha ta’lim tashkiloti uchun amalga oshirilgan to‘lovlar to‘g‘risida ma&#039;lumot olish</h3>
 </h2>
 <div class="entry-meta">
-    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">29-12-2024, 22:15</span></span>
-    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh sahifa</a> / Bog&#039;cha to‘lovlari to‘g‘risida ma&#039;lumot olish</span>
+    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ post.created_at|date:"j-m-Y, H:i" }}</span></span>
+    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Bog&#039;cha to‘lovlari to‘g‘risida ma&#039;lumot olish</span>
 </div>
 
 <div class="row">
     <div class="col-lg-12">
         <div class="default-content">
             <p>
-                <b>Bu qanday ishlaydi?</b><br>Ariza beruvchi YIDXPda ro‘yxatdan va/yoki avtorizatsiyadan o‘tadi va so‘rov yuboradi<br><br><img alt="icon" src="https://my.gov.uz/svg/passport/buil.svg" class="fr-fic fr-dii"> <b>Tashkilot</b><br><ul><li>O’zbekiston Respublikasi Maktabgacha ta'lim vazirligi</li></ul><img alt="icon" src="https://my.gov.uz/svg/passport/phone.svg" class="fr-fic fr-dii"> <b>Bog‘lanish</b><br>+998(71)203-00-50<br><br><img alt="icon" src="https://my.gov.uz/svg/passport/man.svg" class="fr-fic fr-dii"> <b>Xizmatdan foydalanuvchilar</b><br>Jismoniy shaxslar<br><br><img alt="icon" src="https://my.gov.uz/svg/passport/document.svg" class="fr-fic fr-dii"><b> Xizmatni ko'rsatish uchun kerak bo'ladigan hujjatlar</b><br>Talab etilmaydi<br><br><img alt="icon" src="https://my.gov.uz/svg/passport/clock.svg" class="fr-fic fr-dii"> <b>Xizmatni ko'rsatish muddati</b><br>Avtomatik tarzda<br><br><img alt="icon" src="https://my.gov.uz/svg/passport/card.svg" class="fr-fic fr-dii"> <b>Xizmat narxi</b><br>Bepul<br><br><a href="https://my.gov.uz/oz/service/753" rel="external noopener noreferrer"><img src="/uploads/posts/2024-12/1735492757_2024-12-29_21-37-46.png" class="fr-fic fr-dib fr-fil" alt="" style="width:226px;"></a>
+                {{ post.content|safe }}
             </p>
         </div>
     </div>

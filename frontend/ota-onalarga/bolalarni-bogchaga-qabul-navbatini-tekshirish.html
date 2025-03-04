@@ -18,15 +18,15 @@
     <h3 rel="bookmark">Bolalarni bog‘chaga qabul navbatini tekshirish</h3>
 </h2>
 <div class="entry-meta">
-    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">29-12-2024, 22:30</span></span>
-    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh sahifa</a> / Bolalarni bog‘chaga qabul navbatini tekshirish</span>
+    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ post.created_at|date:"j-m-Y, H:i" }}</span></span>
+    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Bolalarni bog‘chaga qabul navbatini tekshirish</span>
 </div>
 
 <div class="row">
     <div class="col-lg-12">
         <div class="default-content">
             <p>
-                <div style="text-align:justify;"><img alt="icon" src="https://my.gov.uz/svg/passport/comment.svg" class="fr-fic fr-dii"> <b>Bu qanday ishlaydi?</b></div><div style="text-align:justify;">Mazkur xizmat orqali Siz ariza raqmingizni kiritib, farzandingizni davlat maktabgacha ta’lim muassasasiga qabul qilish navbati holati haqida ma’lumot olasiz.</div><div style="text-align:justify;"><br></div><div style="text-align:justify;"><img alt="icon" src="https://my.gov.uz/svg/passport/buil.svg" class="fr-fic fr-dii"> <b>Tashkilot</b></div><ul><li style="text-align:justify;">O‘zbekiston Respublikasi Maktabgacha va maktab ta’limi vazirligi</li></ul><div style="text-align:justify;"><img alt="icon" src="https://my.gov.uz/svg/passport/phone.svg" class="fr-fic fr-dii"> <b>Bog‘lanish</b></div><div style="text-align:justify;">+998 (71) 202-09-09</div><div style="text-align:justify;"><br></div><div style="text-align:justify;"><img alt="icon" src="https://my.gov.uz/svg/passport/man.svg" class="fr-fic fr-dii"> <b>Xizmatdan foydalanuvchilar</b></div><div style="text-align:justify;">Jismoniy shaxslar</div><div style="text-align:justify;"><br></div><div style="text-align:justify;"><img alt="icon" src="https://my.gov.uz/svg/passport/document.svg" class="fr-fic fr-dii"> <b>Xizmatni ko'rsatish uchun kerak bo'ladigan hujjatlar</b></div><div style="text-align:justify;">Talab etilmaydi</div><div style="text-align:justify;"><br></div><div style="text-align:justify;"><img alt="icon" src="https://my.gov.uz/svg/passport/clock.svg" class="fr-fic fr-dii"> <b>Xizmatni ko'rsatish muddati</b></div><div style="text-align:justify;">Avtomatik tarzda</div><div style="text-align:justify;"><br></div><div style="text-align:justify;"><img alt="icon" src="https://my.gov.uz/svg/passport/judge.svg" class="fr-fic fr-dii"> <b>Xizmatni ko'rsatishning huquqiy asosi</b></div><div style="text-align:justify;"><a href="https://lex.uz/docs/-3603405" target="_blank" rel="noopener external noreferrer">O‘zbekiston Respublikasi Vazirlar Mahkamasining 2018 yil 28 martdagi "Bolalarni davlat maktabgacha ta’lim muassasalariga qabul qilish bo‘yicha davlat xizmatlari ko‘rsatishning ma’muriy reglamentini tasdiqlash to‘g‘risida"gi 244-son qarori</a></div><div style="text-align:justify;"><br></div><div style="text-align:justify;"><img alt="icon" src="https://my.gov.uz/svg/passport/card.svg" class="fr-fic fr-dii"> <b>Xizmat narxi</b></div><div style="text-align:justify;">Bepul</div><div style="text-align:justify;"><br></div><div style="text-align:justify;"><a href="https://my.gov.uz/oz/service/265" rel="external noopener noreferrer"><img src="/uploads/posts/2024-12/1735493356_2024-12-29_21-37-46.png" class="fr-fic fr-dib fr-fil" style="width:213px;" alt=""></a></div>
+                {{ post.content|safe }}
             </p>
         </div>
     </div>

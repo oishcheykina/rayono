@@ -18,15 +18,15 @@
     <h3 rel="bookmark">Bolalarni bir maktabdan boshqa maktabga ko‘chirish uchun ariza yuborish</h3>
 </h2>
 <div class="entry-meta">
-    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">29-12-2024, 21:34</span></span>
-    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh sahifa</a> / Bolalarni bir maktabdan boshqa maktabga ko‘chirish</span>
+    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ post.created_at|date:"j-m-Y, H:i" }}</span></span>
+    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Bolalarni bir maktabdan boshqa maktabga ko‘chirish</span>
 </div>
 
 <div class="row">
     <div class="col-lg-12">
         <div class="default-content">
             <p>
-                <div style="text-align:justify;"><b>Bu qanday ishlaydi?</b></div><br><div style="text-align:justify;">Ariza beruvchi YIDXPda ro‘yxatdan va/yoki avtorizatsiyadan o‘tadi.</div><div style="text-align:justify;">Ariza beruvchi bolaning ota-onasi o‘rnini bosuvchi shaxs bo‘lsa, ularning qonuniy vakili ekanligini tasdiqlovchi hujjat ilova qilinadi.</div><div style="text-align:justify;">Bolani tug'ilganlik to'g'risidagi guvohnomasi ma'lumotlari to'ldiriladi.</div><div style="text-align:justify;">Bola ko'chiriladigan maktab tanlanadi va so'rov yuboriladi.</div><br><div style="text-align:justify;"><b>Tashkilot</b></div><div style="text-align:justify;">O‘zbekiston Respublikasi Maktabgacha va maktab ta’limi vazirligi</div><br><div style="text-align:justify;"><b>Bog‘lanish</b></div><div style="text-align:justify;">+998 71-203-07-04</div><br><div style="text-align:justify;"><b>Xizmatdan foydalanuvchilar</b></div><div style="text-align:justify;">Jismoniy shaxslar</div><br><div style="text-align:justify;"><b>Xizmatni ko'rsatish uchun kerak bo'ladigan hujjatlar</b></div><div style="text-align:justify;">Talab etilmaydi</div><br><div style="text-align:justify;"><b>Xizmatni ko'rsatish muddati</b></div><div style="text-align:justify;">3 ish kunida</div><br><div style="text-align:justify;"><b>Xizmatni ko'rsatishning huquqiy asosi</b></div><div style="text-align:justify;"><a href="https://lex.uz/docs/-6044094" rel="external noopener noreferrer">O‘zbekiston Respublikasi Vazirlar Mahkamasining 2022 yil 1 iyundagi «Xalq ta’limi tizimida davlat xizmatlari ko‘rsatishni yanada takomillashtirish to‘g‘risida» 295-son qarori</a></div><br><div style="text-align:justify;"><b>Xizmat narxi</b></div><div style="text-align:justify;">Bepul</div><br><div style="text-align:left;"><a href="https://my.gov.uz/oz/service/660" rel="external noopener noreferrer"><img src="/uploads/posts/2024-12/1735490401_2024-12-29_21-37-46.png" class="fr-fic fr-dib fr-fil" alt=""></a></div>
+                {{ post.content|safe }}
             </p>
         </div>
     </div>
