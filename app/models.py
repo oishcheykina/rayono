@@ -525,15 +525,9 @@ class Hayat_Qarorlari(models.Model):
 
 
 class Meyoriy_Hujjatlar(models.Model):
-    slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200)
     content = RichTextUploadingField(blank=True)
     created_at = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to='normativ_hujjatlar/', blank=True, null=True)
-    
-    def get_absolute_url(self):
-        return reverse("meyoriy_hujjat", kwargs={"slug": self.slug})
-    
     
     def __str__(self):
         return self.title
@@ -546,8 +540,13 @@ class Meyoriy_Hujjatlar(models.Model):
 
 class Tuman_Hujjatlari(models.Model):
     title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='normativ_hujjatlar/', blank=True, null=True)
+    slug = models.SlugField(unique=True)
     content = RichTextUploadingField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now=True)
+    
+    def get_absolute_url(self):
+        return reverse("meyoriy-hujjat", kwargs={"slug": self.slug})
     
     def __str__(self):
         return self.title

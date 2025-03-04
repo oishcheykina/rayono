@@ -2,84 +2,60 @@
 {% load static %}
 
 {% block content %}
-                <div class="for-acquaintance">
-                    
-                    
-
-<div class="post-item d-flex jusify-content-between">
+    <div class="for-acquaintance">
+        {% for post in page_obj %}
+        <div class="post-item d-flex jusify-content-between">
     <div class="post-item__preview">
         <div class="post-item__img">
-            <img src="/uploads/posts/2024-11/1732452736_ujzcvjqvbfcmylxccbnf9ou_vigdbhbp.jpg">
+            <img src="{{ post.image.url }}">
         </div>
         <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">24.11.2024 / 05:52.</div>
+            <div class="post-item__date">{{ post.created_at|date:"j-m-Y, H:i" }}</div>
             <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
         </div>
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/faoliyat/korrupsiyaga-qarshi-kurash/1200-korrupsiyaga-oid-harakatlar-haqida-axborot-berish-uchun-aloqa-kanallari.html">Korrupsiyaga oid harakatlar haqida axborot berish uchun aloqa kanallari</a>
-        <p>O‘zbekiston Respublikasi Prezidentining virtual qabulxonasi https://pm.gov.uz/ Vazirlikning elektron pochta manzili orqali info@xtv.uz Vazirlikning "Ishonch telefoni" 71-202-09-09 Vazirlikning maxsus virtual platformasi orqali 1....</p>
+    <div><a class="post-item__title" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        <p>{{ post.content|safe|truncatechars:230 }}</p>
     </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="/uploads/posts/2024-11/1732452584_d-jsgo5zod0kumyxui1dainlgbleaidt.jpg">
         </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">08.11.2024 / 05:49.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/faoliyat/korrupsiyaga-qarshi-kurash/1199-mavjud-manfaatlar-toqnashuvi-togrisidagi-xabarnoma-ehtimoliy-manfaatlar-toqnashuvi-togrisidagi-deklaratsiyalar-va-manfaatlar-toqnashuvini-hisobga-olish-reyestrining-namunaviy-shakllari-tasdi.html">Mavjud manfaatlar to‘qnashuvi to‘g‘risidagi xabarnoma, ehtimoliy manfaatlar to‘qnashuvi to‘g‘risidagi deklaratsiyalar va manfaatlar to‘qnashuvini hisobga olish reyestrining namunaviy shakllari tasdiqlandi</a>
-        <p>Korrupsiyaga qarshi kurashish agentligi direktorining “Mavjud manfaatlar to‘qnashuvi to‘g‘risidagi xabarnoma, ehtimoliy manfaatlar to‘qnashuvi to‘g‘risidagi deklaratsiyalar va manfaatlar to‘qnashuvini hisobga olish reyestrining namunaviy shakllarini...</p>
-    </div>
-</div>
+        {% endfor %}
 
+        <div class="text-center">
+            {% if page_obj.has_other_pages %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                            {% else %}
+                                <li><span>Oldingi</span></li>
+                            {% endif %}
+                <li><a href="?page=1">1</a>
 
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="/uploads/posts/2024-11/1732452908_azrsq2bxh_1bcq-uv2cvsatitaokf9zs.jpg">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">25.07.2024 / 05:54.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/faoliyat/korrupsiyaga-qarshi-kurash/1201-maktabgacha-va-maktab-talimi-vaziri-hilola-umarovaning-korrupsiyaga-qarshi-kurashish-boyicha-murojaati.html">Maktabgacha va maktab taʼlimi vaziri Hilola Umarovaning korrupsiyaga qarshi kurashish boʻyicha murojaati</a>
-        <p>Hurmatli tizim xodimlari, Qadrli ota-onalar! Yangi Oʻzbekistonda amalga oshirilayotgan xalqchil va keng islohotlar natijasi oʻlaroq, maktabgacha va maktab taʼlimi tizimida korrupsiyaning oldini olish, uning sabab va shart-sharoitlarini bartaraf...</p>
-    </div>
-</div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="/uploads/posts/2024-11/1732453010_ztjsiean4pgzvl77oxovsnmdhqigowsg.jpg">
-        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">01.04.2024 / 05:57.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
+                    {% if page_obj.number > 4 %}
+                    <span class="nav_ext">...</span>
+                    {% endif %} 
+                    {% for num in page_obj.paginator.page_range %}
+                                {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                    {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                        {% if num == page_obj.number %}
+                                        <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                        {% else %}
+                                        <a href="?page={{ num }}">{{ num }}</a>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <!-- Многоточие перед последней страницей, если нужно -->
+                            {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                                <span>...</span>
+                            {% endif %}
+                            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                        {% else %}
+                            <li><span>Keyingi</span></li>
+                        {% endif %}
+            </ul>
+            {% endif %}
         </div>
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/faoliyat/korrupsiyaga-qarshi-kurash/1202-maktabgacha-va-maktab-talimi-vazirligining-korrupsiyaga-qarshi-kurashishdagi-faoliyati-samaradorligi-yuqori-baholandi.html">Maktabgacha va maktab taʼlimi vazirligining korrupsiyaga qarshi kurashishdagi faoliyati samaradorligi yuqori baholandi</a>
-        <p>Korrupsiyaga qarshi kurashish agentligi davlat organlari va tashkilotlari, mahalliy ijro etuvchi hokimiyat organlarining 2023 yil davomidagi faoliyatida korrupsiyaga qarshi kurashish mexanizmlar qay darajada samarali amalga oshirilganligiga doir...</p>
-    </div>
-</div>
-
-<div class="text-center">
-   <ul class="pagination">
-      <li><span>Oldingi</span></li>
-      <li><span>1</span> <a href="https://yummtb.uz/faoliyat/korrupsiyaga-qarshi-kurash/page/2/">2</a> <a href="https://yummtb.uz/faoliyat/korrupsiyaga-qarshi-kurash/page/3/">3</a> </li>      <li><a href="https://yummtb.uz/faoliyat/korrupsiyaga-qarshi-kurash/page/2/">Keyingi</a></li>
-  </ul>
-</div>
-
-
-                    
-                </div>
 {% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="for-acquaintance">
+    {% for hujjat in page_obj %}
+    <div class="post-item d-flex jusify-content-between">
+        <div class="post-item__preview">
+            <div class="post-item__img">
+                <img src="{{ hujjat.image.url }}">
+            </div>
+            <div class="post-item__stats d-flex justify-content-between">
+                <div class="post-item__date">{{ hujjat.created_at|date:"j-m-Y, H:i" }}</div>
+            </div>
+        </div>
+        <div>
+            <a class="post-item__title" href="{{ hujjat.get_absolute_url }}">{{ hujjat.title }}</a>
+            <p>{{ hujjat.content|safe }}</p> <!-- RichText uchun |safe qo‘shildi -->
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="text-center">
+        {% if page_obj.has_other_pages %}
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                            <li><a href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                        {% else %}
+                            <li><span>Oldingi</span></li>
+                        {% endif %}
+            <li><a href="?page=1">1</a>
+
+                {% if page_obj.number > 4 %}
+                <span class="nav_ext">...</span>
+                {% endif %} 
+                {% for num in page_obj.paginator.page_range %}
+                            {% if num > 1 and num < page_obj.paginator.num_pages %}
+                                {% if num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                                    {% if num == page_obj.number %}
+                                    <span class="nav_ext">{{ num }}</span>{# Текущая страница #}
+                                    {% else %}
+                                    <a href="?page={{ num }}">{{ num }}</a>
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        <!-- Многоточие перед последней страницей, если нужно -->
+                        {% if page_obj.number < page_obj.paginator.num_pages|add:-3 %}
+                            <span>...</span>
+                        {% endif %}
+                        <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                    {% else %}
+                        <li><span>Keyingi</span></li>
+                    {% endif %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+
+
+
+{% endblock %}

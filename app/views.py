@@ -626,13 +626,33 @@ def korrupsiyaga_qarshi_kurash(request):
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    korrupsiyaga_qarshi_kurash = Korrupsia_Qarshi.objects.all()
+    paginator = Paginator(korrupsiyaga_qarshi_kurash, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
     dic = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos ,
         'videos': videos ,
+        'page_obj': page_obj,  # Объекты для текущей страницы
     }      
     return render(request,'faoliyat/korrupsiyaga-qarshi-kurash.html' , dic )
+
+def korrupsia(request, slug):
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    post = get_object_or_404(Korrupsia_Qarshi, slug=slug)
+    photos = Photo.objects.all().order_by('-created_at')[:4]
+    videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'post': post,
+        'photos': photos ,
+        'videos': videos ,
+    }
+    return render(request,'faoliyat/korrupsia.html', dic )
 
 def talimga_doir_terminlar(request):
     photos = Photo.objects.all().order_by('-created_at')[:4]
@@ -922,22 +942,40 @@ def maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari(request):
 
     return render(request, 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari.html', context)
 
-def yunusobod_tumani_maktabgacha_va_maktab_talimi_bolimining_meyoriy_hujjatlari(request):
+def denov_tumani_maktabgacha_va_maktab_talimi_bolimining_meyoriy_hujjatlari(request):
     photos = Photo.objects.all().order_by('-created_at')[:4]
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    tuman_hujjatlar = Tuman_Hujjatlari.objects.all()  # Yangi modeldan malumotlarni olish
+    tuman_hujjatlar = Tuman_Hujjatlari.objects.all()
+    paginator = Paginator(tuman_hujjatlar, 4)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
     context = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos,
         'videos': videos,
-        'tuman_hujjatlar': tuman_hujjatlar,  # Template-ga uzatiladigan ma'lumot
+        'page_obj': page_obj,
     }
 
-    return render(request, 'normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari.html', context)
+    return render(request, 'normativ-hujjatlar/denov-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari.html', context)
+
+def meyoriy_hujjat(request, slug):
+    photos = Photo.objects.all().order_by('-created_at')[:4]
+    videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    post = get_object_or_404(Tuman_Hujjatlari, slug=slug)
+    dic = {
+        'yil_dasturi': yil_dasturi,
+        'boss': boss,
+        'photos': photos,
+        'videos': videos,
+        'post': post,
+    }
+    return render(request, 'normativ-hujjatlar/meyoriy-hujjat.html', dic)
 
 
 

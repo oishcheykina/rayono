@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Bosh sahifa{% endblock %}
+
+{% block content %}
+<div class="for-acquaintance">
+                    
+    <style>
+.default-content img {
+max-width: 100%;
+}
+iframe { 
+display: block !important;
+height: 500px !important;
+
+}
+</style>
+<h2 class="entry-title">
+<h3 rel="bookmark">{{ post.title }}</h3>
+</h2>
+<div class="entry-meta">
+<span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ post.created_at|date:"j-m-Y, H:i" }}</span></span>
+<span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Yangiliklar</span>
+</div>
+
+<div class="row">
+<div class="col-lg-12">
+<div class="default-content">
+<p>
+<div style="text-align:justify;">
+    {{ post.content|safe }}
+</div><br><br>
+</p>
+</div>
+</div>
+</div>
+
+
+    
+</div>
+{% endblock %}

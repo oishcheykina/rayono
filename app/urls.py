@@ -31,6 +31,7 @@ urlpatterns = [
     path('faoliyat/besh-muhim-tashabbus/<slug:slug>', besh_tashabbus, name='besh-tashabbus'),
     path('faoliyat/faoliyat/', faoliyat, name='faoliyat'),
     path('faoliyat/korrupsiyaga-qarshi-kurash/', korrupsiyaga_qarshi_kurash, name='korrupsiyaga-qarshi-kurash'),
+    path('faoliyat/korrupsiyaga-qarshi-kurash/<slug:slug>', korrupsia, name='korrupsia'),
     path('faoliyat/talimga-doir-terminlar/', talimga_doir_terminlar, name='talimga-doir-terminlar'),
 
     path('oquvchilarga/oquvchilarga/', oquvchilarga, name='oquvchilarga'),
@@ -53,20 +54,22 @@ urlpatterns = [
     path('oqituvchilarga/oqituvchilar-malakasini-oshirish/', oqituvchilar_malakasini_oshirish, name='oqituvchilar-malakasini-oshirish' ),
     path('oqituvchilarga/oqituvchilar-malakasini-oshirish/<slug:slug>', malaka, name='malaka' ),
 
-    path('ota-onalarga/ota-onalarga/', ota_onalarga),
-    path('ota-onalarga/bolani-bogchaga-joylashtirish-uchun-ariza-berish/', bolani_bogchaga_joylashtirish_uchun_ariza_berish),
-    path('ota-onalarga/bolalarni-bogchaga-qabul-navbatini-tekshirish/', bolalarni_bogchaga_qabul_navbatini_tekshirish),
-    path('ota-onalarga/bogcha-tolovlari-togrisida-malumot/', bogcha_tolovlari_togrisida_malumot),    
-    path('ota-onalarga/bolani-maktabning-birinchi-sinfiga-joylashtirishga-ariza-yuborish/', bolani_maktabning_birinchi_sinfiga_joylashtirishga_ariza_yuborish),
-    path('ota-onalarga/maktabga-oquvchilarni-qabul-qilish/', maktabga_oquvchilarni_qabul_qilish),
-    path('ota-onalarga/bolalarni-bir-maktabdan-boshqa-maktabga-kochirish-uchun-ariza-yuborish/', bolalarni_bir_maktabdan_boshqa_maktabga_kochirish_uchun_ariza_yuborish),
-    path('ota-onalarga/xorijiy-fuqarolar-uchun-bolalarini-maktabga-joylashtirish/', xorijiy_fuqarolar_uchun_bolalarini_maktabga_joylashtirish),
+    path('ota-onalarga/ota-onalarga/', ota_onalarga, name='ota_onalarga'),
+    path('ota-onalarga/bolani-bogchaga-joylashtirish-uchun-ariza-berish/', bolani_bogchaga_joylashtirish_uchun_ariza_berish, name="bolani_bogchaga_joylashtirish_uchun_ariza_berish"),
+    path('ota-onalarga/bolalarni-bogchaga-qabul-navbatini-tekshirish/', bolalarni_bogchaga_qabul_navbatini_tekshirish, name='bolalarni_bogchaga_qabul_navbatini_tekshirish'),
+    path('ota-onalarga/bogcha-tolovlari-togrisida-malumot/', bogcha_tolovlari_togrisida_malumot, name='bogcha_tolovlari_togrisida_malumot'),    
+    path('ota-onalarga/bolani-maktabning-birinchi-sinfiga-joylashtirishga-ariza-yuborish/', bolani_maktabning_birinchi_sinfiga_joylashtirishga_ariza_yuborish, name='bolani_maktabning_birinchi_sinfiga_joylashtirishga_ariza_yuborish'),
+    path('ota-onalarga/maktabga-oquvchilarni-qabul-qilish/', maktabga_oquvchilarni_qabul_qilish, name='maktabga_oquvchilarni_qabul_qilish'),
+    path('ota-onalarga/bolalarni-bir-maktabdan-boshqa-maktabga-kochirish-uchun-ariza-yuborish/', bolalarni_bir_maktabdan_boshqa_maktabga_kochirish_uchun_ariza_yuborish, name='bolalarni_bir_maktabdan_boshqa_maktabga_kochirish_uchun_ariza_yuborish'),
+    path('ota-onalarga/xorijiy-fuqarolar-uchun-bolalarini-maktabga-joylashtirish/', xorijiy_fuqarolar_uchun_bolalarini_maktabga_joylashtirish, name='xorijiy_fuqarolar_uchun_bolalarini_maktabga_joylashtirish'),
 
-    path('normativ-hujjatlar/normativ-hujjatlar/' , normativ_hujjatlar),
-    path('normativ-hujjatlar/prezident-qaror-va-farmonlari/' , prezident_qaror_va_farmonlari),
-    path('normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-hayat-qarorlari/' , maktabgacha_va_maktab_talim_vazirligi_hayat_qarorlari),
-    path('normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari/' , maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari),
-    path('normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari/' , yunusobod_tumani_maktabgacha_va_maktab_talimi_bolimining_meyoriy_hujjatlari),
+    path('normativ-hujjatlar/normativ-hujjatlar/' , normativ_hujjatlar, name='normativ_hujjatlar'),
+    path('normativ-hujjatlar/prezident-qaror-va-farmonlari/' , prezident_qaror_va_farmonlari, name='prezident_qaror_va_farmonlari'),
+    path('normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-hayat-qarorlari/' , maktabgacha_va_maktab_talim_vazirligi_hayat_qarorlari, name='maktabgacha_va_maktab_talim_vazirligi_hayat_qarorlari'),
+    path('normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari/' , maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari, name='maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari'),
+    path('normativ-hujjatlar/denov-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari/' , denov_tumani_maktabgacha_va_maktab_talimi_bolimining_meyoriy_hujjatlari, name='denov_tumani_maktabgacha_va_maktab_talimi_bolimining_meyoriy_hujjatlari'),
+    path('normativ-hujjatlar/denov-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari/<slug:slug>' , meyoriy_hujjat, name='meyoriy-hujjat'),
+    
 
 ]
 
