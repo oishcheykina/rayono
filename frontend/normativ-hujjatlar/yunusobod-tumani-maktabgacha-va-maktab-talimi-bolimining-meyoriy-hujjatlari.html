@@ -1,52 +1,24 @@
-
-
-
-
 {% extends "base.html" %}
 {% load static %}
 
 
 {% block content %}
 
-
-                <div class="for-acquaintance">
-                    
-                    
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="https://yunusobodxtb.uz/uploads/posts/2023-06/1685696678_logo_new.png">        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">21.02.2023 / 05:02.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
+<div class="for-acquaintance">
+    {% for hujjat in tuman_hujjatlar %}
+    <div class="post-item d-flex jusify-content-between">
+        <div class="post-item__preview">
+            <div class="post-item__stats d-flex justify-content-between">
+                <div class="post-item__date">{{ hujjat.created_at }}</div>
+            </div>
+        </div>
+        <div>
+            <a class="post-item__title" href="https://74-maktab.uz/">{{ hujjat.title }}</a>
+            <p>{{ hujjat.content|safe }}</p> <!-- RichText uchun |safe qo‘shildi -->
         </div>
     </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari/485-2023-yildagi-yunusobod-tumani-xalq-talimi-bolimining-meyoriy-hujjatlari.html">2023 yildagi Yunusobod tumani maktabgacha va maktab taʼlimi bo`limining me`yoriy hujjatlari</a>
-        <p>...</p>
-    </div>
+    {% endfor %}
 </div>
-
-
-
-<div class="post-item d-flex jusify-content-between">
-    <div class="post-item__preview">
-        <div class="post-item__img">
-            <img src="https://yunusobodxtb.uz/uploads/posts/2023-06/1685696902_logo_new.png">        </div>
-        <div class="post-item__stats d-flex justify-content-between">
-            <div class="post-item__date">25.08.2022 / 03:17.</div>
-            <!-- <div class="post-item__views"><i class="png-icon png-icon-eye"></i>148</div> -->
-        </div>
-    </div>
-    <div><a class="post-item__title" href="https://yummtb.uz/normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari/126-2022-yildagi-yunusobod-tumani-xalq-talimi-bolimining-meyoriy-hujjatlari.html">2022 yildagi Yunusobod tumani maktabgacha va maktab taʼlimi bo`limining me`yoriy hujjatlari</a>
-        <p>Yunusobod tuman xalq ta’limi bo‘limi mudirining 2022-yil 1 iyuldagi 122-sonli “Toshkent shahar xalq ta’limi Bosh boshqarmasining 2022-yil 28-iyundagi 202-sonli buyrug‘i ijrosini ta’minlash to‘g‘risida”gi buyrug‘i  Yunusobod tuman xalq ta’limi...</p>
-    </div>
-</div>
-
-
-
-                    
-                </div>
 
 
 

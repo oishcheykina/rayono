@@ -508,7 +508,8 @@ class Prezident_Qarorlari(models.Model):
     class Meta:
         verbose_name = 'Prezident qarorlari'
         verbose_name_plural = 'Prezident qarorlari'
-        
+    
+
 class Hayat_Qarorlari(models.Model):
     title = models.CharField(max_length=200)
     content = RichTextUploadingField(blank=True)
@@ -521,6 +522,8 @@ class Hayat_Qarorlari(models.Model):
         verbose_name = 'Hayat qarorlari'
         verbose_name_plural = 'Hayat qarorlari'
         
+
+
 class Meyoriy_Hujjatlar(models.Model):
     slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200)
@@ -539,6 +542,8 @@ class Meyoriy_Hujjatlar(models.Model):
         verbose_name = "Me'yoriy hujjatlar"
         verbose_name_plural = "Me'yoriy hujjatlar"
         
+
+
 class Tuman_Hujjatlari(models.Model):
     title = models.CharField(max_length=200)
     content = RichTextUploadingField(blank=True, null=True)
@@ -550,3 +555,4 @@ class Tuman_Hujjatlari(models.Model):
     class Meta:
         verbose_name = "Tuman me'yoriy hujjatlar"
         verbose_name_plural = "Tuman me'yoriy hujjatlar"
+        
