@@ -1,48 +1,54 @@
-
-
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block content %}
 
-
-
-
-
-                <div class="for-acquaintance">
-                    
-                    <style>
-    .default-content img {
-        max-width: 100%;
-    }
+<div class="for-acquaintance">
+    <style>
+        .default-content img {
+            max-width: 100%;
+        }
         iframe { 
-        display: block !important;
-        height: 500px !important;
-    
-    }
-</style>
-<h2 class="entry-title">
-    <h3 rel="bookmark">Maktabgacha va maktab ta&#039;lim vazirligi me’yoriy hujjatlari</h3>
-</h2>
-<div class="entry-meta">
-    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">1-06-2023, 15:13</span></span>
-    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh sahifa</a> / Maktabgacha va maktab ta&#039;lim vazirligi me’yoriy hujjatlari</span>
-</div>
+            display: block !important;
+            height: 500px !important;
+        }
+    </style>
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="default-content">
-            <p>
-                <a href="https://uzedu.uz/uz/documents/11" rel="external noopener noreferrer"><img src="https://yunusobodxtb.uz/uploads/posts/2023-06/1685697986_2023-06-02_14-23-28.png" class="fr-fic fr-dib" alt=""></a>
-            </p>
+    <h2 class="entry-title">
+        <h3 rel="bookmark">Maktabgacha va maktab ta'lim vazirligi me’yoriy hujjatlari</h3>
+    </h2>
+
+    <div class="entry-meta">
+        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">1-06-2023, 15:13</span></span>
+        <span class="meta-item blog-category"><i class="icon-folder-open"></i> 
+            <a href="/">Bosh sahifa</a> / Maktabgacha va maktab ta'lim vazirligi me’yoriy hujjatlari
+        </span>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            {% for hujjat in meyoriy_hujjatlar %}
+            <div class="post-item d-flex justify-content-between">
+                <div class="post-item__preview">
+                    {% if hujjat.image %}
+                        <img src="{{ hujjat.image.url }}" alt="{{ hujjat.title }}">
+                    {% else %}
+                        <img src="/static/images/default.jpg" alt="Hujjat rasmi mavjud emas">
+                    {% endif %}
+                    <div class="post-item__stats d-flex justify-content-between">
+                        <div class="post-item__date">{{ hujjat.created_at }}</div>
+                    </div>
+                </div>
+                <div>
+                    <a class="post-item__title" href="#">{{ hujjat.title }}</a>
+                    <p>{{ hujjat.content|safe }}</p> <!-- RichText uchun |safe qo‘shildi -->
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
 
-
-                    
-                </div>
 
 
 

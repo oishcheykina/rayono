@@ -854,53 +854,71 @@ def prezident_qaror_va_farmonlari(request):
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    dic = {
+    prezident_qarorlari = Prezident_Qarorlari.objects.all().order_by('-created_at')  # Modeldan ma’lumotlarni olish
+
+    context = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
-        'photos': photos ,
-        'videos': videos ,
-    }      
-    return render(request , 'normativ-hujjatlar/prezident-qaror-va-farmonlari.html' , dic)
+        'photos': photos,
+        'videos': videos,
+        'prezident_qarorlari': prezident_qarorlari,  # Template-ga uzatiladigan ma'lumot
+    }
+
+    return render(request, 'normativ-hujjatlar/prezident-qaror-va-farmonlari.html', context)
+
 
 def maktabgacha_va_maktab_talim_vazirligi_hayat_qarorlari(request):
+
     photos = Photo.objects.all().order_by('-created_at')[:4]
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    dic = {
+    hayat_qarorlari = Hayat_Qarorlari.objects.all().order_by('-created_at')  # Modeldan ma’lumotlarni olish
+
+    context = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
-        'photos': photos ,
-        'videos': videos ,
-    }      
-          
-    return render(request , 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-hayat-qarorlari.html' , dic)
+        'photos': photos,
+        'videos': videos,
+        'hayat_qarorlari': hayat_qarorlari,  # Template-ga uzatiladigan ma'lumot
+    }
+
+    return render(request, 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-hayat-qarorlari.html', context)
 
 def maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari(request):
     photos = Photo.objects.all().order_by('-created_at')[:4]
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    dic = {
+    meyoriy_hujjatlar = Meyoriy_Hujjatlar.objects.all().order_by('-created_at')  # Yangi model ma’lumotlarini olish
+
+    context = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
-        'photos': photos ,
-        'videos': videos ,
-    }      
-    return render(request , 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari.html' , dic)
+        'photos': photos,
+        'videos': videos,
+        'meyoriy_hujjatlar': meyoriy_hujjatlar,  # Template-ga uzatiladigan ma'lumot
+    }
+
+    return render(request, 'normativ-hujjatlar/maktabgacha-va-maktab-talim-vazirligi-meyoriy-hujjatlari.html', context)
 
 def yunusobod_tumani_maktabgacha_va_maktab_talimi_bolimining_meyoriy_hujjatlari(request):
     photos = Photo.objects.all().order_by('-created_at')[:4]
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    dic = {
+    tuman_hujjatlar = Tuman_Hujjatlari.objects.all()  # Yangi modeldan malumotlarni olish
+
+    context = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
-        'photos': photos ,
-        'videos': videos ,
-    }      
-    return render(request , 'normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari.html' , dic)
+        'photos': photos,
+        'videos': videos,
+        'tuman_hujjatlar': tuman_hujjatlar,  # Template-ga uzatiladigan ma'lumot
+    }
+
+    return render(request, 'normativ-hujjatlar/yunusobod-tumani-maktabgacha-va-maktab-talimi-bolimining-meyoriy-hujjatlari.html', context)
+
 
 
 
