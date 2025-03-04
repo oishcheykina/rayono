@@ -580,13 +580,33 @@ def besh_muhim_tashabbus(request):
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    muhim_tashabbuslar = Besh_Tashshabus.objects.all().order_by('-created_at')
+    paginator = Paginator(muhim_tashabbuslar, 4)
+    page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
+    page_obj = paginator.get_page(page_number)
     dic = {
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos ,
         'videos': videos ,
+        'page_obj': page_obj,  # Объекты для текущей страницы
     }      
     return render(request,'faoliyat/besh-muhim-tashabbus.html' , dic )
+
+def besh_tashabbus(request, slug):
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    post = get_object_or_404(Besh_Tashshabus, slug=slug)
+    photos = Photo.objects.all().order_by('-created_at')[:4]
+    videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'post': post,
+        'photos': photos ,
+        'videos': videos ,
+    }
+    return render(request,'faoliyat/besh-tashabbus.html', dic )
 
 def faoliyat(request):
     photos = Photo.objects.all().order_by('-created_at')[:4]

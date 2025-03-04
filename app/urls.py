@@ -28,6 +28,7 @@ urlpatterns = [
     path('matbuot-xizmati/yangiliklar/', yangiliklar, name= 'yangiliklar'),
 
     path('faoliyat/besh-muhim-tashabbus/', besh_muhim_tashabbus, name='besh-muhim-tashabbus'),
+    path('faoliyat/besh-muhim-tashabbus/<slug:slug>', besh_tashabbus, name='besh-tashabbus'),
     path('faoliyat/faoliyat/', faoliyat, name='faoliyat'),
     path('faoliyat/korrupsiyaga-qarshi-kurash/', korrupsiyaga_qarshi_kurash, name='korrupsiyaga-qarshi-kurash'),
     path('faoliyat/talimga-doir-terminlar/', talimga_doir_terminlar, name='talimga-doir-terminlar'),
