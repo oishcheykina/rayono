@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="for-acquaintance">
-    {% for hujjat in page_obj %}
+
     <div class="post-item d-flex jusify-content-between">
         <div class="post-item__preview">
             <div class="post-item__img">
@@ -20,7 +20,7 @@
             <p>{{ hujjat.content|safe }}</p> <!-- RichText uchun |safe qo‘shildi -->
         </div>
     </div>
-    {% endfor %}
+
 
     <div class="text-center">
         {% if page_obj.has_other_pages %}
