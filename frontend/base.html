@@ -4,9 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Surxondaryo Viloyati Denov Tumani maktabgacha va maktab ta'limi bo'limi">
+    <meta name="keywords" content="denov tuman, mmtb, denov mmtb, denov tumani mmtb, surxondaryo, uzbekiston, MMTB, rayono">
+    <link rel="search" type="application/opensearchdescription+xml" href="/"
+        title="Surxondaryo Viloyati Denov Tumani maktabgacha va maktab ta'limi bo'limi">
+        {% if request.path == '/' %}
+        <link rel="canonical" href="#">
+        {% endif %}
+    
+    <link rel="alternate" type="application/rss+xml" title="Surxondaryo Viloyati Denov Tumani maktabgacha va maktab ta'limi bo'limi" href="/">
     <link rel="icon" type="image/x-icon" href="https://toshvil.uz/favicon.ico">
-    <title>{% block title %}Pol{% endblock %}</title>
-    <link href="css/language-selector.css" rel="stylesheet">
+    <title>Surxondaryo viloyati Denov tumani maktabgacha va maktab ta'limi bo'limi</title>
     <link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/fontawesome.min.css' %}" rel="stylesheet">
@@ -327,5 +335,41 @@
     {% include 'details/footer.html' %}
 
     {% include 'details/scripts.html' %}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Клик по кнопке меню открывает/закрывает его
+            document.getElementById("megamenu-button-mobile").addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(".megamenu").classList.toggle("show");
+            });
+        
+            // Клик по пунктам с подпунктами открывает/закрывает их
+            document.querySelectorAll(".drop-down").forEach(item => {
+                item.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    let submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains("drop-down-container")) {
+                        submenu.classList.toggle("show");
+                    }
+                });
+            });
+        
+            // Закрытие меню при клике вне него
+            document.addEventListener("click", function (e) {
+                if (!e.target.closest(".main-nav")) {
+                    document.querySelector(".megamenu").classList.remove("show");
+                    document.querySelectorAll(".drop-down-container").forEach(sub => sub.classList.remove("show"));
+                }
+            });
+        });
+        
+    </script>
 </body>
 </html>
+
+<!-- 
+the website was created by a team of programmers from school №74
+веб-сайт был создан командой программистов школы №74
+veb-sayt 74-maktab dasturchilar jamoasi tomonidan yaratilgan 
+-->

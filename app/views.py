@@ -2,6 +2,22 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import *
 
+#404 handler
+def custom_page_not_found(request, exception):
+    boss = Boss.objects.first()
+    yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
+    photos = Photo.objects.all().order_by('-created_at')[:4]
+    videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
+    maktablar_soni = LeftSidebar.objects.first()
+    dic = {
+        'boss': boss,
+        'yil_dasturi': yil_dasturi,
+        'photos': photos ,
+        'videos': videos ,
+        'maktablar_soni': maktablar_soni,  # Текущее содержимое левого блока
+    }
+    return render(request, "404.html", dic, status=404,)
+
 # MTM BO"LIMI
 def home(request):
     boss = Boss.objects.first()

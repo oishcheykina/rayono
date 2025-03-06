@@ -4,7 +4,7 @@
     <div class="header-top">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="header-top__left">
-                <a class="logo d-flex align-items-center" href="/">
+                <a class="logo d-flex align-items-center" href="{% url 'home' %}">
                     <img src="{% static 'images/logo_new.png' %}" width="10%" alt="logo"><br>
                     <strong style="color: #fff;">
                         <span>Denov tumani maktabgacha<br> va maktab ta’limi bo‘limi</span>
@@ -25,7 +25,7 @@
     border-top: 1px solid #051bab;
     border-bottom: 15px solid #d4dadf;
     position: relative;
-    padding: 15px 0;
+    padding: 7px 0;
     margin-top:95px;"> 
 <div class="megamenu_container">
 <a id="megamenu-button-mobile" href="#">Menu</a>
@@ -38,46 +38,54 @@ bo‘limi <span class="caret"></span></a>
     href="{% url 'rahbariyat' %}">Rahbariyat </a>
 
 </li>
-<li class="drop-normal"><a class="drop-down"
+<li class="drop-normal">
+    <a class="drop-down"
     href="{% url 'apparat-xodimlari' %}">Apparat
-    xodimlari </a>
-
+    xodimlari</a>
 </li>
-<li class="drop-normal"><a class="drop-down"
+<li class="drop-normal">
+    <a class="drop-down"
     href="{% url 'tarkibiy-tuzilma' %}">Tarkibiy
     tuzilma </a>
 
 </li>
-<li class="drop-normal"><a class="drop-down"
+<li class="drop-normal">
+    <a class="drop-down"
     href="{% url 'rahbariyat' %}">Rahbariyat
     qabul kunlari </a>
 
 </li>
-<li class="drop-normal"><a class="drop-down"
+<li class="drop-normal">
+    <a class="drop-down"
     href="{% url 'bolim-nizomi' %}">Bo‘lim Nizomi </a>
 
 </li>
-<li class="drop-normal"><a class="drop-down"
+<li class="drop-normal">
+    <a class="drop-down"
     href="{% url 'talim-muassasalari' %}">Ta’lim
     muassasalari </a>
 
 </li>
-<li class="drop-normal"><a class="drop-down"
+<li class="drop-normal">
+    <a class="drop-down"
     href="{% url 'mtm' %}">Maktabgacha ta&#039;lim
     tashkiloti </a>
 
 </li>
-<li class="drop-normal"><a class="drop-down"
+<li class="drop-normal">
+    <a class="drop-down"
     href="{% url 'bolim-ish-kun-tartibi' %}">Bo‘lim
     ish kun tartibi </a>
 
 </li>
-<li class="drop-normal"><a class="drop-down"
+<li class="drop-normal">
+    <a class="drop-down"
     href="/xalq-talimi-bolimi/bosh-ish-orinlari/">Bo&#039;sh
     ish o&#039;rinlari </a>
 
 </li>
-<li class="drop-normal"><a class="drop-down"
+<li class="drop-normal">
+    <a class="drop-down"
     href="/xalq-talimi-bolimi/bolim-manzili/">Bo`lim manzili
 </a>
 
