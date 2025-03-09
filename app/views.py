@@ -759,7 +759,9 @@ def talimga_doir_terminlar(request):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
     maktablar_soni = LeftSidebar.objects.first()
-    dic = {
+    post = Talim_Terminlar.objects.order_by('-created_at').first()
+
+    dic = { 
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos ,
@@ -1041,15 +1043,15 @@ def prezident_qaror_va_farmonlari(request):
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    prezident_qarorlari = Prezident_Qarorlari.objects.all().order_by('-created_at')  # Modeldan ma’lumotlarni olish
+    post = Prezident_Qarorlari.objects.order_by('-created_at').first()
     maktablar_soni = LeftSidebar.objects.first()
 
-    context = {
+    context = { 
         'yil_dasturi': yil_dasturi,
         'boss': boss,
         'photos': photos,
         'videos': videos,
-        'prezident_qarorlari': prezident_qarorlari,  # Template-ga uzatiladigan ma'lumot
+        'post': post,  # Template-ga uzatiladigan ma'lumot
         'maktablar_soni': maktablar_soni,  # Текущее содержимое левого блока
     }
 
@@ -1062,7 +1064,7 @@ def maktabgacha_va_maktab_talim_vazirligi_hayat_qarorlari(request):
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    hayat_qarorlari = Hayat_Qarorlari.objects.all().order_by('-created_at')  # Modeldan ma’lumotlarni olish
+    post = Hayat_Qarorlari.objects.order_by('-created_at').first()  # Modeldan ma’lumotlarni olish
     maktablar_soni = LeftSidebar.objects.first()
 
     context = {
@@ -1070,7 +1072,7 @@ def maktabgacha_va_maktab_talim_vazirligi_hayat_qarorlari(request):
         'boss': boss,
         'photos': photos,
         'videos': videos,
-        'hayat_qarorlari': hayat_qarorlari,  # Template-ga uzatiladigan ma'lumot
+        'post': post,  # Template-ga uzatiladigan ma'lumot
         'maktablar_soni': maktablar_soni,  # Текущее содержимое левого блока
     }
 
@@ -1081,7 +1083,7 @@ def maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari(request):
     videos = Video_Galereya.objects.all().order_by('-created_at')[:4]
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    meyoriy_hujjatlar = Meyoriy_Hujjatlar.objects.all().order_by('-created_at')  # Yangi model ma’lumotlarini olish
+    post = Meyoriy_Hujjatlar.objects.order_by('-created_at').first()  # Yangi model ma’lumotlarini olish
     maktablar_soni = LeftSidebar.objects.first()
 
     context = {
@@ -1089,7 +1091,7 @@ def maktabgacha_va_maktab_talim_vazirligi_meyoriy_hujjatlari(request):
         'boss': boss,
         'photos': photos,
         'videos': videos,
-        'meyoriy_hujjatlar': meyoriy_hujjatlar,  # Template-ga uzatiladigan ma'lumot
+        'post': post,  # Template-ga uzatiladigan ma'lumot
         'maktablar_soni': maktablar_soni,  # Текущее содержимое левого блока
     }
 

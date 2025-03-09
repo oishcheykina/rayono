@@ -19,25 +19,18 @@
     </h2>
 
     <div class="entry-meta">
-        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">2-06-2023, 15:06</span></span>
+        <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ post.created_at|date:"j-m-Y, H:i" }}</span></span>
         <span class="meta-item blog-category"><i class="icon-folder-open"></i> 
-            <a href="/">Bosh sahifa</a> / Maktabgacha va maktab ta'lim vazirligi hay’at qarorlari
+            <a href="{% url 'home' %}">Bosh sahifa</a> / Maktabgacha va maktab ta'lim vazirligi hay’at qarorlari
         </span>
     </div>
 
     <div class="row">
         <div class="col-lg-12">
             <div class="default-content">
-
-                <div class="post-item d-flex justify-content-between">
-                    <div>
-                        <a class="post-item__title" href="#">{{ qaror.title }}</a>
-                        <p>{{ qaror.content|safe }}</p> <!-- RichText uchun |safe qo‘shildi -->
-                        <div class="post-item__date">{{ qaror.created_at }}</div>
-                    </div>
-                </div>
-                <hr> <!-- Har bir qarorni ajratish uchun -->
-
+                <p>
+                    {{ post.content|safe }}
+                </p>
             </div>
         </div>
     </div>

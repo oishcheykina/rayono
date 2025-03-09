@@ -18,19 +18,23 @@
     <h3 rel="bookmark">Ta’limga doir terminlar</h3>
 </h2>
 <div class="entry-meta">
-    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">8-09-2022, 17:35</span></span>
-    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="/">Bosh sahifa</a> / Ta’limga doir terminlar</span>
+    <span class="meta-item blog-date"><i class="icon-time"></i> <span class="txt">{{ post.created_at|date:"j-m-Y, H:i" }}</span></span>
+    <span class="meta-item blog-category"><i class="icon-folder-open"></i> <a href="{% url 'home' %}">Bosh sahifa</a> / Ta’limga doir terminlar</span>
 </div>
+
+
 
 <div class="row">
     <div class="col-lg-12">
         <div class="default-content">
             <p>
-                <div style="text-align:center;"><b>Umumiy o‘rta ta’limga oid terminlar</b></div><b><br></b><div style="text-align:justify;"><b>Pedagog -</b> (yunon tilidan — παιδαγωγός bola yetaklovchi) — pedagogika mutaxassisi; bolalar va yoshlarni tarbiyalash va o‘qitish bilan shug‘ullanuvchi, shu soha bo‘yicha maxsus tayyorgarlikka ega bo‘lgan shaxs</div><div style="text-align:justify;"><b>davlat akkreditatsiyasi — </b>davlat ta’lim muassasalari va tashkilotlari, shuningdek nodavlat ta’lim tashkilotlari (bundan buyon matnda ta’lim tashkilotlari deb yuritiladi) faoliyatining davlat ta’lim standartlari va davlat ta’lim talablariga hamda o‘quv dasturlariga muvofiqligining davlat tomonidan e’tirof etilishi hamda ularning bitiruvchilariga ma’lumot to‘g‘risidagi hujjatlarni topshirish huquqining taqdim etilishidan iborat jarayon;</div><div style="text-align:justify;"><b>davlat ta’lim muassasasi —</b> davlat hokimiyati va boshqaruvi organlari tomonidan davlat mulki bo‘lgan mol-mulk negizida tashkil etilgan, davlat ta’lim standartlariga va davlat ta’lim talablariga muvofiq ta’lim beradigan muassasa;</div><div style="text-align:justify;"><b>davlat ta’lim standartlari —</b> davlat tomonidan ta’limning mazmuni va sifatiga nisbatan belgilanadigan talablar majmui;</div><div style="text-align:justify;"><b>davlat ta’lim talablari — </b>ta’limning tuzilmasiga, mazmuniga va uni amalga oshirish shart-sharoitlariga, shuningdek ta’lim oluvchilarning jismoniy, shaxsiy, intellektual, ilmiy hamda kasbiy sifatlariga qo‘yiladigan majburiy talablar;</div><div style="text-align:justify;"><b>malaka —</b> shaxsning kasbiy faoliyatning muayyan turini bajarishga tayyorgarligini ifodalaydigan, ma’lumot to‘g‘risidagi tegishli hujjat bilan tasdiqlanadigan bilim, qobiliyat, mahorat va ko‘nikmalar darajasi;</div><div style="text-align:justify;"><b>mutaxassislik — </b>malaka berish bilan yakunlanadigan muayyan kasbiy tayyorgarlik turining nomi;</div><div style="text-align:justify;"><b>nodavlat ta’lim tashkiloti —</b> davlat ta’lim standartlari, davlat ta’lim talablari va o‘quv dasturlariga muvofiq ta’lim xizmatlari ko‘rsatish faoliyatini amalga oshirish huquqini beradigan litsenziya asosida ta’lim xizmatlari ko‘rsatuvchi yuridik shaxs;</div><div style="text-align:justify;"><b>tarbiya —</b> aniq maqsadli hamda ijtimoiy-tarixiy tajriba asosida yosh avlodni har tomonlama kamol toptirishga, ularning ongini, ma’naviy-axloqiy qadriyatlar va dunyoqarashini shakllantirishga qaratilgan tizimli jarayon;</div><div style="text-align:justify;"><b>ta’lim — </b>ta’lim oluvchilarga chuqur nazariy bilim, malakalar va amaliy ko‘nikmalar berishga, shuningdek ularning umumta’lim va kasbiy bilim, malaka hamda ko‘nikmalarini shakllantirishga, qobiliyatini rivojlantirishga qaratilgan tizimli jarayon;</div><div style="text-align:justify;"><b>ta’lim kampusi — </b>yagona hududda birlashtirilgan o‘quv binolarini, ilmiy-tadqiqot institutlarini (markazlarini), ishlab chiqarish majmualari va texnoparklarni, ta’lim-tarbiya jarayoni ishtirokchilarining vaqtincha yashash joylarini, laboratoriyalarni, axborot-resurs markazlarini (kutubxonalarni), sport inshootlarini, umumiy ovqatlanish obyektlarini o‘z ichiga olgan binolar hamda inshootlar majmuidan iborat bo‘lgan, o‘quv jarayoni, ma’naviy-axloqiy tarbiyaning yuqori samaradorligini ta’minlaydigan ta’lim-tarbiya muhiti;</div><div style="text-align:justify;"><b>o‘quv metodik majmua – </b>darslik, mashq daftari, o‘qituvchi uchun metodik qo‘llanma, darsliklarning multimediali ilovasidan iborat majmua.</div><div style="text-align:justify;"><b>Umumiy o‘rta ta’lim – </b>ta’lim turi hisoblanib, 1-sinfdan 11-sinfgacha bo‘lgan ta’lim olish davrini o‘z ichiga oladi. Umumiy o‘rta ta’lim quyidagi davrlarga bo‘linadi:</div><div style="text-align:justify;"><b>boshlang‘ich ta’lim </b>– 1-4-sinf;</div><div style="text-align:justify;"><b>tayanch o‘rta ta’lim</b> – 5-9-sinf;</div><div style="text-align:justify;"><b>o‘rta ta’lim –</b> 10-11-sinf.</div>
+                {{ post.content|safe }}
             </p>
         </div>
     </div>
 </div>
+
+
 
 
                     
