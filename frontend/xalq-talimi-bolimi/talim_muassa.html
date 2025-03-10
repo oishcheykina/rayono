@@ -26,6 +26,21 @@
         <div class="default-content">
             <p>
                 <div style="text-align:center;"><img src="{{ principal.image.url }}" class="fr-fic fr-dib" style="width:278px;" alt=""></div><div style="text-align:center;"><br></div><div style="text-align:center;"><b>{{ principal.name }}</b></div><div style="text-align:center;"><b>TELEFON: </b>{{ principal.phone_number }}</div><div style="text-align:center;"><b>VEB-SAYT:</b> {{ principal.veb_sayt }}</div><div style="text-align:center;"><b>E-MAIL:</b> {{ principal.email }} </div><div style="text-align:center;"><b>QABUL KUNLARI: </b>{{ principal.reception_days }}</div><br><br>{{ principal.date_of_birth }}<br>{{ principal.education|linebreaks }}
+
+                <!-- Google Maps joylashuvi -->
+                <div style="margin-top: 20px;">
+                    <h3 style="text-align:center;">Maktabning Google xaritasi</h3>
+                    <div style="text-align:center;">
+                        <iframe 
+                            src="{{ principal.school_location }}" 
+                            width="100%" height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
             </p>
         </div>
     </div>

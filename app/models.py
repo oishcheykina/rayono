@@ -148,6 +148,7 @@ class Principals(models.Model): #direktorlar
     education = models.TextField(null=True)
     field = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    school_location = models.TextField(null=True, blank=True)
     
     def __str__(self):
         return self.name
