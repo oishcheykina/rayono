@@ -1,11 +1,15 @@
 {% load static %}
 
 <header class="header" style="background: linear-gradient(rgba(62, 6, 232, 0.3), rgba(71, 5, 236, 0.3)), url('{% static 'images/plain.png' %}'); background-position: center; background-size: cover; padding-bottom:0;">
-    <div class="header-top">
+    <div class=".header-top {
+        height: 10%; /* or any other value you want */
+        display: flex;
+        align-items: center;
+    }">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="header-top__left">
-                <a class="logo d-flex align-items-center" href="{% url 'home' %}">
-                    <img src="{% static 'images/denov5.png' %}" width="10%" alt="logo"><br>
+                <a class="logo d-flex align-items-center" href="/">
+                    <img src="{% static 'images/denov5.png' %}" width="15%" alt="logo"><br>
                     <strong style="color: #fff;">
                         <span>Denov tumani maktabgacha<br> va maktab ta’limi bo‘limi</span>
                         <span style="color: #fff;"> </span>
@@ -16,7 +20,7 @@
                 <div class="header-contacts mr-5"></div>
                 <div class="header-contacts">
                     <div class="header-contacts__title" style="color: white;">ISHONCH TELEFONI</div>
-                    <div class="header-contacts__body" style="color: #fff;width:300px !important"><span>(0 371)</span> 217-59-38</div>
+                    <div class="header-contacts__body" style="color: #fff;"><span>(0 371)</span> 217-59-38</div>
                 </div>
             </div>
         </div>
@@ -26,7 +30,7 @@
     border-bottom: 15px solid #d4dadf;
     position: relative;
     padding: 7px 0;
-    margin-top:95px;"> 
+    margin-top:10px;"> 
 <div class="megamenu_container">
 <a id="megamenu-button-mobile" href="#">Menu</a>
 <ul class="megamenu">
