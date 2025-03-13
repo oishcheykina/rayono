@@ -183,7 +183,7 @@ def bolim_nizomi(request):
 def talim_muassasalari(request):
     boss = Boss.objects.first()
     yil_dasturi = Yil_Dasturi.objects.order_by('-created_at').first()
-    direktorlar = Principals.objects.all()
+    direktorlar = Principals.objects.all().order_by('-created_at')
     paginator = Paginator(direktorlar, 4)
     page_number = request.GET.get('page')  # Получаем номер страницы из GET-параметра
     page_obj = paginator.get_page(page_number)

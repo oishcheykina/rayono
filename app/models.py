@@ -13,7 +13,7 @@ class Post(models.Model):
     slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200, unique=True)
     content = RichTextUploadingField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="posts", null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="posts", null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     views = models.PositiveIntegerField(default=0)
     
@@ -157,8 +157,8 @@ class Principals(models.Model): #direktorlar
         return reverse("talim_muassa", kwargs={"slug": self.slug})
     
     class Meta:
-        verbose_name = 'Direktor'
-        verbose_name_plural = 'Direktorlar'
+        verbose_name = "Ta'lim muassasalari"
+        verbose_name_plural = "Ta'lim muassasalari"
         
 class Talim_Tashkiloti(models.Model):
     name = models.CharField(max_length=200, null=True)

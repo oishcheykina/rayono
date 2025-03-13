@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load youtube_tags %}
 
 
 {% block title %}Bosh sahifa{% endblock %}
@@ -30,7 +31,7 @@ height: 500px !important;
 <div class="default-content">
 <p>
 <div style="text-align:center;"><img src="{{ post.image.url }}" class="fr-fic fr-dib" style="width:743px;" alt=""></div><br><div style="text-align:justify;">
-    {{ post.content|safe }}
+    {{ post.content|youtube_embed|safe }}
 </div><br><br>
 </p>
 </div>
